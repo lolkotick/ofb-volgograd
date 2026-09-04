@@ -568,3 +568,13 @@ td .badge { font-size: .6875rem; }
 .faq__a p { margin: 0; }
 
 .person-contact { padding: 1.5rem; max-width: 460px; }
+
+/* Ссылки, вынесенные из текста поста ВКонтакте */
+.news-links {
+  margin-top: 2rem; padding: 1.25rem 1.4rem;
+  background: var(--bg-2); border: 1px solid var(--line-soft); border-radius: var(--radius);
+}
+.news-links h2 { font-size: 1rem; margin: 0 0 .75rem; }
+.news-links ul { list-style: none; margin: 0; padding: 0; display: grid; gap: .5rem; }
+.news-links li a { font-size: .9375rem; word-break: break-word; }
+.news-article__text a { word-break: break-word; }

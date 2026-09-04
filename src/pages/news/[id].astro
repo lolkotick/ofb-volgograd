@@ -10,6 +10,25 @@ export async function getStaticPaths() {
 }
 
 const { item } = Astro.props;
+
+/* Голые ссылки в тексте поста делаем кликабельными.
+   Текст режем на куски по адресам и собираем обратно уже со ссылками —
+   так в разметку не попадает ничего, кроме того, что мы построили сами. */
+const URL_PATTERN = /(https?:\/\/[^\s<>"']+)/g;
+const isUrl = (part) => /^https?:\/\//.test(part);
+/* Первая строка поста уже стоит заголовком страницы — в теле её не повторяем. */
+const norm = (value) => String(value ?? '').replace(/\s+/g, ' ').trim();
+const bodyText = (() => {
+  const lines = (item.text ?? '').split('\n');
+  const first = lines.findIndex((line) => line.trim() !== '');
+  if (first >= 0 && norm(lines[first]) === norm(item.title)) {
+    return lines.slice(first + 1).join('\n').replace(/^\s*\n/, '').trimEnd();
+  }
+  return item.text ?? '';
+})();
+
+const segments = bodyText.split(URL_PATTERN).filter((part) => part !== '');
+const postLinks = item.links ?? [];
 const idx = news.findIndex((n) => String(n.id) === String(item.id));
 const prev = idx > 0 ? news[idx - 1] : null;
 const next = idx > -1 && idx < news.length - 1 ? news[idx + 1] : null;
@@ -37,9 +56,28 @@ const gallery = (item.photos ?? []).filter((p) => !item.cover || p.url !== item.
                alt={`Иллюстрация к новости «${item.title}»`} />
         )}
 
-        {item.text
-          ? <div class="news-article__text" set:text={item.text} />
-          : <p class="muted">В этой публикации нет текста — посмотрите её во ВКонтакте.</p>}
+        {bodyText ? (
+          <div class="news-article__text">
+            {segments.map((part) =>
+              isUrl(part)
+                ? <a href={part} rel="noopener">{part}</a>
+                : <Fragment set:text={part} />
+            )}
+          </div>
+        ) : (
+          <p class="muted">В этой публикации нет текста — посмотрите её во ВКонтакте.</p>
+        )}
+
+        {postLinks.length > 0 && (
+          <div class="news-links">
+            <h2>Ссылки из публикации</h2>
+            <ul>
+              {postLinks.map((link) => (
+                <li><a href={link.url} rel="noopener">{link.label}</a></li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {gallery.length > 0 && (
           <div class="news-gallery">
