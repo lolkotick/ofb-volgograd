@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
+import SectionBlocks from '../../components/SectionBlocks.astro';
 import { url } from '../../lib/url.js';
 import { sections } from '../../lib/nav.js';
 import { site } from '../../lib/data.js';
@@ -12,56 +13,79 @@ export async function getStaticPaths() {
 
 const { section } = Astro.props;
 const others = sections.filter((s) => s.slug !== section.slug).slice(0, 4);
+
+/* Раздел открывается публично только при published: true.
+   Пока федерация не заполнила содержание, посетитель видит честную заглушку,
+   а не каркас с пустыми полями. */
+const isReady = section.published === true && (section.blocks ?? []).length > 0;
 ---
 
 <BaseLayout
   title={section.title}
-  description={`${section.title} — направление работы ВРОО «Областная федерация баскетбола». Раздел готовится к публикации.`}
-  noindex={true}
+  description={`${section.title} — направление работы ВРОО «Областная федерация баскетбола».${isReady ? '' : ' Раздел готовится к публикации.'}`}
+  noindex={!isReady}
 >
   <PageHero
     eyebrow="Направление работы"
     title={section.title}
+    lead={isReady ? section.description : undefined}
     crumbs={[{ title: 'Направления' }, { title: section.title }]}
   />
 
-  <section class="section">
-    <div class="container">
-      <div class="stub">
-        <svg class="stub__icon" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
-          <g fill="none" stroke="#F5761A" stroke-width="11" stroke-linecap="round">
-            <circle cx="100" cy="100" r="88" opacity=".9"/>
-            <path d="M12 100H188"/><path d="M100 12V188"/>
-            <path d="M27.9 49.5Q78 100 27.9 150.5"/>
-            <path d="M172.1 49.5Q122 100 172.1 150.5"/>
-          </g>
-        </svg>
+  {isReady ? (
+    <>
+      <SectionBlocks blocks={section.blocks} />
 
-        <h2>Раздел готовится</h2>
-        <p class="lead" style="margin-inline:auto">{section.description}</p>
-        <p class="muted" style="max-width:52ch;margin-inline:auto">
-          Мы наполняем этот раздел содержанием. Как только материалы будут готовы,
-          мы сообщим об этом в новостях и в сообществе федерации — следите за обновлениями.
-        </p>
+      <section class="section section--tight">
+        <div class="container">
+          <p class="notice">
+            Не нашли нужного? Напишите нам через <a href={url('/contacts/')}>раздел контактов</a>
+            или в <a href={site.social.vk} rel="noopener">сообщество ВКонтакте</a>.
+          </p>
+        </div>
+      </section>
+    </>
+  ) : (
+    <section class="section">
+      <div class="container">
+        <div class="stub">
+          <svg class="stub__icon" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+            <g fill="none" stroke="#F5761A" stroke-width="11" stroke-linecap="round">
+              <circle cx="100" cy="100" r="88" opacity=".9"/>
+              <path d="M12 100H188"/><path d="M100 12V188"/>
+              <path d="M27.9 49.5Q78 100 27.9 150.5"/>
+              <path d="M172.1 49.5Q122 100 172.1 150.5"/>
+            </g>
+          </svg>
 
-        <div class="stub__actions">
-          <a class="btn btn--primary" href={site.social.vk} rel="noopener">Следить в сообществе ВКонтакте</a>
-          <a class="btn btn--ghost" href={url('/contacts/')}>Задать вопрос федерации</a>
+          <h2>Раздел готовится</h2>
+          <p class="lead" style="margin-inline:auto">{section.description}</p>
+          <p class="muted" style="max-width:52ch;margin-inline:auto">
+            Мы наполняем этот раздел содержанием. Как только материалы будут готовы,
+            мы сообщим об этом в новостях и в сообществе федерации — следите за обновлениями.
+          </p>
+
+          <div class="stub__actions">
+            <a class="btn btn--primary" href={site.social.vk} rel="noopener">Следить в сообществе ВКонтакте</a>
+            <a class="btn btn--ghost" href={url('/contacts/')}>Задать вопрос федерации</a>
+          </div>
         </div>
       </div>
+    </section>
+  )}
 
-      <div style="margin-top:clamp(2rem,6vw,3.5rem)">
-        <div class="section-head">
-          <h2 style="font-size:1.35rem">Другие направления</h2>
-        </div>
-        <div class="grid grid--4">
-          {others.map((s) => (
-            <a class="card tile" href={url(`/sections/${s.slug}/`)}>
-              <span class="tile__title">{s.short} <span class="tile__arrow" aria-hidden="true">→</span></span>
-              <p class="tile__desc">Раздел готовится</p>
-            </a>
-          ))}
-        </div>
+  <section class="section section--tight">
+    <div class="container">
+      <div class="section-head">
+        <h2 style="font-size:1.35rem">Другие направления</h2>
+      </div>
+      <div class="grid grid--4">
+        {others.map((s) => (
+          <a class="card tile" href={url(`/sections/${s.slug}/`)}>
+            <span class="tile__title">{s.short} <span class="tile__arrow" aria-hidden="true">→</span></span>
+            <p class="tile__desc">{s.published ? 'Открыть раздел' : 'Раздел готовится'}</p>
+          </a>
+        ))}
       </div>
     </div>
   </section>

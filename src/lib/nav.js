@@ -1,30 +1,25 @@
-/** Навигация сайта. Разделы второго этапа (stub: true) уже присутствуют в меню,
- *  но ведут на страницу «Раздел готовится». */
-export const sections = [
-  { slug: 'accreditation',  title: 'Аккредитация',            short: 'Аккредитация',
-    description: 'Аккредитация клубов, спортивных школ и организаторов соревнований в Волгоградской области.' },
-  { slug: 'referees',       title: 'Судейский корпус',        short: 'Судейский корпус',
-    description: 'Судьи и комиссары региона, обучение, аттестация и назначения на матчи.' },
-  { slug: 'amateur',        title: 'Любительский баскетбол',  short: 'Любительский',
-    description: 'Турниры и лиги для взрослых любителей: как собрать команду и заявиться на соревнования.' },
-  { slug: 'student',        title: 'Студенческий баскетбол',  short: 'Студенческий',
-    description: 'Соревнования между вузами и ссузами Волгограда и области, студенческие лиги.' },
-  { slug: 'youth',          title: 'Детский баскетбол',       short: 'Детский',
-    description: 'Секции и первенства для детей и подростков, информация для родителей и тренеров.' },
-  { slug: 'interactive',    title: 'Интерактивный баскетбол', short: 'Интерактивный',
-    description: 'Интерактивные форматы игры и подготовки, соревнования нового типа.' },
-  { slug: 'phygital',       title: 'Фиджитал баскетбол',      short: 'Фиджитал',
-    description: 'Фиджитал-формат: сочетание игры на площадке и киберспортивной части.' },
-  { slug: 'quiet',          title: '«Тихий» баскетбол',       short: '«Тихий» баскетбол',
-    description: 'Направление для людей с инвалидностью и ветеранов СВО: адаптированные тренировки и турниры.' },
-];
+/** Навигация сайта.
+ *  Список направлений — единый источник: data/sections.json.
+ *  Раздел с published: false остаётся в меню, но ведёт на страницу «Раздел готовится». */
+import sectionsData from '../../data/sections.json';
+
+export const sections = sectionsData.sections ?? [];
+
+export const publishedSections = sections.filter((s) => s.published);
 
 export const nav = [
   { href: '/',          title: 'Главная' },
   { href: '/about/',    title: 'О федерации' },
   { href: '/news/',     title: 'Новости' },
   { href: '/calendar/', title: 'Календарь' },
-  { title: 'Направления', children: sections.map((s) => ({ href: `/sections/${s.slug}/`, title: s.title, stub: true })) },
+  {
+    title: 'Направления',
+    children: sections.map((s) => ({
+      href: `/sections/${s.slug}/`,
+      title: s.title,
+      stub: !s.published,
+    })),
+  },
   { href: '/documents/', title: 'Документы' },
   { href: '/contacts/',  title: 'Контакты' },
 ];

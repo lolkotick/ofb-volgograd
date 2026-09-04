@@ -523,3 +523,40 @@ td .badge { font-size: .6875rem; }
   padding: 1rem 1.25rem; border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
   font-size: .9375rem; color: var(--text-2);
 }
+
+/* ==========================================================================
+   БЛОКИ СТРАНИЦЫ НАПРАВЛЕНИЯ
+   ========================================================================== */
+.steps { list-style: none; counter-reset: step; margin: 0; padding: 0; display: grid; gap: 1px; background: var(--line-soft); border: 1px solid var(--line-soft); border-radius: var(--radius); overflow: hidden; }
+@media (min-width: 780px) { .steps { grid-template-columns: repeat(2, 1fr); } }
+.steps__item { counter-increment: step; background: var(--bg); padding: 1.35rem 1.4rem 1.5rem; position: relative; }
+.steps__item::before {
+  content: counter(step);
+  display: grid; place-items: center;
+  width: 30px; height: 30px; margin-bottom: .85rem;
+  border-radius: 999px; background: var(--accent-soft); border: 1px solid var(--accent-line);
+  color: var(--accent-bright); font-weight: 800; font-size: .875rem;
+}
+.steps__title { font-size: 1.0625rem; margin: 0 0 .4rem; }
+.steps__text { font-size: .9375rem; color: var(--text-2); margin: 0; }
+
+.info-card { padding: 1.35rem; display: flex; flex-direction: column; gap: .45rem; }
+.info-card__sub { font-size: .6875rem; letter-spacing: .1em; text-transform: uppercase; color: var(--accent-bright); font-weight: 700; }
+.info-card__title { font-size: 1.0625rem; margin: 0; }
+.info-card__text { font-size: .9375rem; color: var(--text-2); margin: 0; }
+.info-card__contact { font-size: .875rem; color: var(--muted); margin: .35rem 0 0; word-break: break-word; }
+
+.faq { display: grid; gap: .6rem; max-width: 78ch; }
+.faq__item { background: var(--bg-2); border: 1px solid var(--line-soft); border-radius: var(--radius-sm); overflow: hidden; }
+.faq__item[open] { border-color: var(--accent-line); }
+.faq__q {
+  cursor: pointer; list-style: none; padding: 1rem 1.2rem;
+  font-weight: 700; font-size: 1rem; display: flex; align-items: center; justify-content: space-between; gap: 1rem;
+}
+.faq__q::-webkit-details-marker { display: none; }
+.faq__q::after { content: "+"; color: var(--accent-bright); font-size: 1.4rem; line-height: 1; flex: none; }
+.faq__item[open] .faq__q::after { content: "−"; }
+.faq__a { padding: 0 1.2rem 1.15rem; color: var(--text-2); font-size: .9375rem; }
+.faq__a p { margin: 0; }
+
+.person-contact { padding: 1.5rem; max-width: 460px; }

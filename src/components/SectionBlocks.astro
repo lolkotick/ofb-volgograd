@@ -1,0 +1,75 @@
+---
+/* Рендер содержания страницы направления.
+   Типы блоков описаны в data/sections.json → _как_заполнять. */
+const { blocks = [] } = Astro.props;
+---
+
+{blocks.map((block) => (
+  <section class="section section--tight" aria-label={block.title}>
+    <div class="container">
+      {block.title && (
+        <div class="section-head" style="margin-bottom:1.25rem">
+          <div>
+            <h2>{block.title}</h2>
+            {block.note && <p class="muted" style="font-size:.9375rem;margin:.35rem 0 0">{block.note}</p>}
+          </div>
+        </div>
+      )}
+
+      {block.type === 'text' && (
+        <div class="prose">
+          {(block.body ?? []).map((p) => <p>{p}</p>)}
+        </div>
+      )}
+
+      {block.type === 'steps' && (
+        <ol class="steps">
+          {(block.items ?? []).map((item) => (
+            <li class="steps__item">
+              <h3 class="steps__title">{item.title}</h3>
+              {item.text && <p class="steps__text">{item.text}</p>}
+            </li>
+          ))}
+        </ol>
+      )}
+
+      {block.type === 'cards' && (
+        <div class="grid grid--3">
+          {(block.items ?? []).map((item) => (
+            <article class="card info-card">
+              {item.subtitle && <span class="info-card__sub">{item.subtitle}</span>}
+              <h3 class="info-card__title">{item.title}</h3>
+              {item.text && <p class="info-card__text">{item.text}</p>}
+              {item.contact && <p class="info-card__contact">{item.contact}</p>}
+            </article>
+          ))}
+        </div>
+      )}
+
+      {block.type === 'faq' && (
+        <div class="faq">
+          {(block.items ?? []).map((item) => (
+            <details class="faq__item">
+              <summary class="faq__q">{item.q}</summary>
+              <div class="faq__a"><p>{item.a}</p></div>
+            </details>
+          ))}
+        </div>
+      )}
+
+      {block.type === 'contact' && (
+        <div class="card person-contact">
+          <div>
+            <p class="person__role">{block.role}</p>
+            <p class="person__name" style="margin-bottom:.75rem">{block.name}</p>
+            {block.email && <p class="person__contact"><a href={`mailto:${block.email}`}>{block.email}</a></p>}
+            {block.phone && <p class="person__contact"><a href={`tel:${block.phone.replace(/[^+\d]/g, '')}`}>{block.phone}</a></p>}
+            {!block.email && !block.phone && (
+              <p class="muted" style="font-size:.9375rem;margin:0">Контакт пока не указан.</p>
+            )}
+          </div>
+        </div>
+      )}
+    </div>
+  </section>
+))}
