@@ -1,0 +1,121 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { site } from '../lib/data.js';
+
+const email = site.contacts.email;
+const phoneHref = site.contacts.phone.replace(/[^+\d]/g, '');
+---
+
+<BaseLayout
+  title="Контакты"
+  description="Контакты ВРОО «Областная федерация баскетбола»: адрес, телефон, электронная почта и сообщество ВКонтакте."
+>
+  <PageHero
+    eyebrow="Связь"
+    title="Контакты"
+    lead="Напишите нам по вопросам участия в соревнованиях, сотрудничества, аккредитации или работы сайта."
+    crumbs={[{ title: 'Контакты' }]}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2" style="align-items:start">
+        <div>
+          <h2>Реквизиты для связи</h2>
+          <dl class="contact-list" style="margin-top:1.5rem">
+            <div>
+              <dt>Организация</dt>
+              <dd style="font-size:1rem">{site.name_full}</dd>
+            </div>
+            <div>
+              <dt>Адрес</dt>
+              <dd>{site.contacts.address}</dd>
+            </div>
+            <div>
+              <dt>Электронная почта</dt>
+              <dd><a href={`mailto:${email}`}>{email}</a></dd>
+            </div>
+            <div>
+              <dt>Телефон</dt>
+              <dd><a href={`tel:${phoneHref}`}>{site.contacts.phone}</a></dd>
+            </div>
+            <div>
+              <dt>Часы работы</dt>
+              <dd>{site.contacts.work_hours}</dd>
+            </div>
+            <div>
+              <dt>ВКонтакте</dt>
+              <dd><a href={site.social.vk} rel="noopener">{site.social.vk_label}</a></dd>
+            </div>
+          </dl>
+
+          <p class="notice" style="margin-top:2rem">
+            Самый быстрый способ связаться с федерацией — написать сообщение в
+            <a href={site.social.vk} rel="noopener"> сообщество ВКонтакте</a>.
+          </p>
+        </div>
+
+        <div class="card" style="padding:clamp(1.25rem,4vw,2rem)">
+          <h2 style="font-size:1.35rem">Форма обращения</h2>
+          <p class="muted" style="font-size:.9375rem">
+            Заполните поля — письмо откроется в вашей почтовой программе уже готовым к отправке
+            на адрес {email}. Сайт не хранит и не пересылает введённые данные.
+          </p>
+
+          <form data-contact-form style="display:grid;gap:1rem;margin-top:1.5rem">
+            <p style="margin:0">
+              <label for="cf-name" style="display:block;font-size:.8125rem;color:var(--muted);margin-bottom:.35rem">Ваше имя</label>
+              <input id="cf-name" name="name" type="text" required autocomplete="name" class="field" />
+            </p>
+            <p style="margin:0">
+              <label for="cf-topic" style="display:block;font-size:.8125rem;color:var(--muted);margin-bottom:.35rem">Тема обращения</label>
+              <select id="cf-topic" name="topic" class="field">
+                <option>Участие в соревнованиях</option>
+                <option>Детский баскетбол и секции</option>
+                <option>Судейство</option>
+                <option>Сотрудничество и партнёрство</option>
+                <option>Вопрос для СМИ</option>
+                <option>Другое</option>
+              </select>
+            </p>
+            <p style="margin:0">
+              <label for="cf-message" style="display:block;font-size:.8125rem;color:var(--muted);margin-bottom:.35rem">Сообщение</label>
+              <textarea id="cf-message" name="message" rows="5" required class="field"></textarea>
+            </p>
+            <p style="margin:0">
+              <button class="btn btn--primary" type="submit">Написать письмо</button>
+            </p>
+            <p class="muted" style="margin:0;font-size:.8125rem" data-form-hint>
+              Если почтовая программа не открылась, напишите напрямую на <a href={`mailto:${email}`}>{email}</a>.
+            </p>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
+
+<style>
+  .field {
+    width: 100%; font: inherit; font-size: .9375rem; color: var(--text);
+    background: var(--bg-3); border: 1px solid var(--line);
+    border-radius: var(--radius-sm); padding: .7rem .85rem;
+  }
+  .field:focus-visible { border-color: var(--accent); }
+  textarea.field { resize: vertical; min-height: 120px; }
+</style>
+
+<script is:inline define:vars={{ email }}>
+  const form = document.querySelector('[data-contact-form]');
+  if (form) {
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const data = new FormData(form);
+      const subject = `Обращение с сайта: ${data.get('topic')}`;
+      const body = `${data.get('message')}\n\n—\n${data.get('name')}`;
+      window.location.href =
+        `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    });
+  }
+</script>

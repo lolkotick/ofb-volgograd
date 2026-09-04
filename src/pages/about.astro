@@ -1,0 +1,96 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { url } from '../lib/url.js';
+import { site, leaders } from '../lib/data.js';
+
+---
+
+<BaseLayout
+  title="О федерации"
+  description="Официальное название, миссия и цели ВРОО «Областная федерация баскетбола», руководство организации."
+>
+  <PageHero
+    eyebrow="О нас"
+    title="О федерации"
+    lead="Волгоградская региональная общественная организация «Областная федерация баскетбола» — региональная федерация по виду спорта «баскетбол» в Волгоградской области."
+    crumbs={[{ title: 'О федерации' }]}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2" style="align-items:start">
+        <div class="prose">
+          <h2>Официальное название</h2>
+          <p>Полное наименование: <strong>{site.name_full}</strong>.</p>
+          <p>Сокращённое наименование: <strong>{site.name_short}</strong>.</p>
+
+          <h2>Миссия</h2>
+          <p>{site.mission}</p>
+
+          <h2>Цели и задачи</h2>
+          <ul>
+            <li>Популяризация баскетбола среди жителей Волгограда и Волгоградской области.</li>
+            <li>Организация и проведение официальных соревнований на территории региона.</li>
+            <li>Развитие детского и юношеского баскетбола, поддержка спортивных школ и секций.</li>
+            <li>Развитие студенческого и любительского баскетбола.</li>
+            <li>Подготовка, аттестация и повышение квалификации судей и тренеров.</li>
+            <li>Поддержка команд региона при участии в межрегиональных и всероссийских соревнованиях.</li>
+            <li>Развитие доступных форматов игры, в том числе для людей с инвалидностью и ветеранов СВО.</li>
+          </ul>
+        </div>
+
+        <aside class="card" style="padding:clamp(1.25rem,4vw,2rem)">
+          <h2 style="font-size:1.2rem">Связаться с федерацией</h2>
+          <p class="muted" style="font-size:.9375rem">
+            По вопросам участия в соревнованиях, аккредитации и сотрудничества пишите нам или в сообщество ВКонтакте.
+          </p>
+          <p style="display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.25rem">
+            <a class="btn btn--primary btn--sm" href={url('/contacts/')}>Контакты</a>
+            <a class="btn btn--ghost btn--sm" href={site.social.vk} rel="noopener">Группа ВКонтакте</a>
+          </p>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" aria-labelledby="leadership">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Команда</span>
+          <h2 id="leadership">Руководство федерации</h2>
+        </div>
+      </div>
+
+      <p class="notice" style="margin-bottom:1.75rem">
+        Данные руководителей заполняются федерацией. Сейчас в карточках показаны образцы полей —
+        ФИО, должность, фото и контакт подставляются из файла <code>data/leadership.json</code>.
+      </p>
+
+      <div class="grid grid--4">
+        {leaders.map((p) => (
+          <article class="card person">
+            {p.photo ? (
+              <img class="person__photo" src={url(p.photo)} width="400" height="400" loading="lazy"
+                   alt={`${p.name} — ${p.role.toLowerCase()} федерации`} />
+            ) : (
+              <div class="person__initials" role="img" aria-label={`Фотография (${p.role.toLowerCase()}) пока не добавлена`}>
+                <svg viewBox="0 0 64 64" width="52" height="52" aria-hidden="true" focusable="false"
+                     fill="none" stroke="currentColor" stroke-width="3.5" stroke-linecap="round">
+                  <circle cx="32" cy="23" r="11"/>
+                  <path d="M12 55c2.5-11 10.5-17 20-17s17.5 6 20 17"/>
+                </svg>
+              </div>
+            )}
+            <p class="person__role">{p.role}</p>
+            <p class="person__name">{p.name}</p>
+            {p.email && <p class="person__contact"><a href={`mailto:${p.email}`}>{p.email}</a></p>}
+            {p.phone && <p class="person__contact"><a href={`tel:${p.phone.replace(/[^+\d]/g, '')}`}>{p.phone}</a></p>}
+            {p.note && <p class="person__contact muted">{p.note}</p>}
+          </article>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

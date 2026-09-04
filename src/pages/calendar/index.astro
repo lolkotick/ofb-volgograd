@@ -1,0 +1,149 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { url } from '../../lib/url.js';
+import { matches, formatDate, weekday } from '../../lib/data.js';
+
+/* Матчи выводим от ближайших предстоящих к более далёким,
+   прошедшие — в конце, от самых свежих. */
+const upcoming = matches.filter((m) => !m.isFinished);
+const finished = [...matches].filter((m) => m.isFinished).reverse();
+const rows = [...upcoming, ...finished];
+---
+
+<BaseLayout
+  title="Календарь матчей"
+  description="Расписание баскетбольных матчей в Волгограде и Волгоградской области, а также выездных игр команд региона."
+>
+  <PageHero
+    eyebrow="Соревнования"
+    title="Календарь матчей"
+    lead="Игры на территории Волгограда и Волгоградской области, а также выездные матчи команд региона по России."
+    crumbs={[{ title: 'Календарь' }]}
+  />
+
+  <section class="section">
+    <div class="container">
+      {rows.length > 0 ? (
+        <>
+          <div class="filters" data-filters>
+            <div class="filter-group">
+              <span class="filter-group__label" id="f-status">Статус</span>
+              <div class="filter-group__buttons" role="group" aria-labelledby="f-status">
+                <button class="filter-btn" type="button" data-filter="status" data-value="upcoming" aria-pressed="true">Предстоящие</button>
+                <button class="filter-btn" type="button" data-filter="status" data-value="finished" aria-pressed="false">Прошедшие</button>
+                <button class="filter-btn" type="button" data-filter="status" data-value="all" aria-pressed="false">Все</button>
+              </div>
+            </div>
+            <div class="filter-group">
+              <span class="filter-group__label" id="f-type">Тип игры</span>
+              <div class="filter-group__buttons" role="group" aria-labelledby="f-type">
+                <button class="filter-btn" type="button" data-filter="type" data-value="all" aria-pressed="true">Все</button>
+                <button class="filter-btn" type="button" data-filter="type" data-value="home" aria-pressed="false">Домашние</button>
+                <button class="filter-btn" type="button" data-filter="type" data-value="away" aria-pressed="false">Выездные</button>
+              </div>
+            </div>
+          </div>
+
+          <p class="muted" style="font-size:.875rem;margin-bottom:1rem" data-match-count aria-live="polite"></p>
+
+          <div class="table-scroll">
+            <table>
+              <caption class="visually-hidden">Календарь матчей федерации: дата, лига, команды, место проведения и результат</caption>
+              <thead>
+                <tr>
+                  <th scope="col">Дата</th>
+                  <th scope="col">Лига / категория</th>
+                  <th scope="col">Матч</th>
+                  <th scope="col">Место</th>
+                  <th scope="col">Тип</th>
+                  <th scope="col">Результат</th>
+                </tr>
+              </thead>
+              <tbody>
+                {rows.map((m) => (
+                  <tr data-status={m.isFinished ? 'finished' : 'upcoming'} data-type={m.isHome ? 'home' : 'away'}>
+                    <td>
+                      <time datetime={m.datetime}>{formatDate(m.date)}</time>
+                      <div class="muted" style="font-size:.8125rem">
+                        {m.time ? `${m.time}, ` : ''}{weekday(m.date)}
+                      </div>
+                    </td>
+                    <td class="muted">{m.league}</td>
+                    <td class="match-row__teams">
+                      <a href={url(`/calendar/${m.id}/`)}>{m.team1} — {m.team2}</a>
+                      {m.hasBroadcast && <div><span class="badge badge--live">Трансляция</span></div>}
+                    </td>
+                    <td class="muted">{m.venue}<div style="font-size:.8125rem">{m.city}</div></td>
+                    <td><span class:list={['badge', m.isHome ? 'badge--home' : 'badge--away']}>{m.isHome ? 'Дома' : 'В гостях'}</span></td>
+                    <td>
+                      {m.isFinished
+                        ? (m.score ? <span class="match-row__score">{m.score}</span> : <span class="muted">сыгран</span>)
+                        : <span class="muted">—</span>}
+                    </td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+
+          <p class="matches-empty" hidden data-empty>По выбранным условиям матчей нет. Попробуйте изменить фильтры.</p>
+        </>
+      ) : (
+        <div class="empty-state">
+          <strong>Календарь пока пуст</strong>
+          <p>Расписание появится здесь после утверждения календаря соревнований.</p>
+        </div>
+      )}
+
+      <p class="notice" style="margin-top:2rem">
+        Расписание ведёт федерация. Если вы заметили ошибку в календаре или хотите добавить матч,
+        напишите нам через <a href={url('/contacts/')}>раздел контактов</a>.
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  const root = document.querySelector('[data-filters]');
+  if (root) {
+    const rows = [...document.querySelectorAll('tbody tr')];
+    const empty = document.querySelector('[data-empty]');
+    const counter = document.querySelector('[data-match-count]');
+    const state = { status: 'upcoming', type: 'all' };
+
+    const plural = (n) => {
+      const d10 = n % 10, d100 = n % 100;
+      if (d10 === 1 && d100 !== 11) return 'матч';
+      if (d10 >= 2 && d10 <= 4 && (d100 < 12 || d100 > 14)) return 'матча';
+      return 'матчей';
+    };
+
+    const apply = () => {
+      let visible = 0;
+      rows.forEach((row) => {
+        const okStatus = state.status === 'all' || row.dataset.status === state.status;
+        const okType = state.type === 'all' || row.dataset.type === state.type;
+        const show = okStatus && okType;
+        row.hidden = !show;
+        if (show) visible += 1;
+      });
+      if (empty) empty.hidden = visible !== 0;
+      if (counter) counter.textContent = `Показано ${visible} ${plural(visible)}`;
+      const table = document.querySelector('.table-scroll');
+      if (table) table.hidden = visible === 0;
+    };
+
+    root.addEventListener('click', (e) => {
+      const btn = e.target.closest('[data-filter]');
+      if (!btn) return;
+      state[btn.dataset.filter] = btn.dataset.value;
+      root.querySelectorAll(`[data-filter="${btn.dataset.filter}"]`).forEach((b) => {
+        b.setAttribute('aria-pressed', String(b === btn));
+      });
+      apply();
+    });
+
+    apply();
+  }
+</script>

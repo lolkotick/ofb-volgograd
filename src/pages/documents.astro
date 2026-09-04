@@ -1,0 +1,59 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import { url } from '../lib/url.js';
+import { documents, formatDate } from '../lib/data.js';
+
+const categories = [...new Set(documents.map((d) => d.category))];
+---
+
+<BaseLayout
+  title="Документы"
+  description="Устав, положения о соревнованиях, регламенты и бланки ВРОО «Областная федерация баскетбола»."
+>
+  <PageHero
+    eyebrow="Официально"
+    title="Документы федерации"
+    lead="Устав, положения о соревнованиях, регламенты и формы заявок. Файлы доступны для скачивания в формате PDF."
+    crumbs={[{ title: 'Документы' }]}
+  />
+
+  <section class="section">
+    <div class="container">
+      {categories.map((cat) => (
+        <div style="margin-bottom:2.5rem">
+          <div class="section-head" style="margin-bottom:1.25rem">
+            <h2 style="font-size:1.35rem">{cat}</h2>
+          </div>
+          <div class="grid grid--2">
+            {documents.filter((d) => d.category === cat).map((doc) => (
+              <article class="card doc-card">
+                <span class="doc-card__icon" aria-hidden="true">PDF</span>
+                <div>
+                  <span class="doc-card__cat">{doc.category}</span>
+                  <h3 class="doc-card__title">{doc.title}</h3>
+                  {doc.description && <p class="doc-card__desc">{doc.description}</p>}
+                  {doc.file ? (
+                    <p style="margin:0">
+                      <a class="btn btn--ghost btn--sm" href={url(doc.file)} download>
+                        Скачать PDF{doc.size ? ` · ${doc.size}` : ''}
+                      </a>
+                      {doc.date && <span class="doc-card__pending"> от {formatDate(doc.date)}</span>}
+                    </p>
+                  ) : (
+                    <p class="doc-card__pending" style="margin:0">Файл готовится к публикации</p>
+                  )}
+                </div>
+              </article>
+            ))}
+          </div>
+        </div>
+      ))}
+
+      <p class="notice">
+        Нужного документа нет в списке? Напишите нам через <a href={url('/contacts/')}>раздел контактов</a> —
+        мы направим нужный файл или добавим его на сайт.
+      </p>
+    </div>
+  </section>
+</BaseLayout>

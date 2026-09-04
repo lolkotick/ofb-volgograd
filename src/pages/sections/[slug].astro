@@ -1,0 +1,68 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { url } from '../../lib/url.js';
+import { sections } from '../../lib/nav.js';
+import { site } from '../../lib/data.js';
+
+export async function getStaticPaths() {
+  const { sections } = await import('../../lib/nav.js');
+  return sections.map((section) => ({ params: { slug: section.slug }, props: { section } }));
+}
+
+const { section } = Astro.props;
+const others = sections.filter((s) => s.slug !== section.slug).slice(0, 4);
+---
+
+<BaseLayout
+  title={section.title}
+  description={`${section.title} — направление работы ВРОО «Областная федерация баскетбола». Раздел готовится к публикации.`}
+  noindex={true}
+>
+  <PageHero
+    eyebrow="Направление работы"
+    title={section.title}
+    crumbs={[{ title: 'Направления' }, { title: section.title }]}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="stub">
+        <svg class="stub__icon" viewBox="0 0 200 200" aria-hidden="true" focusable="false">
+          <g fill="none" stroke="#F5761A" stroke-width="11" stroke-linecap="round">
+            <circle cx="100" cy="100" r="88" opacity=".9"/>
+            <path d="M12 100H188"/><path d="M100 12V188"/>
+            <path d="M27.9 49.5Q78 100 27.9 150.5"/>
+            <path d="M172.1 49.5Q122 100 172.1 150.5"/>
+          </g>
+        </svg>
+
+        <h2>Раздел готовится</h2>
+        <p class="lead" style="margin-inline:auto">{section.description}</p>
+        <p class="muted" style="max-width:52ch;margin-inline:auto">
+          Мы наполняем этот раздел содержанием. Как только материалы будут готовы,
+          мы сообщим об этом в новостях и в сообществе федерации — следите за обновлениями.
+        </p>
+
+        <div class="stub__actions">
+          <a class="btn btn--primary" href={site.social.vk} rel="noopener">Следить в сообществе ВКонтакте</a>
+          <a class="btn btn--ghost" href={url('/contacts/')}>Задать вопрос федерации</a>
+        </div>
+      </div>
+
+      <div style="margin-top:clamp(2rem,6vw,3.5rem)">
+        <div class="section-head">
+          <h2 style="font-size:1.35rem">Другие направления</h2>
+        </div>
+        <div class="grid grid--4">
+          {others.map((s) => (
+            <a class="card tile" href={url(`/sections/${s.slug}/`)}>
+              <span class="tile__title">{s.short} <span class="tile__arrow" aria-hidden="true">→</span></span>
+              <p class="tile__desc">Раздел готовится</p>
+            </a>
+          ))}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

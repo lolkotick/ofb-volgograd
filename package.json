@@ -1,0 +1,19 @@
+{
+  "name": "ofb-volgograd",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Официальный сайт ВРОО «Областная федерация баскетбола» (Волгоградская область)",
+  "scripts": {
+    "dev": "astro dev",
+    "build": "astro build",
+    "preview": "astro preview",
+    "sync:news": "node scripts/sync-vk-news.mjs"
+  },
+  "devDependencies": {
+    "astro": "^5.14.1"
+  },
+  "dependencies": {
+    "@astrojs/sitemap": "^3.7.4"
+  }
+}

@@ -1,0 +1,83 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { url } from '../../lib/url.js';
+import { news, formatDate } from '../../lib/data.js';
+
+export async function getStaticPaths() {
+  const { news } = await import('../../lib/data.js');
+  return news.map((item) => ({ params: { id: String(item.id) }, props: { item } }));
+}
+
+const { item } = Astro.props;
+const idx = news.findIndex((n) => String(n.id) === String(item.id));
+const prev = idx > 0 ? news[idx - 1] : null;
+const next = idx > -1 && idx < news.length - 1 ? news[idx + 1] : null;
+const gallery = (item.photos ?? []).filter((p) => !item.cover || p.url !== item.cover.url);
+---
+
+<BaseLayout title={item.title} description={item.excerpt || item.title} image={item.cover?.url || '/og-image.png'}>
+  <PageHero
+    eyebrow="Новость"
+    title={item.title}
+    crumbs={[{ title: 'Новости', href: '/news/' }, { title: 'Публикация' }]}
+  />
+
+  <section class="section">
+    <div class="container">
+      <article class="news-article">
+        <div class="news-article__meta">
+          <time datetime={item.date}>{formatDate(item.date)}</time>
+          <a href={item.url} rel="noopener">Оригинал публикации во ВКонтакте</a>
+        </div>
+
+        {item.cover && (
+          <img class="news-cover" src={item.cover.url}
+               width={item.cover.width || 1200} height={item.cover.height || 750}
+               alt={`Иллюстрация к новости «${item.title}»`} />
+        )}
+
+        {item.text
+          ? <div class="news-article__text" set:text={item.text} />
+          : <p class="muted">В этой публикации нет текста — посмотрите её во ВКонтакте.</p>}
+
+        {gallery.length > 0 && (
+          <div class="news-gallery">
+            {gallery.map((p, i) => (
+              <img src={p.url} width={p.width || 600} height={p.height || 400} loading="lazy"
+                   alt={`Фотография ${i + 1} к новости «${item.title}»`} />
+            ))}
+          </div>
+        )}
+
+        {item.hasVideo && (
+          <p class="notice" style="margin-top:1.75rem">
+            К публикации приложено видео — его можно посмотреть
+            <a href={item.url} rel="noopener"> в оригинальной записи ВКонтакте</a>.
+          </p>
+        )}
+
+        <p style="margin-top:2rem">
+          <a class="btn btn--primary btn--sm" href={item.url} rel="noopener">Открыть во ВКонтакте</a>
+        </p>
+      </article>
+
+      <nav class="grid grid--2" aria-label="Другие новости" style="margin-top:2.5rem">
+        {prev && (
+          <a class="card tile" href={url(`/news/${prev.id}/`)}>
+            <span class="tile__desc">Следующая новость</span>
+            <span class="tile__title">{prev.title}</span>
+          </a>
+        )}
+        {next && (
+          <a class="card tile" href={url(`/news/${next.id}/`)}>
+            <span class="tile__desc">Предыдущая новость</span>
+            <span class="tile__title">{next.title}</span>
+          </a>
+        )}
+      </nav>
+
+      <p style="margin-top:2rem"><a href={url('/news/')}>← Ко всем новостям</a></p>
+    </div>
+  </section>
+</BaseLayout>

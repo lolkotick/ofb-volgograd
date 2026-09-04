@@ -1,0 +1,119 @@
+---
+import { url } from '../lib/url.js';
+import { nav } from '../lib/nav.js';
+
+const current = Astro.url.pathname.replace(/\/+$/, '') || '/';
+const isActive = (href) => {
+  const target = url(href).replace(/\/+$/, '') || '/';
+  if (target === (url('/').replace(/\/+$/, '') || '/')) return current === target;
+  return current === target || current.startsWith(target + '/');
+};
+const sectionsOpen = nav
+  .find((i) => i.children)
+  ?.children.some((c) => isActive(c.href));
+---
+
+<header class="site-header">
+  <div class="container header-inner">
+    <a class="brand" href={url('/')} aria-label="ВРОО «Областная федерация баскетбола» — на главную">
+      <img
+        src={url('/logo/ofb-logo-on-dark.png')}
+        srcset={`${url('/logo/ofb-logo-on-dark.png')} 1x, ${url('/logo/ofb-logo-on-dark@2x.png')} 2x`}
+        width="900" height="564"
+        alt="Логотип ВРОО «Областная федерация баскетбола»"
+        class="brand__logo"
+      />
+      <span class="brand__text">
+        <span class="brand__title">Областная федерация баскетбола</span>
+        <span class="brand__sub">Волгоградская область</span>
+      </span>
+    </a>
+
+    <button
+      class="burger"
+      type="button"
+      aria-expanded="false"
+      aria-controls="site-nav"
+      data-menu-toggle
+    >
+      <span class="burger__box" aria-hidden="true"><span class="burger__line"></span></span>
+      <span class="burger__label">Меню</span>
+    </button>
+
+    <nav id="site-nav" class="site-nav" aria-label="Основное меню">
+      <ul class="site-nav__list">
+        {nav.map((item) =>
+          item.children ? (
+            <li class="site-nav__item site-nav__item--has-sub">
+              <details class="submenu">
+                <summary class:list={['site-nav__link', 'submenu__summary', sectionsOpen && 'is-active']}>
+                  {item.title}
+                  <svg class="submenu__chevron" viewBox="0 0 12 8" aria-hidden="true" focusable="false">
+                    <path d="M1 1.5 6 6.5 11 1.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+                  </svg>
+                </summary>
+                <ul class="submenu__list">
+                  {item.children.map((child) => (
+                    <li>
+                      <a
+                        class:list={['submenu__link', isActive(child.href) && 'is-active']}
+                        href={url(child.href)}
+                        aria-current={isActive(child.href) ? 'page' : undefined}
+                      >
+                        {child.title}
+                        <span class="submenu__tag">скоро</span>
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </details>
+            </li>
+          ) : (
+            <li class="site-nav__item">
+              <a
+                class:list={['site-nav__link', isActive(item.href) && 'is-active']}
+                href={url(item.href)}
+                aria-current={isActive(item.href) ? 'page' : undefined}
+              >{item.title}</a>
+            </li>
+          )
+        )}
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<script>
+  const toggle = document.querySelector('[data-menu-toggle]');
+  const nav = document.getElementById('site-nav');
+  const submenu = document.querySelector('.site-nav .submenu');
+
+  if (toggle && nav) {
+    const setOpen = (open) => {
+      toggle.setAttribute('aria-expanded', String(open));
+      document.body.classList.toggle('menu-open', open);
+    };
+    toggle.addEventListener('click', () => {
+      setOpen(toggle.getAttribute('aria-expanded') !== 'true');
+    });
+    nav.addEventListener('click', (e) => {
+      if (e.target.closest('a')) setOpen(false);
+    });
+    document.addEventListener('keydown', (e) => {
+      if (e.key !== 'Escape') return;
+      if (toggle.getAttribute('aria-expanded') === 'true') { setOpen(false); toggle.focus(); }
+      else if (submenu?.open && window.matchMedia('(min-width: 1000px)').matches) submenu.open = false;
+    });
+  }
+
+  // Выпадающий список «Направления»: на широких экранах закрываем по клику мимо
+  if (submenu) {
+    const wide = () => window.matchMedia('(min-width: 1000px)').matches;
+    document.addEventListener('click', (e) => {
+      if (wide() && submenu.open && !submenu.contains(e.target)) submenu.open = false;
+    });
+    document.addEventListener('focusin', (e) => {
+      if (wide() && submenu.open && !submenu.contains(e.target)) submenu.open = false;
+    });
+  }
+</script>

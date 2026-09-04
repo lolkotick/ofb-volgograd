@@ -1,0 +1,142 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import NewsCard from '../components/NewsCard.astro';
+import MatchCard from '../components/MatchCard.astro';
+import { url } from '../lib/url.js';
+import { site, news, upcomingMatches } from '../lib/data.js';
+
+const latestNews = news.slice(0, 4);
+const nextMatches = upcomingMatches.slice(0, 3);
+
+const quickLinks = [
+  { href: '/calendar/', title: 'Календарь матчей', desc: 'Расписание игр в регионе и выездных матчей волгоградских команд.' },
+  { href: '/documents/', title: 'Документы', desc: 'Устав, положения о соревнованиях, регламенты и бланки заявок.' },
+  { href: '/sections/youth/', title: 'Детский баскетбол', desc: 'Информация для родителей и тренеров о занятиях и первенствах.' },
+  { href: '/sections/amateur/', title: 'Любительский баскетбол', desc: 'Как собрать команду и заявиться на любительские турниры.' },
+  { href: '/sections/referees/', title: 'Судейский корпус', desc: 'Обучение, аттестация и работа судей на матчах федерации.' },
+  { href: '/contacts/', title: 'Контакты', desc: 'Как связаться с федерацией и направить обращение.' },
+];
+
+const jsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'SportsOrganization',
+  name: site.name_full,
+  alternateName: site.name_short,
+  sport: 'Баскетбол',
+  areaServed: site.region,
+  url: Astro.site ? new URL(url('/'), Astro.site).href : undefined,
+  sameAs: [site.social.vk],
+};
+---
+
+<BaseLayout description={`Официальный сайт ВРОО «Областная федерация баскетбола». Новости, календарь матчей и документы федерации в Волгограде и Волгоградской области.`}>
+  <script type="application/ld+json" is:inline set:html={JSON.stringify(jsonLd)} slot="head" />
+
+  <section class="hero">
+    <img class="hero__ball" src={url('/logo/ball.svg')} alt="" aria-hidden="true" width="512" height="512" />
+    <div class="container hero__inner">
+      <span class="eyebrow">{site.name_short} · {site.region}</span>
+      <h1>Баскетбол <span class="hero__accent">Волгоградской области</span></h1>
+      <p class="lead hero__lead">{site.tagline}. Новости федерации, расписание матчей, документы и направления работы — в одном месте.</p>
+      <div class="hero__actions">
+        <a class="btn btn--primary" href={url('/calendar/')}>Календарь матчей</a>
+        <a class="btn btn--ghost" href={url('/news/')}>Все новости</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- НОВОСТИ -->
+  <section class="section" aria-labelledby="home-news">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Новости</span>
+          <h2 id="home-news">Что происходит в федерации</h2>
+        </div>
+        <a class="btn btn--ghost btn--sm" href={url('/news/')}>Все новости</a>
+      </div>
+
+      {latestNews.length > 0 ? (
+        <div class="grid grid--3">
+          {latestNews.map((item, i) => <NewsCard item={item} featured={i === 0} />)}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <strong>Новости появятся здесь автоматически</strong>
+          <p>Лента подключается к группе федерации ВКонтакте и обновляется несколько раз в день.
+            Пока лента пуста, свежие материалы можно посмотреть в сообществе.</p>
+          <p style="margin-top:1.25rem"><a class="btn btn--primary btn--sm" href={site.social.vk} rel="noopener">Открыть группу ВКонтакте</a></p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- МАТЧИ -->
+  <section class="section" aria-labelledby="home-matches">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Календарь</span>
+          <h2 id="home-matches">Ближайшие матчи</h2>
+        </div>
+        <a class="btn btn--ghost btn--sm" href={url('/calendar/')}>Весь календарь</a>
+      </div>
+
+      {nextMatches.length > 0 ? (
+        <div class="grid grid--3">
+          {nextMatches.map((match) => <MatchCard match={match} />)}
+        </div>
+      ) : (
+        <div class="empty-state">
+          <strong>Расписание готовится</strong>
+          <p>Ближайшие игры появятся здесь, как только федерация утвердит календарь.</p>
+        </div>
+      )}
+    </div>
+  </section>
+
+  <!-- О ФЕДЕРАЦИИ -->
+  <section class="section" aria-labelledby="home-about">
+    <div class="container">
+      <div class="grid grid--2" style="align-items:start">
+        <div>
+          <span class="eyebrow">О федерации</span>
+          <h2 id="home-about">Коротко о нас</h2>
+          <p class="lead">{site.name_full} объединяет тех, кто играет, тренирует, судит и болеет за баскетбол в нашем регионе.</p>
+          <p class="muted">{site.mission}</p>
+          <p style="margin-top:1.5rem"><a class="btn btn--ghost" href={url('/about/')}>Подробнее о федерации</a></p>
+        </div>
+        <div class="card" style="padding:clamp(1.25rem,4vw,2rem)">
+          <h3>Чем мы занимаемся</h3>
+          <ul class="prose" style="margin:0;padding-left:1.1em;color:var(--text-2)">
+            <li>Организуем областные соревнования и кубковые турниры</li>
+            <li>Развиваем детский, студенческий и любительский баскетбол</li>
+            <li>Готовим и аттестуем судейский корпус региона</li>
+            <li>Поддерживаем команды Волгоградской области на выездных играх</li>
+            <li>Развиваем адаптивные и новые форматы игры</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- БЫСТРЫЕ ССЫЛКИ -->
+  <section class="section" aria-labelledby="home-links">
+    <div class="container">
+      <div class="section-head">
+        <div>
+          <span class="eyebrow">Куда дальше</span>
+          <h2 id="home-links">Быстрые ссылки</h2>
+        </div>
+      </div>
+      <div class="grid grid--3">
+        {quickLinks.map((l) => (
+          <a class="card tile" href={url(l.href)}>
+            <span class="tile__title">{l.title} <span class="tile__arrow" aria-hidden="true">→</span></span>
+            <p class="tile__desc">{l.desc}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,40 @@
+---
+import { url } from '../lib/url.js';
+import { formatDate, weekday } from '../lib/data.js';
+const { match } = Astro.props;
+---
+<article class="card match-card">
+  <a class="match-card__link" href={url(`/calendar/${match.id}/`)}>
+    <div class="match-card__top">
+      <span class:list={['badge', match.isHome ? 'badge--home' : 'badge--away']}>
+        {match.isHome ? 'Дома' : 'В гостях'}
+      </span>
+      {match.hasBroadcast && <span class="badge badge--live">Трансляция</span>}
+    </div>
+
+    <p class="match-card__league">{match.league}</p>
+
+    <div class="match-card__teams">
+      <span class="match-card__team">{match.team1}</span>
+      <span class="match-card__vs" aria-label="против">
+        {match.isFinished && match.score ? match.score : '—'}
+      </span>
+      <span class="match-card__team">{match.team2}</span>
+    </div>
+
+    <dl class="match-card__meta">
+      <div>
+        <dt>Дата</dt>
+        <dd>
+          <time datetime={match.datetime}>{formatDate(match.date)}</time>
+          {match.time && <> · {match.time}</>}
+          <span class="muted"> ({weekday(match.date)})</span>
+        </dd>
+      </div>
+      <div>
+        <dt>Место</dt>
+        <dd>{match.venue}, {match.city}</dd>
+      </div>
+    </dl>
+  </a>
+</article>

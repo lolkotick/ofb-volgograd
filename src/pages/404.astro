@@ -1,0 +1,22 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { url } from '../lib/url.js';
+---
+<BaseLayout title="Страница не найдена" noindex={true}>
+  <section class="section">
+    <div class="container">
+      <div class="stub">
+        <span class="eyebrow">Ошибка 404</span>
+        <h1>Такой страницы нет</h1>
+        <p class="lead" style="margin-inline:auto">
+          Возможно, страница была перемещена или в адресе опечатка.
+        </p>
+        <div class="stub__actions">
+          <a class="btn btn--primary" href={url('/')}>На главную</a>
+          <a class="btn btn--ghost" href={url('/news/')}>Новости</a>
+          <a class="btn btn--ghost" href={url('/calendar/')}>Календарь</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -1,0 +1,22 @@
+---
+import { url } from '../lib/url.js';
+const { title, lead, eyebrow, crumbs = [] } = Astro.props;
+---
+<section class="page-hero">
+  <div class="container">
+    {crumbs.length > 0 && (
+      <nav class="crumbs" aria-label="Хлебные крошки">
+        <a href={url('/')}>Главная</a>
+        {crumbs.map((c) => (
+          <>
+            <span aria-hidden="true">/</span>
+            {c.href ? <a href={url(c.href)}>{c.title}</a> : <span class="crumbs__current">{c.title}</span>}
+          </>
+        ))}
+      </nav>
+    )}
+    {eyebrow && <span class="eyebrow">{eyebrow}</span>}
+    <h1>{title}</h1>
+    {lead && <p class="lead">{lead}</p>}
+  </div>
+</section>

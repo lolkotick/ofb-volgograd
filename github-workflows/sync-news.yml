@@ -1,0 +1,59 @@
+# Автоматическая синхронизация новостей с группой федерации ВКонтакте.
+# Скрипт читает стену сообщества через VK API (wall.get), обновляет data/news.json,
+# коммитит изменения и запускает пересборку сайта.
+name: Новости из ВКонтакте
+
+on:
+  schedule:
+    # каждые 2 часа (время указано в UTC; Волгоград = UTC+3)
+    - cron: '17 */2 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    name: Обновить data/news.json
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Забрать записи из ВКонтакте
+        env:
+          # Токен хранится ТОЛЬКО в GitHub Secrets (Settings → Secrets and variables → Actions)
+          VK_API_TOKEN: ${{ secrets.VK_API_TOKEN }}
+          # Короткий адрес группы. Можно переопределить переменной репозитория VK_GROUP_DOMAIN.
+          VK_GROUP_DOMAIN: ${{ vars.VK_GROUP_DOMAIN || 'vrooofb' }}
+        run: node scripts/sync-vk-news.mjs
+
+      - name: Закоммитить изменения
+        id: commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data/news.json; then
+            echo "Новостей без изменений — коммит не нужен."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git add data/news.json
+            git commit -m "Новости: обновление ленты из ВКонтакте"
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  publish:
+    name: Пересобрать и опубликовать сайт
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml

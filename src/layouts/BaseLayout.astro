@@ -1,0 +1,63 @@
+---
+import '../styles/global.css';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { url } from '../lib/url.js';
+import { site } from '../lib/data.js';
+
+const {
+  title,
+  description = site.mission,
+  image = '/og-image.png',
+  noindex = false,
+} = Astro.props;
+
+const fullTitle = title ? `${title} — ${site.name_short}` : `${site.name_short} — ${site.name_plain} Волгоградской области`;
+const canonical = new URL(Astro.url.pathname, Astro.site ?? 'https://example.org').href;
+const ogImage = new URL(url(image), Astro.site ?? 'https://example.org').href;
+---
+
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{fullTitle}</title>
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content={site.name_short} />
+    <meta property="og:title" content={fullTitle} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:locale" content="ru_RU" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#111111" />
+
+    <link rel="icon" href={url('/favicon.ico')} sizes="32x32" />
+    <link rel="icon" href={url('/favicon.svg')} type="image/svg+xml" />
+    <link rel="apple-touch-icon" href={url('/apple-touch-icon.png')} />
+    <link rel="manifest" href={url('/site.webmanifest')} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800;900&display=swap&subset=cyrillic,latin"
+    />
+
+    <script is:inline>document.documentElement.classList.remove('no-js');</script>
+    <slot name="head" />
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Перейти к содержанию</a>
+    <Header />
+    <main id="main">
+      <slot />
+    </main>
+    <Footer />
+  </body>
+</html>

@@ -1,0 +1,64 @@
+---
+import { url } from '../lib/url.js';
+import { sections } from '../lib/nav.js';
+import { site } from '../lib/data.js';
+const year = new Date().getFullYear();
+const hasRequisites = Boolean(site.requisites?.ogrn || site.requisites?.inn || site.requisites?.legal_address);
+---
+
+<footer class="site-footer">
+  <div class="container">
+    <div class="footer-grid">
+      <div>
+        <img
+          src={url('/logo/ofb-logo-on-dark.png')}
+          width="900" height="564"
+          alt="Логотип ВРОО «Областная федерация баскетбола»"
+          class="footer__logo"
+          loading="lazy"
+        />
+        <p class="footer__name">{site.name_full}</p>
+        <p style="margin-top:1rem">
+          <a class="vk-link" href={site.social.vk} rel="noopener">
+            <svg width="22" height="22" viewBox="0 0 24 24" aria-hidden="true" focusable="false" fill="currentColor">
+              <path d="M13.2 18.4c-6 0-9.5-4.1-9.6-10.9h3c.1 5 2.3 7.1 4 7.5V7.5h2.9v4.4c1.7-.2 3.4-2.1 4-4.4h2.8c-.4 2.8-2.3 4.7-3.6 5.5 1.3.6 3.5 2.3 4.3 5.4h-3.1c-.6-2-2.2-3.6-4.4-3.8v3.8h-.3z"/>
+            </svg>
+            {site.social.vk_label}
+          </a>
+        </p>
+      </div>
+
+      <nav class="footer__col" aria-label="Разделы сайта">
+        <h3>Разделы</h3>
+        <ul class="footer__list">
+          <li><a href={url('/about/')}>О федерации</a></li>
+          <li><a href={url('/news/')}>Новости</a></li>
+          <li><a href={url('/calendar/')}>Календарь матчей</a></li>
+          <li><a href={url('/documents/')}>Документы</a></li>
+          <li><a href={url('/contacts/')}>Контакты</a></li>
+        </ul>
+      </nav>
+
+      <nav class="footer__col" aria-label="Направления работы">
+        <h3>Направления</h3>
+        <ul class="footer__list">
+          {sections.map((s) => (
+            <li><a href={url(`/sections/${s.slug}/`)}>{s.title}</a></li>
+          ))}
+        </ul>
+      </nav>
+    </div>
+
+    {hasRequisites && (
+      <p class="footer__name" style="margin-top:2rem;max-width:none">
+        {[site.requisites.legal_address, site.requisites.ogrn && `ОГРН ${site.requisites.ogrn}`, site.requisites.inn && `ИНН ${site.requisites.inn}`]
+          .filter(Boolean).join(' · ')}
+      </p>
+    )}
+
+    <div class="footer__bottom">
+      <span>© {year} {site.name_short}. Все права защищены.</span>
+      <span>Волгоград и Волгоградская область</span>
+    </div>
+  </div>
+</footer>

@@ -1,0 +1,43 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import NewsCard from '../../components/NewsCard.astro';
+import { site, news, newsUpdatedAt, formatDateTime } from '../../lib/data.js';
+---
+
+<BaseLayout
+  title="Новости"
+  description="Новости ВРОО «Областная федерация баскетбола»: соревнования, наборы, итоги матчей и события баскетбола Волгоградской области."
+>
+  <PageHero
+    eyebrow="Лента"
+    title="Новости федерации"
+    lead="Материалы публикуются в сообществе федерации ВКонтакте и автоматически появляются на сайте."
+    crumbs={[{ title: 'Новости' }]}
+  />
+
+  <section class="section">
+    <div class="container">
+      {news.length > 0 ? (
+        <>
+          <p class="muted" style="font-size:.875rem;margin-bottom:1.5rem">
+            {newsUpdatedAt && <>Последнее обновление ленты: {formatDateTime(newsUpdatedAt)}. </>}
+            Источник: <a href={site.social.vk} rel="noopener">{site.social.vk_label}</a>
+          </p>
+          <div class="grid grid--3">
+            {news.map((item, i) => <NewsCard item={item} featured={i === 0} />)}
+          </div>
+        </>
+      ) : (
+        <div class="empty-state">
+          <strong>Лента новостей ещё не наполнена</strong>
+          <p>Новости подтягиваются из группы федерации ВКонтакте автоматически.
+            Если лента пуста — синхронизация ещё не запускалась либо в сообществе пока нет записей.</p>
+          <p style="margin-top:1.25rem">
+            <a class="btn btn--primary btn--sm" href={site.social.vk} rel="noopener">Смотреть новости во ВКонтакте</a>
+          </p>
+        </div>
+      )}
+    </div>
+  </section>
+</BaseLayout>

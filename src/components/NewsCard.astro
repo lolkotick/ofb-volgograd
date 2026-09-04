@@ -1,0 +1,32 @@
+---
+import { url } from '../lib/url.js';
+import { formatDate } from '../lib/data.js';
+const { item, featured = false } = Astro.props;
+const href = url(`/news/${item.id}/`);
+---
+<article class:list={['card', 'news-card', featured && 'news-card--featured']}>
+  <a class="news-card__link" href={href}>
+    <div class="news-card__media">
+      {item.cover ? (
+        <img
+          src={item.cover.url}
+          width={item.cover.width || 800}
+          height={item.cover.height || 500}
+          alt={`Иллюстрация к новости «${item.title}»`}
+          loading="lazy"
+          decoding="async"
+        />
+      ) : (
+        <div class="news-card__placeholder" role="img" aria-label="Новость без изображения">
+          <img src={url('/logo/ball.svg')} width="64" height="64" alt="" aria-hidden="true" />
+        </div>
+      )}
+    </div>
+    <div class="news-card__body">
+      <time class="news-card__date" datetime={item.date}>{formatDate(item.date)}</time>
+      <h3 class="news-card__title">{item.title}</h3>
+      {item.excerpt && <p class="news-card__excerpt">{item.excerpt}</p>}
+      <span class="news-card__more">Читать <span aria-hidden="true">→</span></span>
+    </div>
+  </a>
+</article>

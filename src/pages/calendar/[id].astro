@@ -1,0 +1,95 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import PageHero from '../../components/PageHero.astro';
+import { url } from '../../lib/url.js';
+import { formatDate, weekday, vkEmbedUrl } from '../../lib/data.js';
+
+export async function getStaticPaths() {
+  const { matches } = await import('../../lib/data.js');
+  return matches.map((match) => ({ params: { id: match.id }, props: { match } }));
+}
+
+const { match } = Astro.props;
+const embed = vkEmbedUrl(match.broadcast_url);
+const title = `${match.team1} — ${match.team2}`;
+---
+
+<BaseLayout
+  title={title}
+  description={`${match.league}. ${title}, ${formatDate(match.date)}${match.time ? `, ${match.time}` : ''}, ${match.venue}, ${match.city}.`}
+>
+  <PageHero
+    eyebrow={match.league}
+    title={title}
+    crumbs={[{ title: 'Календарь', href: '/calendar/' }, { title: title }]}
+  />
+
+  <section class="section">
+    <div class="container">
+      <div class="grid grid--2" style="align-items:start">
+        <div class="match-head">
+          <div class="match-scoreboard">
+            <span class="match-scoreboard__team">{match.team1}</span>
+            <span class="match-scoreboard__score">
+              {match.isFinished && match.score ? match.score : 'VS'}
+            </span>
+            <span class="match-scoreboard__team">{match.team2}</span>
+          </div>
+
+          <div style="display:flex;flex-wrap:wrap;gap:.5rem">
+            <span class:list={['badge', match.isHome ? 'badge--home' : 'badge--away']}>
+              {match.isHome ? 'Домашняя игра' : 'Выездная игра'}
+            </span>
+            <span class="badge">{match.isFinished ? 'Матч сыгран' : 'Матч предстоит'}</span>
+            {match.hasBroadcast && <span class="badge badge--live">Есть трансляция</span>}
+          </div>
+
+          <dl class="match-facts">
+            <div><dt>Дата</dt><dd><time datetime={match.datetime}>{formatDate(match.date)}</time> ({weekday(match.date)})</dd></div>
+            {match.time && <div><dt>Начало</dt><dd>{match.time} (местное время)</dd></div>}
+            <div><dt>Лига</dt><dd>{match.league}</dd></div>
+            <div><dt>Место</dt><dd>{match.venue}</dd></div>
+            <div><dt>Город</dt><dd>{match.city}</dd></div>
+            {match.note && <div><dt>Примечание</dt><dd>{match.note}</dd></div>}
+          </dl>
+
+          <p><a href={url('/calendar/')}>← Ко всему календарю</a></p>
+        </div>
+
+        <div>
+          {/* Блок трансляции показывается только если админ заполнил broadcast_url.
+              Сайт не ведёт собственный эфир — он лишь встраивает уже существующую
+              трансляцию клуба или арены во ВКонтакте. */}
+          {embed ? (
+            <>
+              <h2 style="font-size:1.25rem">Трансляция матча</h2>
+              <p class="muted" style="font-size:.9375rem">
+                Эфир ведёт организатор матча во ВКонтакте. Видео воспроизводится прямо здесь.
+              </p>
+              <div class="video-embed" style="margin-top:1rem">
+                <iframe
+                  src={embed}
+                  title={`Трансляция матча ${title} во ВКонтакте`}
+                  allow="autoplay; encrypted-media; fullscreen; picture-in-picture; screen-wake-lock;"
+                  allowfullscreen
+                  frameborder="0"
+                  loading="lazy"
+                ></iframe>
+              </div>
+              <p class="muted" style="font-size:.875rem;margin-top:.75rem">
+                Если плеер не открывается, посмотрите трансляцию
+                <a href={match.broadcast_url} rel="noopener"> напрямую во ВКонтакте</a>.
+              </p>
+            </>
+          ) : (
+            <div class="empty-state">
+              <strong>Трансляции нет</strong>
+              <p>Для этого матча организатор не публиковал трансляцию во ВКонтакте.
+                Если эфир появится, ссылка на него будет добавлена на эту страницу.</p>
+            </div>
+          )}
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>
