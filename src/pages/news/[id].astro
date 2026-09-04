@@ -13,9 +13,19 @@ const { item } = Astro.props;
 
 /* Голые ссылки в тексте поста делаем кликабельными.
    Текст режем на куски по адресам и собираем обратно уже со ссылками —
-   так в разметку не попадает ничего, кроме того, что мы построили сами. */
-const URL_PATTERN = /(https?:\/\/[^\s<>"']+)/g;
+   так в разметку не попадает ничего, кроме того, что мы построили сами.
+
+   Скобки, вертикальную черту и кавычки в адрес НЕ пускаем: в постах ВКонтакте
+   встречается разметка вида [https://…|Подпись], и без этого ограничения
+   «|Подпись]» уезжало внутрь href, а ссылка вела в никуда. */
+const URL_PATTERN = /(https?:\/\/[^\s<>"'|[\]()]+)/g;
 const isUrl = (part) => /^https?:\/\//.test(part);
+
+/* Точка или запятая в конце предложения — это не часть адреса. */
+const splitTail = (value) => {
+  const match = value.match(/^(https?:\/\/.*?)([.,;:!?…»"']*)$/);
+  return match ? { url: match[1], tail: match[2] } : { url: value, tail: '' };
+};
 /* Первая строка поста уже стоит заголовком страницы — в теле её не повторяем. */
 const norm = (value) => String(value ?? '').replace(/\s+/g, ' ').trim();
 const bodyText = (() => {
@@ -58,11 +68,16 @@ const gallery = (item.photos ?? []).filter((p) => !item.cover || p.url !== item.
 
         {bodyText ? (
           <div class="news-article__text">
-            {segments.map((part) =>
-              isUrl(part)
-                ? <a href={part} rel="noopener">{part}</a>
-                : <Fragment set:text={part} />
-            )}
+            {segments.map((part) => {
+              if (!isUrl(part)) return <Fragment set:text={part} />;
+              const { url: href, tail } = splitTail(part);
+              return (
+                <>
+                  <a href={href} rel="noopener">{href}</a>
+                  {tail && <Fragment set:text={tail} />}
+                </>
+              );
+            })}
           </div>
         ) : (
           <p class="muted">В этой публикации нет текста — посмотрите её во ВКонтакте.</p>
