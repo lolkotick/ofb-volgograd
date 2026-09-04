@@ -1,7 +1,12 @@
 ---
 /* Рендер содержания страницы направления.
    Типы блоков описаны в data/sections.json → _как_заполнять. */
+import { url } from '../lib/url.js';
 const { blocks = [] } = Astro.props;
+
+/* Ссылки внутри сайта пишутся как /documents/, внешние — целиком.
+   Внутренние прогоняем через url(), чтобы работал подкаталог GitHub Pages. */
+const href = (value = '') => (value.startsWith('http') ? value : url(value));
 ---
 
 {blocks.map((block) => (
@@ -69,6 +74,15 @@ const { blocks = [] } = Astro.props;
             )}
           </div>
         </div>
+      )}
+
+      {block.action?.label && block.action?.href && (
+        <p style="margin:1.5rem 0 0">
+          <a class="btn btn--ghost btn--sm" href={href(block.action.href)}
+             rel={block.action.href.startsWith('http') ? 'noopener' : undefined}>
+            {block.action.label}
+          </a>
+        </p>
       )}
     </div>
   </section>
