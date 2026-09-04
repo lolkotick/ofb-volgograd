@@ -1,6 +1,597 @@
 {
-  "_комментарий": "Этот файл ПОЛНОСТЬЮ перезаписывается скриптом scripts/sync-vk-news.mjs при каждой синхронизации с ВКонтакте. Руками его править не нужно.",
-  "generatedAt": null,
+  "_комментарий": "Файл создаётся автоматически скриптом scripts/sync-vk-news.mjs. Руками не редактировать.",
+  "generatedAt": "2026-09-04T21:31:23.403Z",
   "source": "https://vk.com/vrooofb",
-  "items": []
+  "items": [
+    {
+      "id": 6532,
+      "date": "2026-09-01T07:13:18.000Z",
+      "url": "https://vk.com/wall-211184409_6532",
+      "title": "ВРОО «ОФБ» поздравляет с началом нового учебного года!",
+      "text": "ВРОО «ОФБ» поздравляет с началом нового учебного года!\nПусть этот день станет стартом яркого пути к новым знаниям, большим достижениям и победам!\n#баскетбол #деньзнаний",
+      "excerpt": "Пусть этот день станет стартом яркого пути к новым знаниям, большим достижениям и победам! #баскетбол #деньзнаний",
+      "cover": {
+        "url": "https://sun9-39.userapi.com/s/v1/ig2/qmP5_RQ7dz4KSeqLWWffsEt_2C0dzu4T0z_aaCcHEpmPWzhEhAEjBIwStQn_86i5LKA6mvk2kOWfiptcpojzB3l4.jpg?quality=95&as=32x26,48x38,72x58,108x86,160x128,240x192,360x288,480x384,540x432,640x512,720x576,1080x864,1280x1024,1402x1122&from=bu&cs=1402x0",
+        "width": 1402,
+        "height": 1122
+      },
+      "photos": [
+        {
+          "url": "https://sun9-39.userapi.com/s/v1/ig2/qmP5_RQ7dz4KSeqLWWffsEt_2C0dzu4T0z_aaCcHEpmPWzhEhAEjBIwStQn_86i5LKA6mvk2kOWfiptcpojzB3l4.jpg?quality=95&as=32x26,48x38,72x58,108x86,160x128,240x192,360x288,480x384,540x432,640x512,720x576,1080x864,1280x1024,1402x1122&from=bu&cs=1402x0",
+          "width": 1402,
+          "height": 1122
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6531,
+      "date": "2026-09-01T06:40:39.000Z",
+      "url": "https://vk.com/wall-211184409_6531",
+      "title": "Прошел Исполком РФБ",
+      "text": "Прошел Исполком РФБ\n\nСостоялось заседание Исполкома РФБ\n\nНа нем была согласована аккредитация региональной федерации Волгоградская Региональная общественная организация «Областная Федерация Баскетбола». \n\nВ рамках Исполкома также были внесены изменения в Статус игрока и в Положение о Просмотровой комиссии. Были утверждены составы рабочих органов РФБ по вопросам судейства спортивных соревнований:\n- Просмотровой комиссии РФБ;\n- Учебно-методической комиссии РФБ;\n- Комиссии РФБ по назначению судей и комиссаров;\n- Аттестационной комиссии РФБ.\n\nКроме того, на заседании обсудили и утвердили итоговую классификации команд в Первенстве России по баскетболу 3х3 среди команд юниоров и юниорок до 24 лет 2026 года.\n\nТакже были утверждены Регламенты и Приложения. \nЕще: https://russiabasket.ru/post/213766",
+      "excerpt": "Состоялось заседание Исполкома РФБ На нем была согласована аккредитация региональной федерации Волгоградская Региональная общественная организация «Областная Федерация Баскетбол…",
+      "cover": {
+        "url": "https://sun9-30.userapi.com/s/v1/ig2/X_Cqud8RLzO7v0SHAyAawUiBvpp0DcEgSFEtOygVm-3hiuahhbWQiq5gBAQhcrP_mDrXGq4WdunrCBMYv52-chtt.jpg?quality=95&crop=0,0,2048,2560&as=32x40,48x60,72x90,108x135,160x200,240x300,360x450,480x600,540x675,640x800,720x900,1080x1350,1280x1600,1440x1800,2048x2560&from=bu&cs=2048x0",
+        "width": 2048,
+        "height": 2560
+      },
+      "photos": [
+        {
+          "url": "https://sun9-30.userapi.com/s/v1/ig2/X_Cqud8RLzO7v0SHAyAawUiBvpp0DcEgSFEtOygVm-3hiuahhbWQiq5gBAQhcrP_mDrXGq4WdunrCBMYv52-chtt.jpg?quality=95&crop=0,0,2048,2560&as=32x40,48x60,72x90,108x135,160x200,240x300,360x450,480x600,540x675,640x800,720x900,1080x1350,1280x1600,1440x1800,2048x2560&from=bu&cs=2048x0",
+          "width": 2048,
+          "height": 2560
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6530,
+      "date": "2026-08-11T09:41:22.000Z",
+      "url": "https://vk.com/wall-211184409_6530",
+      "title": "Горячие фотографии с Оранжевого мяча 2026🏀",
+      "text": "Горячие фотографии с Оранжевого мяча 2026🏀\n[https://vk.ru/album-211184409_312016687|Награждение]\n[https://vk.ru/album-211184409_312016684|Игры]\n\nРезультаты по каждым категориям:\nМужчины 2007 г.р. и старше\n🥇 - На Паркете\n🥈- Сталинград\n🥉- РИТЭК\n\nЖенщины 2007 г.р. и старше\n🥇 - Пенсия\n🥈- Tundra\n🥉- Метиоры\n\nЮниоры 2008-2009 г.р.\n🥇 - Сирень\n🥈- Олимп-Баскет\n🥉- Четкие Перцы\n\nЮниорки 2008-2009 г.р.\n🥇 - Енотики\n🥈- Котики\n🥉- Малышки\n\nЮноши 2010-2011 г.р.\n🥇 - Аслановские Арбузы\n🥈- Костромские Арбузы\n🥉- Сельские\n\nДевушки 2010-2011 г.р.\n🥇 - Одинцово\n🥈- Фристайл\n🥉- Старый городок\n\nЮноши 2012-2013 г.р.\n🥇 - Bad Boys\n🥈- Kvadrat\n🥉- ЦСП 2.0.\n\nДевушки 2012-2013 г.р.\n🥇 - ОчКрашКисуни\n🥈- Ареон 1\n🥉- One Team\n\nЮноши 2014 г.р. и младше\n🥇 - ЦСП Волжский\n🥈- Bulls\n🥉- Мечта-1\n\nБлагодарим всех участников, тренеров, судей и болельщиков!!!\n#баскетбол3х3 #оранжевыймяч #волгоград",
+      "excerpt": "[https://vk.ru/album-211184409_312016687|Награждение] [https://vk.ru/album-211184409_312016684|Игры] Результаты по каждым категориям: Мужчины 2007 г.р. и старше 🥇 - На Паркете…",
+      "cover": {
+        "url": "https://sun9-63.userapi.com/s/v1/ig2/465ejifYNFogP-exP0BQtQPeSGTcyLXIry5mlyhO6u0CHf4d4D5KPm_L9q9MCGOxvf2kHPkVT-Iebql6gPCgPyRq.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=2560x0",
+        "width": 2560,
+        "height": 1707
+      },
+      "photos": [
+        {
+          "url": "https://sun9-63.userapi.com/s/v1/ig2/465ejifYNFogP-exP0BQtQPeSGTcyLXIry5mlyhO6u0CHf4d4D5KPm_L9q9MCGOxvf2kHPkVT-Iebql6gPCgPyRq.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=2560x0",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "url": "https://sun9-10.userapi.com/s/v1/ig2/AzkEetfv-l0DcJQ5E5pkMsYY7gIn7IXEnnPmjZ-6qhKQCSF4xcpVPK_4Kt5MAx2fP0bVSMopeb0HtfRg3QeWuST9.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=2560x0",
+          "width": 2560,
+          "height": 1707
+        },
+        {
+          "url": "https://sun9-70.userapi.com/s/v1/ig2/iCuZds3EQks0HmYpBebtOuTGhWJRVn9RbAzVKOVVE398EnDPSjEpNkf9DzS2KLxEflUJG-2V3Wj4AB8Nv5zN-S3x.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=2560x0",
+          "width": 2560,
+          "height": 1707
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6529,
+      "date": "2026-08-10T15:03:31.000Z",
+      "url": "https://vk.com/wall-211184409_6529",
+      "title": "🏀 В Волгограде прошел Всероссийский турнир по баскетболу 3х3 \"Оранжевый мяч\"",
+      "text": "🏀 В Волгограде прошел Всероссийский турнир по баскетболу 3х3 \"Оранжевый мяч\" \n \n🔥 В минувшие выходные в Волгограде на открытой площадке училища олимпийского резерва завершились Всероссийские соревнования по баскетболу 3х3 \"Оранжевый мяч\" — турнир, где под одним кольцом сошлись юноши и девушки, воспитанники специализированных спортшкол и дворовые команды, собранные из друзей и одноклассников. \n \nИстория фестиваля в регионе началась в 2004 году. Тогда это были скромные по масштабу областные соревнования — азарт уличного баскетбола, впервые возведённый в ранг официального старта. За два десятилетия \"Оранжевый мяч\" вырос из локальной инициативы в турнир всероссийского уровня, на который сегодня приезжают команды из десятков субъектов страны. \n \nПо традиции соревнования приурочены ко Дню физкультурника — празднику, давно ставшему символом массового спорта, доступного каждому. В 2026 году турнир посвятили Году единства народов России. На волгоградской площадке встретились представители различных регионов страны, для многих из которых эта поездка стала первым выездным стартом в жизни. \n \nВолгоградскую область представляли воспитанники спортшкол и любительские коллективы Волгограда и Волжского, а также команды Быковского, Дубовского и Городищенского районов. \n \nСоревнования прошли в различных возрастных категориях: от самых юных 2014 года рождения до взрослых мужских и женских составов. \n \n🏆 Команды, поднявшиеся на пьедестал в своих категориях, получили медали, кубки и грамоты Министерства спорта Российской Федерации. Но главный итог фестиваля, как и двадцать с лишним лет назад, лежит за пределами протоколов: сотни детей и взрослых провели день на площадке, и многие из них наверняка вернутся сюда через год — уже в следующей возрастной категории.\n\nОтметим, что проведение подобных соревнований способствует достижению целей и задач государственной программы \"Спорт России\".",
+      "excerpt": "🔥 В минувшие выходные в Волгограде на открытой площадке училища олимпийского резерва завершились Всероссийские соревнования по баскетболу 3х3 \"Оранжевый мяч\" — турнир, где под…",
+      "cover": {
+        "url": "https://sun9-85.userapi.com/s/v1/ig2/aldJdbRiCvBDDtLj4-UOKpWVzKImGbLYAw460oQmjSslJSs_bvdHQrbsJgkVOBcUwOyFRB2n_2V9t173K-Q-ktFO.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&from=bu&cs=1200x0",
+        "width": 1200,
+        "height": 800
+      },
+      "photos": [
+        {
+          "url": "https://sun9-85.userapi.com/s/v1/ig2/aldJdbRiCvBDDtLj4-UOKpWVzKImGbLYAw460oQmjSslJSs_bvdHQrbsJgkVOBcUwOyFRB2n_2V9t173K-Q-ktFO.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&from=bu&cs=1200x0",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://sun9-37.userapi.com/s/v1/ig2/ILL6I5uM19yZo1lLtrGNLaxvRD1wdCjerWMG3J2KPII69djG1PY8J7UaKld-rl-Cw6xtt51kTtXeo85Tl7ktMMnI.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&from=bu&cs=1200x0",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://sun9-44.userapi.com/s/v1/ig2/ktpqOq7Ik5H1xQxGEa66bG_Bv0cSpqty159dCff6Ifp23ld1x9oMkbzs2hIg5QQqFr227DlXMbDHgiLpT51HjaPV.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&from=bu&cs=1200x0",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://sun9-48.userapi.com/s/v1/ig2/sdURj5SWOPeKa_uHsZ5WspzgmghFZ6nEVkqKPyKrLsJCBPYCioNP63x8jlyHAF7lL7h2o4-77_lofdfUv0GCNbDG.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&from=bu&cs=1200x0",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://sun9-51.userapi.com/s/v1/ig2/beeN3tn5H5szodkiOVQOym7feRKabxLE9bTTd8KezKWZeWNWCxvpnVaD8jXbcp2Uf9Yq_EML4g72nrmVgQ1mfzWv.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&from=bu&cs=1200x0",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://sun9-42.userapi.com/s/v1/ig2/Ws5Qtr_FbbMXgWplxo6_c8FRB77JVzqnhT3LEd3yGM3OMP4QVRLXg8yoSyk26JjcyaNjMqJexNwtM41WbcuRYfG-.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&from=bu&cs=1200x0",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://sun9-63.userapi.com/s/v1/ig2/O3U645_BhJ7n-QezUIe0QeQksXMDWQ6DGqHGZAE7vvMl0Z26XN_mFtgHjYJxxt5IyKZADFvCH0Gt8G8AKrudqoYX.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&from=bu&cs=1200x0",
+          "width": 1200,
+          "height": 800
+        },
+        {
+          "url": "https://sun9-34.userapi.com/s/v1/ig2/2kPWoc7h8IrMeSD-jl48wWY64J__UPeMX2kgAcER18VQOD9hx6lBC14stZ4MlLU6h1VfXb5D27XYOas1f-HkJ76P.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,533x800&from=bu&cs=533x0",
+          "width": 533,
+          "height": 800
+        },
+        {
+          "url": "https://sun9-73.userapi.com/s/v1/ig2/GTpczISsDZW-BNcfKANRzSL6r5v-Wrf_1QGbsTDoXkvI_qPDkN01Jnatp5mvp9mYH1wXmKHFgJvwYWnWszLWggLj.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&from=bu&cs=1200x0",
+          "width": 1200,
+          "height": 800
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6524,
+      "date": "2026-07-20T11:00:00.000Z",
+      "url": "https://vk.com/wall-211184409_6524",
+      "title": "ОРАНЖЕВЫЙ МЯЧ - 2026🏀",
+      "text": "ОРАНЖЕВЫЙ МЯЧ - 2026🏀\n❓Где: Спортивная площадка ПСБ г. Волгоград, ул. Чуйкова (УОР имени дважды Героя Советского Союза А.И. Родимцева) \n❓Когда: 8 августа (суббота) 2026\n\nРАСПИСАНИЕ:\n8.00-8.45: Подтверждение заявок, жеребьёвка и составление сетки турнира для категорий: Юноши (2014 г.р. и младше) и Юноши и девушки (2012 - 2013 г.р.), Юноши и девушки (2010-2011 г.р.)\n\n9.00: Церемония Открытия\n\n09.30: Игры для категорий: Юноши (2014 г.р. и младше) и Юноши и девушки (2012 - 2013 г.р.), Юноши и девушки (2010 - 2011 г.р.)\n\n11.00 -11.40: Подтверждение заявок, жеребьёвка и составление сетки турнира для категорий: Юноши и девушки (2008 - 2009 г.р.) и Мужчины и женщины (2007 г.р. и старше)\n\n12:00: Игры для категорий: Юноши и девушки (2008 - 2009 г.р.) и Мужчины и женщины (2007 г.р. и старше)\n\nРЕГИСТРАЦИЯ НА САЙТЕ ФИБА ОБЯЗАТЕЛЬНА ДЛЯ ВСЕХ КАТЕГОРИЙ КРОМЕ ЮНОШИ 2014 г.р. и младше!!!\nhttps://play.fiba3x3.com/events/67ce2e9a-9426-46bc-a6d6-afa412a6d4bc/categories\n\n Регистрация закроется 6 августа в 23:00!\n\nP.S. Медицинская справка (Допуск врача) обязателен для всех категории!!! Так же не забываем паспорта или свидетельства о рождении для подтверждения заявки! И саму заявку ЗАПОЛНЕННУЮ (прикреплена к посту)\n\nПо всем вопросам писать Главному секретарю соревнований Anna Ryazanova",
+      "excerpt": "❓Где: Спортивная площадка ПСБ г. Волгоград, ул. Чуйкова (УОР имени дважды Героя Советского Союза А.И. Родимцева) ❓Когда: 8 августа (суббота) 2026 РАСПИСАНИЕ: 8.00-8.45: Подтверж…",
+      "cover": {
+        "url": "https://sun9-23.userapi.com/s/v1/ig2/qb5nNZGZm32Vd38L0EZ-Xp9I6ElICOaxZwqY8XvbOpLuYLOnpr6BAz5U0bZ8TnBRCDx1V1UFRUvajWa1Kf1B5JQM.jpg?quality=95&as=32x40,48x60,72x90,108x136,160x201,240x301,360x452,480x602,540x678,640x803,720x904,1024x1285&from=bu&cs=1024x0",
+        "width": 1024,
+        "height": 1285
+      },
+      "photos": [
+        {
+          "url": "https://sun9-23.userapi.com/s/v1/ig2/qb5nNZGZm32Vd38L0EZ-Xp9I6ElICOaxZwqY8XvbOpLuYLOnpr6BAz5U0bZ8TnBRCDx1V1UFRUvajWa1Kf1B5JQM.jpg?quality=95&as=32x40,48x60,72x90,108x136,160x201,240x301,360x452,480x602,540x678,640x803,720x904,1024x1285&from=bu&cs=1024x0",
+          "width": 1024,
+          "height": 1285
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6521,
+      "date": "2026-07-14T14:30:46.000Z",
+      "url": "https://vk.com/wall-211184409_6521",
+      "title": "Стартует обязательная аттестация для тренеров детско-юношеских команд на спортивный сезон 2026/2027",
+      "text": "Стартует обязательная аттестация для тренеров детско-юношеских команд на спортивный сезон 2026/2027\n\nАкадемия РФБ обновила информацию в курсах, навигацию по программам, литературе и очным мероприятиям. В новом сезоне образовательные программы создаются при поддержке Российского спортивного фонда.\n\nОбучение предоставляется бесплатно. Тренер может выбрать материал под свою команду:\n\n- До 19 лет ДЮБЛ (2009 г.р. и младше)\n- До 18 лет (2010 г.р. и младше)\n- До 17 лет (2011 г.р. и младше)\n- До 16 лет (2012 г.р. и младше)\n- До 15 лет (2013 г.р. и младше)\n- До 14 лет (2014 г.р. и младше; 2015 г.р. и младше).\n\n🔍Навигация по программам, литературе и очным мероприятиям также собрана на обновленной странице проектов Академии РФБ: russiabasket.ru/online-academia\n\n💡Кроме того, можно пройти специальный курс от компании СИБУР — «Тренер 2.0». Также для тренеров всегда доступен проект «Академия 47».\n\n✉По всем вопросам - coach-support@russiabasket.ru\n\n#академияРФБ",
+      "excerpt": "Академия РФБ обновила информацию в курсах, навигацию по программам, литературе и очным мероприятиям. В новом сезоне образовательные программы создаются при поддержке Российского…",
+      "cover": {
+        "url": "https://sun9-31.userapi.com/s/v1/ig2/IH-2-YR5YovOPUcnPVb_dNb9HBwAr9Sz6JT68ZQOxJ94ZVxh46mfvFuIAW0z-li2BZjbrLaUkSrLHkpJCDg_U2_-.jpg?quality=95&crop=0,0,1499,1499&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440,1499x1499&from=bu&cs=1499x0",
+        "width": 1499,
+        "height": 1499
+      },
+      "photos": [
+        {
+          "url": "https://sun9-31.userapi.com/s/v1/ig2/IH-2-YR5YovOPUcnPVb_dNb9HBwAr9Sz6JT68ZQOxJ94ZVxh46mfvFuIAW0z-li2BZjbrLaUkSrLHkpJCDg_U2_-.jpg?quality=95&crop=0,0,1499,1499&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1280x1280,1440x1440,1499x1499&from=bu&cs=1499x0",
+          "width": 1499,
+          "height": 1499
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6520,
+      "date": "2026-07-14T08:14:41.000Z",
+      "url": "https://vk.com/wall-211184409_6520",
+      "title": "ВРОО «ОФБ» поздравляет воспитанника Волгоградской школы баскетбола - Халилулаева Магомеднаби с Победой в ту…",
+      "text": "ВРОО «ОФБ» поздравляет воспитанника Волгоградской школы баскетбола - Халилулаева Магомеднаби с Победой в туре Лиге Наций 3х3!\n#баскетбол #3х3",
+      "excerpt": "ре Лиге Наций 3х3! #баскетбол #3х3",
+      "cover": {
+        "url": "https://sun9-66.userapi.com/s/v1/ig2/l8kYIgDF3B3Z4Hypg72hyTmwzgz5Jbg5w-LFcVvKjXwmtsBrdOzj7AmM5YKHA1nARDLQnrjNkWNmd6XLUQT8SnTB.jpg?quality=95&crop=0,0,2048,2560&as=32x40,48x60,72x90,108x135,160x200,240x300,360x450,480x600,540x675,640x800,720x900,1080x1350,1280x1600,1440x1800,2048x2560&from=bu&cs=2048x0",
+        "width": 2048,
+        "height": 2560
+      },
+      "photos": [
+        {
+          "url": "https://sun9-66.userapi.com/s/v1/ig2/l8kYIgDF3B3Z4Hypg72hyTmwzgz5Jbg5w-LFcVvKjXwmtsBrdOzj7AmM5YKHA1nARDLQnrjNkWNmd6XLUQT8SnTB.jpg?quality=95&crop=0,0,2048,2560&as=32x40,48x60,72x90,108x135,160x200,240x300,360x450,480x600,540x675,640x800,720x900,1080x1350,1280x1600,1440x1800,2048x2560&from=bu&cs=2048x0",
+          "width": 2048,
+          "height": 2560
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6519,
+      "date": "2026-06-15T06:00:02.000Z",
+      "url": "https://vk.com/wall-211184409_6519",
+      "title": "13-14 июня на площадке ПСБ прошли Чемпионат Волгоградской области  по баскетболу 3х3 среди мужских команд (…",
+      "text": "13-14 июня на площадке ПСБ прошли Чемпионат Волгоградской области  по баскетболу 3х3 среди мужских команд (2008 г.р. и старше) и Первенство Волгоградской области среди юниоров и юниорок до 18 лет по баскетболу 3х3 (2009 - 2011 г.р.)🏀 \nПобедителям и призерами стали: \nМужчины: \n🥇место - G.O.A.T\n🥈место - На Паркете \n🥉место - Три в лицо \n\nЮниорки: \n🥇место - Сикссевен\n🥈место - Миньоны\n🥉место - Маями \n\nЮниоры:\n🥇место - ИАиС\n🥈место - Сельские \n🥉место - Олимп-Баскет\n\nПоздравляем победителей и призеров! Желаем дальнейших побед как в жизни, так и в спорте!🏆💪",
+      "excerpt": "2008 г.р. и старше) и Первенство Волгоградской области среди юниоров и юниорок до 18 лет по баскетболу 3х3 (2009 - 2011 г.р.)🏀 Победителям и призерами стали: Мужчины: 🥇место -…",
+      "cover": {
+        "url": "https://sun9-86.userapi.com/s/v1/ig2/Y4SdLOYWwuLPhglpFXgVh5rpe5rYAk2t91LUrbBqSWnG72CRR7tcrEyx5gYSK6-0qWAFOVINaS4bGZnlcekSosAZ.jpg?quality=95&as=32x18,48x27,72x40,108x61,160x90,240x135,360x202,480x270,540x304,640x360,720x405,1080x607,1280x720,1440x810,2560x1440&from=bu&cs=2560x0",
+        "width": 2560,
+        "height": 1440
+      },
+      "photos": [
+        {
+          "url": "https://sun9-86.userapi.com/s/v1/ig2/Y4SdLOYWwuLPhglpFXgVh5rpe5rYAk2t91LUrbBqSWnG72CRR7tcrEyx5gYSK6-0qWAFOVINaS4bGZnlcekSosAZ.jpg?quality=95&as=32x18,48x27,72x40,108x61,160x90,240x135,360x202,480x270,540x304,640x360,720x405,1080x607,1280x720,1440x810,2560x1440&from=bu&cs=2560x0",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "url": "https://sun9-18.userapi.com/s/v1/ig2/iMVKbkBJkhWc1KthzXz7KvotsJzlni6y3-3a0vcyyE3ho8wIr8LUY5sx9uGb6DBnf2Kvnkm2l-A2BXmtdVFf7AHO.jpg?quality=95&as=32x18,48x27,72x40,108x61,160x90,240x135,360x202,480x270,540x304,640x360,720x405,1080x607,1280x720,1440x810,2560x1440&from=bu&cs=2560x0",
+          "width": 2560,
+          "height": 1440
+        },
+        {
+          "url": "https://sun9-56.userapi.com/s/v1/ig2/Uf1eSghpVyMiO5iPWo_NTKcF7RZ5DHcDbZ3dvggBTU1kafDTxi0yLvfP_GCiOTTSjnRX8KwR5goZ3we6dqgtM7tv.jpg?quality=95&as=32x57,48x85,72x128,108x192,160x284,240x427,360x640,480x853,540x960,640x1138,720x1280,1080x1920,1280x2276,1440x2560&from=bu&cs=1440x0",
+          "width": 1440,
+          "height": 2560
+        },
+        {
+          "url": "https://sun9-40.userapi.com/s/v1/ig2/donnCE0dt0Bz8-nni4OxMsw5HIvslNpW1gpWD5ntQLIZqtLr_aYehu-VVH4ROCs9GpRZWGEYf_c6xvAr5I5lZ3DR.jpg?quality=95&as=32x57,48x85,72x128,108x192,160x284,240x427,360x640,480x853,540x960,640x1138,720x1280,1080x1920,1280x2276,1440x2560&from=bu&cs=1440x0",
+          "width": 1440,
+          "height": 2560
+        },
+        {
+          "url": "https://sun9-64.userapi.com/s/v1/ig2/btiGSDPiR4go62tu0FsW_nrejIy-sNMGlG9OeOMVHqU5UU0qW4JMneJYVpul02Vj9iY2w1hy0v2UjMLZ4hopHctN.jpg?quality=95&as=32x57,48x85,72x128,108x192,160x284,240x427,360x640,480x853,540x960,640x1138,720x1280,1080x1920,1280x2276,1440x2560&from=bu&cs=1440x0",
+          "width": 1440,
+          "height": 2560
+        },
+        {
+          "url": "https://sun9-45.userapi.com/s/v1/ig2/XcrjmHjlHKqe2w1n-3eyuNpAIGRedxLaHXSZXx5_gihT9MccRBBQ-fM2TWy5GAQ1i6Kv70cyPEjge0UmsgkXsiT1.jpg?quality=95&as=32x57,48x85,72x128,108x192,160x284,240x427,360x640,480x853,540x960,640x1138,720x1280,1080x1920,1280x2276,1440x2560&from=bu&cs=1440x0",
+          "width": 1440,
+          "height": 2560
+        },
+        {
+          "url": "https://sun9-50.userapi.com/s/v1/ig2/N-vu-ftZeSFN39QYs1ST-CtPxDJ-5s2AP7gpAJleSLQvY8Zr_ghYlNPliS6CtGtT0m4X4HHyQ2K5a0A6-dCdEKi2.jpg?quality=95&as=32x57,48x85,72x128,108x192,160x284,240x427,360x640,480x853,540x960,640x1138,720x1280,1080x1920,1280x2276,1440x2560&from=bu&cs=1440x0",
+          "width": 1440,
+          "height": 2560
+        },
+        {
+          "url": "https://sun9-63.userapi.com/s/v1/ig2/Zu8tOchFd-R9fwWK7aDPRipiq7xTaqFROjfz5fO-l9zT7eJ1uFOieKqTuQwXfoTjNRFKk8jBoNYM1xE2s_keeOVJ.jpg?quality=95&as=32x57,48x85,72x128,108x192,160x284,240x427,360x640,480x853,540x960,640x1138,720x1280,1080x1920,1280x2276,1440x2560&from=bu&cs=1440x0",
+          "width": 1440,
+          "height": 2560
+        },
+        {
+          "url": "https://sun9-78.userapi.com/s/v1/ig2/WqbUDvlLN0_292x-eL4ppBdiA7WGbG6qYUCNQnYV_l83p_SYICOs2U-gozWd4tlcHsEvgOaLNasbfqR61zGmoHDL.jpg?quality=95&as=32x57,48x85,72x128,108x192,160x284,240x427,360x640,480x853,540x960,640x1138,720x1280,1080x1920,1280x2276,1440x2560&from=bu&cs=1440x0",
+          "width": 1440,
+          "height": 2560
+        },
+        {
+          "url": "https://sun9-63.userapi.com/s/v1/ig2/bASM85Ddwb1uOCycqzqDUTtwSQS3e80mMLNCqSYddJAhYmw5or7oFkuh79saowFL9uqdTpHkvowKNQ-371ZicwQx.jpg?quality=95&as=32x57,48x85,72x128,108x192,160x284,240x427,360x640,480x853,540x960,640x1138,720x1280,1080x1920,1280x2276,1440x2560&from=bu&cs=1440x0",
+          "width": 1440,
+          "height": 2560
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6517,
+      "date": "2026-06-12T11:22:54.000Z",
+      "url": "https://vk.com/wall-211184409_6517",
+      "title": "С Днём России!",
+      "text": "С Днём России!",
+      "excerpt": "С Днём России!",
+      "cover": {
+        "url": "https://sun9-37.userapi.com/s/v1/ig2/UKL3dfVgpQzPHUZwjyRsJdqRUAlfrJczXCBdvieseiH21lZ_NN13DwGLMT86jIZqHydNO3T6muw083HmAYTLzH1d.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
+        "width": 1086,
+        "height": 1448
+      },
+      "photos": [
+        {
+          "url": "https://sun9-37.userapi.com/s/v1/ig2/UKL3dfVgpQzPHUZwjyRsJdqRUAlfrJczXCBdvieseiH21lZ_NN13DwGLMT86jIZqHydNO3T6muw083HmAYTLzH1d.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
+          "width": 1086,
+          "height": 1448
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6515,
+      "date": "2026-06-01T10:57:11.000Z",
+      "url": "https://vk.com/wall-211184409_6515",
+      "title": "ВРОО «ОФБ» поздравляет С днем защиты детей! Пусть все мечты сбываются, а каждый день приносит что‑то весело…",
+      "text": "ВРОО «ОФБ» поздравляет С днем защиты детей! Пусть все мечты сбываются, а каждый день приносит что‑то веселое и удивительное!",
+      "excerpt": "е и удивительное!",
+      "cover": {
+        "url": "https://sun9-50.userapi.com/s/v1/ig2/ZC4pFwcHbyXjc74jDVKNbS3o_A4_4ULJH_tZs-_jv2KzdbkdqQKmLpx4sj5u1N5VeD_7R-ORB582_vzRH0GjVX1s.jpg?quality=95&as=32x31,48x47,72x71,108x106,160x157,240x236,360x354,480x472,540x531,640x629,720x708,1080x1062,1265x1244&from=bu&cs=1265x0",
+        "width": 1265,
+        "height": 1244
+      },
+      "photos": [
+        {
+          "url": "https://sun9-50.userapi.com/s/v1/ig2/ZC4pFwcHbyXjc74jDVKNbS3o_A4_4ULJH_tZs-_jv2KzdbkdqQKmLpx4sj5u1N5VeD_7R-ORB582_vzRH0GjVX1s.jpg?quality=95&as=32x31,48x47,72x71,108x106,160x157,240x236,360x354,480x472,540x531,640x629,720x708,1080x1062,1265x1244&from=bu&cs=1265x0",
+          "width": 1265,
+          "height": 1244
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6513,
+      "date": "2026-05-31T12:26:41.000Z",
+      "url": "https://vk.com/wall-211184409_6513",
+      "title": "13 июня 2026 пройдет - Чемпионат Волгоградской области баскетболу 3х3 среди мужских команд (2008 г.р. и ста…",
+      "text": "13 июня 2026 пройдет - Чемпионат Волгоградской области баскетболу 3х3 среди мужских команд (2008 г.р. и старше)🏀 \n \n14 июня 2026 - Первенство Волгоградской области среди юниоров и юниорок до 18 лет по баскетболу 3х3 (2009 - 2011 г.р.)🏀 \n \n❓Где: Спортивная площадка ПСБ г. Волгоград, ул. Чуйкова (УОР имени дважды Героя Советского Союза А.И. Родимцева) \n❓Во сколько: Игры с 09:00 до 15:00 (Мандатная комиссия с 8:00 до 08:30) \n\nЭлектронные заявки принимаются до 12 июня включительно и обязательны для всех категорий!!!\n\nПодать электронную заявку для мужских команд👇\nhttps://docs.google.com/forms/d/e/1FAIpQLSdQUMdRxoqxmlhrV4IFIlgnLGDl3qq3J_xb6L8256tS3nMdFA/viewform?usp=dialog\n\nПодать электронную заявку для юниоров и юниорок👇\nhttps://docs.google.com/forms/d/e/1FAIpQLSf-ga61mWF-47Mj5I8p_DKyHHNzQYAPfz-CEyV7XyErNvy9Og/viewform?usp=publish-editor\n \nВ день игр принести ДОПУСКИ ОТ ВРАЧА или СПРАВКИ и РАСПЕЧАТАННЫЕ ЗАЯВКИ! (Пример заявки прикреплен к посту!)\nА так же обязательно иметь СЕРТИФИКАТ РУСАДА ! Пройти его можно бесплатно по ссылке https://course.rusada.ru/course/53 👈\n\nПо вопросам обращаться к Главному Секретарю соревнований Anna Ryazanova",
+      "excerpt": "рше)🏀 14 июня 2026 - Первенство Волгоградской области среди юниоров и юниорок до 18 лет по баскетболу 3х3 (2009 - 2011 г.р.)🏀 ❓Где: Спортивная площадка ПСБ г. Волгоград, ул. Ч…",
+      "cover": {
+        "url": "https://sun9-42.userapi.com/s/v1/ig2/hFsgJqjmwFYwckp0LYlGNKdd3rbwgHoguAtbDNVV7_3i8XRL-0M-Ml-sqm-vGjgEiPaB6tD42U9U9VSn_pbV0uFT.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1254x1254&from=bu&cs=1254x0",
+        "width": 1254,
+        "height": 1254
+      },
+      "photos": [
+        {
+          "url": "https://sun9-42.userapi.com/s/v1/ig2/hFsgJqjmwFYwckp0LYlGNKdd3rbwgHoguAtbDNVV7_3i8XRL-0M-Ml-sqm-vGjgEiPaB6tD42U9U9VSn_pbV0uFT.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1254x1254&from=bu&cs=1254x0",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://sun9-15.userapi.com/s/v1/ig2/s6Svmyi-UBvzEx2QoOdyIMUglKLBVfiGknVZoBZNNISDXgpNpqySZNoOLs1cHSBLuQ4Ryx_kM1UbgyCssvFOgqPB.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1254x1254&from=bu&cs=1254x0",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6511,
+      "date": "2026-05-29T10:53:04.000Z",
+      "url": "https://vk.com/wall-211184409_6511",
+      "title": "Светлая память!!!",
+      "text": "Светлая память!!!\nМир Баскетбола понёс тяжелую утрату! 28 мая 2026 года ушла из жизни тренер-профессионал, ветеран труда, Отличник физической культуры, Заслуженный тренер России Лидия Петровна Щепоткина! 52 года ее жизни тесно связаны именно со Специализированной детско-юношеской спортивной школой олимпийского резерва № 2 города Волгограда. Именно здесь Лидия Петровна воспитывала из обычных девчонок и мальчишек игроков-баскетболистов с большой буквы, мастеров спорта, членов сборных команд России, чемпионов и призёров первенства СССР и России, чемпионов Мира и Европы! \nКоллектив спортивной школы № 2 выражает искренние соболезнования родным и близким! Светлая, вечная память🙏!!!",
+      "excerpt": "Мир Баскетбола понёс тяжелую утрату! 28 мая 2026 года ушла из жизни тренер-профессионал, ветеран труда, Отличник физической культуры, Заслуженный тренер России Лидия Петровна Ще…",
+      "cover": {
+        "url": "https://sun9-15.userapi.com/s/v1/ig2/tdBIarvmPZ5qt6bvIgDcJImw1XKqKWsWu2ZUDm9D6bqKkNSvEgOHUlmavP7q1C8vUKVFeTjGKP_DwkZxIeKPybJ1.jpg?quality=95&crop=0,0,1066,1599&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1066x1599&from=bu&cs=1066x0",
+        "width": 1066,
+        "height": 1599
+      },
+      "photos": [
+        {
+          "url": "https://sun9-15.userapi.com/s/v1/ig2/tdBIarvmPZ5qt6bvIgDcJImw1XKqKWsWu2ZUDm9D6bqKkNSvEgOHUlmavP7q1C8vUKVFeTjGKP_DwkZxIeKPybJ1.jpg?quality=95&crop=0,0,1066,1599&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1066x1599&from=bu&cs=1066x0",
+          "width": 1066,
+          "height": 1599
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6510,
+      "date": "2026-05-09T09:06:57.000Z",
+      "url": "https://vk.com/wall-211184409_6510",
+      "title": "Дорогие друзья!",
+      "text": "Дорогие друзья!\n\nСегодня мы отмечаем один из самых значимых и священных праздников — День Победы! Этот день напоминает нам о мужестве и героизме наших предков, о тех, кто отстоял свободу и мир на нашей земле. Мы чтим память тех, кто сражался на фронтах, кто трудился в тылу, кто не дожил до этого дня, но чья сила духа навсегда останется в наших сердцах.\n\nПусть этот день станет символом единства и гордости за нашу страну. Мы обязаны помнить уроки истории и передавать их следующим поколениям. \n\nС праздником! С Днём Победы! Пусть мир и согласие всегда будут в наших домах, а память о героях живёт вечно!\n\n#ДеньПобеды #9мая #ПомнимЧтимГордимся",
+      "excerpt": "Сегодня мы отмечаем один из самых значимых и священных праздников — День Победы! Этот день напоминает нам о мужестве и героизме наших предков, о тех, кто отстоял свободу и мир н…",
+      "cover": {
+        "url": "https://sun9-7.userapi.com/s/v1/ig2/Xio87mC-j8V87DY4RSC0eM1Uct8P8nelDpCKZD2CZ1vBy_z6p2oL9GHVNWbw2OVWU0A945_yugiP5e-v_GVbqzdZ.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1024x1536&from=bu&cs=1024x0",
+        "width": 1024,
+        "height": 1536
+      },
+      "photos": [
+        {
+          "url": "https://sun9-7.userapi.com/s/v1/ig2/Xio87mC-j8V87DY4RSC0eM1Uct8P8nelDpCKZD2CZ1vBy_z6p2oL9GHVNWbw2OVWU0A945_yugiP5e-v_GVbqzdZ.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1024x1536&from=bu&cs=1024x0",
+          "width": 1024,
+          "height": 1536
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
+    {
+      "id": 6499,
+      "date": "2026-05-07T08:57:57.000Z",
+      "url": "https://vk.com/wall-211184409_6499",
+      "title": "Липецк - Волгоград",
+      "text": "Липецк - Волгоград",
+      "excerpt": "Липецк - Волгоград",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6470,
+      "date": "2026-05-07T07:36:23.000Z",
+      "url": "https://vk.com/wall-211184409_6470",
+      "title": "Фрязино-Краснодар",
+      "text": "Фрязино-Краснодар",
+      "excerpt": "Фрязино-Краснодар",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6462,
+      "date": "2026-05-07T05:40:11.000Z",
+      "url": "https://vk.com/wall-211184409_6462",
+      "title": "Сальск - Бугуруслан",
+      "text": "Сальск - Бугуруслан",
+      "excerpt": "Сальск - Бугуруслан",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6446,
+      "date": "2026-05-06T13:24:36.000Z",
+      "url": "https://vk.com/wall-211184409_6446",
+      "title": "Фрязино - Волгоград",
+      "text": "Фрязино - Волгоград",
+      "excerpt": "Фрязино - Волгоград",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6438,
+      "date": "2026-05-06T12:07:43.000Z",
+      "url": "https://vk.com/wall-211184409_6438",
+      "title": "Бугуруслан - Краснодар",
+      "text": "Бугуруслан - Краснодар",
+      "excerpt": "Бугуруслан - Краснодар",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6411,
+      "date": "2026-05-06T10:23:05.000Z",
+      "url": "https://vk.com/wall-211184409_6411",
+      "title": "Сальск - Волгоград",
+      "text": "Сальск - Волгоград",
+      "excerpt": "Сальск - Волгоград",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6399,
+      "date": "2026-05-06T08:54:56.000Z",
+      "url": "https://vk.com/wall-211184409_6399",
+      "title": "Липецк - Бугуруслан",
+      "text": "Липецк - Бугуруслан",
+      "excerpt": "Липецк - Бугуруслан",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6385,
+      "date": "2026-05-06T07:30:51.000Z",
+      "url": "https://vk.com/wall-211184409_6385",
+      "title": "Краснодар-Сальск",
+      "text": "Краснодар-Сальск",
+      "excerpt": "Краснодар-Сальск",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6368,
+      "date": "2026-05-06T05:57:29.000Z",
+      "url": "https://vk.com/wall-211184409_6368",
+      "title": "Фрязино - Кадеты Липецк",
+      "text": "Фрязино - Кадеты Липецк",
+      "excerpt": "Фрязино - Кадеты Липецк",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6353,
+      "date": "2026-05-05T14:54:26.000Z",
+      "url": "https://vk.com/wall-211184409_6353",
+      "title": "Волгоград - Краснодар",
+      "text": "Волгоград - Краснодар",
+      "excerpt": "Волгоград - Краснодар",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6335,
+      "date": "2026-05-05T13:28:19.000Z",
+      "url": "https://vk.com/wall-211184409_6335",
+      "title": "Липецк- Сальск",
+      "text": "Липецк- Сальск",
+      "excerpt": "Липецк- Сальск",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6322,
+      "date": "2026-05-05T12:08:53.000Z",
+      "url": "https://vk.com/wall-211184409_6322",
+      "title": "Бугуруслан - Волгоград",
+      "text": "Бугуруслан - Волгоград",
+      "excerpt": "Бугуруслан - Волгоград",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6306,
+      "date": "2026-05-05T10:42:47.000Z",
+      "url": "https://vk.com/wall-211184409_6306",
+      "title": "Сальск - Фрязино",
+      "text": "Сальск - Фрязино",
+      "excerpt": "Сальск - Фрязино",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6280,
+      "date": "2026-05-05T09:10:13.000Z",
+      "url": "https://vk.com/wall-211184409_6280",
+      "title": "Краснодар - Липецк",
+      "text": "Краснодар - Липецк",
+      "excerpt": "Краснодар - Липецк",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6255,
+      "date": "2026-05-05T07:56:05.000Z",
+      "url": "https://vk.com/wall-211184409_6255",
+      "title": "Фрязино - Бугуруслан",
+      "text": "Фрязино - Бугуруслан",
+      "excerpt": "Фрязино - Бугуруслан",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6243,
+      "date": "2026-04-25T11:48:14.000Z",
+      "url": "https://vk.com/wall-211184409_6243",
+      "title": "Руна- Фортуна",
+      "text": "Руна- Фортуна",
+      "excerpt": "Руна- Фортуна",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    },
+    {
+      "id": 6229,
+      "date": "2026-04-25T10:17:43.000Z",
+      "url": "https://vk.com/wall-211184409_6229",
+      "title": "СШОР 2 (2011) - Спарта",
+      "text": "СШОР 2 (2011) - Спарта",
+      "excerpt": "СШОР 2 (2011) - Спарта",
+      "cover": null,
+      "photos": [],
+      "hasVideo": true,
+      "isPinned": false
+    }
+  ]
 }
