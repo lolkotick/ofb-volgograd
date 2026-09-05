@@ -1,0 +1,225 @@
+# Панель управления сайтом ВРОО «ОФБ». Открывается по адресу /admin/.
+# Правит те же файлы в папке data, что раньше правились вручную.
+# Сохранение = коммит в репозиторий, после которого сайт пересобирается сам.
+
+backend:
+  name: github
+  repo: lolkotick/ofb-volgograd
+  branch: main
+  # Адрес сайта на российском хостинге (укажите ваш домен, например https://ofb34.ru):
+  base_url: https://vrooofb.ru
+  auth_endpoint: oauth/auth.php
+
+# Локальный просмотр и правка без входа в GitHub:
+#   npx decap-server        (в одном окне, из корня проекта)
+#   npm run dev             (в другом окне)
+# затем открыть http://localhost:4321/admin/
+local_backend: true
+
+locale: ru
+media_folder: public/uploads
+public_folder: /uploads
+
+collections:
+  - name: calendar
+    label: Календарь матчей
+    editor: { preview: false }
+    files:
+      - name: matches
+        label: Расписание матчей
+        file: data/matches.json
+        description: Матчи в Волгоградской области и выездные игры команд региона.
+        fields:
+          - name: matches
+            label: Матчи
+            label_singular: Матч
+            widget: list
+            summary: '{{fields.date}} · {{fields.team1}} — {{fields.team2}}'
+            fields:
+              - { name: date, label: Дата, widget: datetime, format: 'YYYY-MM-DD', date_format: 'DD.MM.YYYY', time_format: false }
+              - { name: time, label: Время начала, widget: string, required: false, hint: 'Например 17:00. Пусто — время неизвестно' }
+              - { name: league, label: Лига или категория, widget: string, hint: 'Например: Чемпионат Волгоградской области, мужчины' }
+              - { name: team1, label: Команда 1, widget: string }
+              - { name: team2, label: Команда 2, widget: string }
+              - { name: venue, label: Место проведения, widget: string, hint: 'Название спортзала или арены' }
+              - { name: city, label: Город, widget: string }
+              - { name: home, label: Домашняя игра, widget: boolean, default: true, hint: 'Включено — игра в области. Выключено — выезд' }
+              - name: status
+                label: Статус
+                widget: select
+                default: upcoming
+                options:
+                  - { label: Предстоит, value: upcoming }
+                  - { label: Сыгран, value: finished }
+              - { name: score, label: Счёт, widget: string, required: false, hint: 'После игры, например 81:69' }
+              - { name: broadcast_url, label: Трансляция во ВКонтакте, widget: string, required: false, hint: 'Ссылка на эфир. Пусто — блока с видео не будет' }
+              - { name: note, label: Примечание, widget: string, required: false }
+              - { name: id, label: Код матча, widget: string, hint: 'Латиницей, попадает в адрес страницы' }
+
+  - name: about
+    label: О федерации
+    editor: { preview: false }
+    files:
+      - name: leadership
+        label: Руководство
+        file: data/leadership.json
+        description: Карточки руководителей. Порядок здесь = порядок на сайте.
+        fields:
+          - name: people
+            label: Руководители
+            label_singular: Руководитель
+            widget: list
+            summary: '{{fields.role}} — {{fields.name}}'
+            fields:
+              - { name: name, label: Фамилия Имя Отчество, widget: string }
+              - { name: role, label: Должность, widget: string }
+              - { name: photo, label: Фотография, widget: image, required: false, media_folder: /public/leadership, public_folder: /leadership }
+              - { name: email, label: Почта, widget: string, required: false }
+              - { name: phone, label: Телефон, widget: string, required: false }
+              - { name: note, label: Примечание, widget: string, required: false }
+              - { name: id, label: Код, widget: string }
+
+      - name: site
+        label: Контакты и общие сведения
+        file: data/site.json
+        fields:
+          - { name: name_full, label: Полное название, widget: string }
+          - { name: name_short, label: Сокращённое название, widget: string }
+          - { name: name_plain, label: Название без кавычек, widget: string }
+          - { name: region, label: Регион, widget: string }
+          - { name: tagline, label: Короткий девиз, widget: string }
+          - { name: mission, label: Миссия, widget: text }
+          - name: contacts
+            label: Контакты
+            widget: object
+            fields:
+              - { name: address, label: Адрес, widget: string, required: false }
+              - { name: city, label: Город, widget: string, required: false }
+              - { name: email, label: Электронная почта, widget: string, required: false, hint: 'Заполните — на сайте включится форма обращения' }
+              - { name: phone, label: Телефон, widget: string, required: false }
+              - { name: phone_href, label: Телефон для ссылки, widget: string, required: false }
+              - { name: work_hours, label: Часы работы, widget: string, required: false }
+          - name: social
+            label: Социальные сети
+            widget: object
+            fields:
+              - { name: vk, label: Ссылка на сообщество, widget: string }
+              - { name: vk_label, label: Подпись ссылки, widget: string }
+          - name: requisites
+            label: Реквизиты
+            widget: object
+            fields:
+              - { name: ogrn, label: ОГРН, widget: string, required: false }
+              - { name: inn, label: ИНН, widget: string, required: false }
+              - { name: legal_address, label: Юридический адрес, widget: string, required: false }
+
+  - name: docs
+    label: Документы
+    editor: { preview: false }
+    files:
+      - name: documents
+        label: Список документов
+        file: data/documents.json
+        description: Документ появляется на сайте, только когда к нему приложен файл.
+        fields:
+          - name: documents
+            label: Документы
+            label_singular: Документ
+            widget: list
+            summary: '{{fields.title}}'
+            fields:
+              - { name: title, label: Название, widget: string }
+              - { name: category, label: Категория, widget: string, hint: 'Одинаковая категория = один блок на странице' }
+              - { name: description, label: Описание, widget: text, required: false }
+              - { name: file, label: Файл PDF, widget: file, required: false, media_folder: /public/documents, public_folder: /documents }
+              - { name: size, label: Размер, widget: string, required: false, hint: 'Например 1,2 МБ' }
+              - { name: date, label: Дата документа, widget: datetime, required: false, format: 'YYYY-MM-DD', date_format: 'DD.MM.YYYY', time_format: false }
+              - { name: id, label: Код, widget: string }
+
+  - name: sections
+    label: Направления работы
+    editor: { preview: false }
+    files:
+      - name: sections
+        label: Восемь направлений
+        file: data/sections.json
+        description: Раздел откроется на сайте, только когда включён переключатель «Опубликован».
+        fields:
+          - name: sections
+            label: Направления
+            label_singular: Направление
+            widget: list
+            collapsed: true
+            summary: '{{fields.title}}'
+            fields:
+              - { name: title, label: Название, widget: string }
+              - { name: short, label: Короткое название, widget: string }
+              - { name: description, label: Описание, widget: text }
+              - { name: published, label: Опубликован, widget: boolean, default: false, hint: 'Выключено — посетитель видит «Раздел готовится»' }
+              - name: blocks
+                label: Блоки страницы
+                label_singular: Блок
+                widget: list
+                collapsed: true
+                types:
+                  - name: text
+                    label: Текст
+                    summary: 'Текст: {{fields.title}}'
+                    fields:
+                      - { name: title, label: Заголовок блока, widget: string }
+                      - { name: note, label: Подпись под заголовком, widget: string, required: false }
+                      - { name: body, label: Абзацы, widget: list, field: { name: item, label: Абзац, widget: text } }
+                  - name: steps
+                    label: Шаги
+                    summary: 'Шаги: {{fields.title}}'
+                    fields:
+                      - { name: title, label: Заголовок блока, widget: string }
+                      - { name: note, label: Подпись под заголовком, widget: string, required: false }
+                      - name: items
+                        label: Шаги
+                        label_singular: Шаг
+                        widget: list
+                        summary: '{{fields.title}}'
+                        fields:
+                          - { name: title, label: Название шага, widget: string }
+                          - { name: text, label: Пояснение, widget: text }
+                  - name: cards
+                    label: Карточки
+                    summary: 'Карточки: {{fields.title}}'
+                    fields:
+                      - { name: title, label: Заголовок блока, widget: string }
+                      - { name: note, label: Подпись под заголовком, widget: string, required: false }
+                      - name: items
+                        label: Карточки
+                        label_singular: Карточка
+                        widget: list
+                        summary: '{{fields.title}}'
+                        fields:
+                          - { name: title, label: Заголовок, widget: string }
+                          - { name: subtitle, label: Подзаголовок, widget: string, required: false }
+                          - { name: text, label: Текст, widget: text, required: false }
+                          - { name: contact, label: Контакт, widget: string, required: false }
+                  - name: faq
+                    label: Вопросы и ответы
+                    summary: 'Вопросы: {{fields.title}}'
+                    fields:
+                      - { name: title, label: Заголовок блока, widget: string }
+                      - name: items
+                        label: Вопросы
+                        label_singular: Вопрос
+                        widget: list
+                        summary: '{{fields.q}}'
+                        fields:
+                          - { name: q, label: Вопрос, widget: string }
+                          - { name: a, label: Ответ, widget: text }
+                  - name: contact
+                    label: Контакт ответственного
+                    summary: 'Контакт: {{fields.title}}'
+                    fields:
+                      - { name: title, label: Заголовок блока, widget: string }
+                      - { name: note, label: Подпись под заголовком, widget: string, required: false }
+                      - { name: name, label: Фамилия Имя Отчество, widget: string }
+                      - { name: role, label: Должность, widget: string }
+                      - { name: email, label: Почта, widget: string, required: false }
+                      - { name: phone, label: Телефон, widget: string, required: false }
+              - { name: slug, label: Код раздела, widget: string }
