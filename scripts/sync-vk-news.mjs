@@ -83,12 +83,19 @@ export function cleanText(raw = '') {
 const TITLE_MAX = 95;
 const EXCERPT_MAX = 180;
 
+/** Длина и нарезка в КОДОВЫХ ТОЧКАХ, а не в единицах UTF-16.
+ *  Иначе обрезка попадает в середину суррогатной пары и заголовок
+ *  заканчивается битым символом — посты федерации полны эмодзи. */
+const cp = (value) => Array.from(value);
+
 /** Обрезает по границе слова, а не по символу */
 function clip(value, max) {
-  if (value.length <= max) return value;
-  const cut = value.slice(0, max);
+  const chars = cp(value);
+  if (chars.length <= max) return value;
+  const cut = chars.slice(0, max);
   const space = cut.lastIndexOf(' ');
-  return `${(space > max * 0.5 ? cut.slice(0, space) : cut).trimEnd()}…`;
+  const base = (space > max * 0.5 ? cut.slice(0, space) : cut).join('');
+  return `${base.trimEnd()}…`;
 }
 
 /** Заголовок берём из первой строки поста.
@@ -98,10 +105,11 @@ export function makeTitle(text) {
   const firstLine = text.split('\n').map((s) => s.trim()).find((s) => s.length > 0) || text;
   const clean = firstLine.replace(/^[#•\-–—\s]+/, '').replace(/\s+/g, ' ').trim();
   if (!clean) return { title: 'Публикация федерации', truncated: false };
-  if (clean.length <= TITLE_MAX) return { title: clean, truncated: false };
+  if (cp(clean).length <= TITLE_MAX) return { title: clean, truncated: false };
 
   // если в начале есть законченное предложение подходящей длины — берём его целиком
-  const sentence = clean.match(/^.{30,95}?[.!?…](?:\s|$)/);
+  // флаг u обязателен: без него '.' считает эмодзи за два символа
+  const sentence = clean.match(/^.{30,95}?[.!?…](?:\s|$)/u);
   if (sentence) return { title: sentence[0].trim(), truncated: false };
 
   return { title: clip(clean, TITLE_MAX), truncated: true };
@@ -116,7 +124,7 @@ export function makeExcerpt(text, title, truncated) {
   // сравниваем по тексту с одинарными пробелами: в постах встречаются двойные,
   // из-за них заголовок иначе не «находится» в начале и превью дублирует его
   const base = (truncated ? title.replace(/…$/, '') : title).replace(/\s+/g, ' ').trim();
-  let rest = flat.startsWith(base) ? flat.slice(base.length).trim() : '';
+  let rest = flat.startsWith(base) ? flat.slice(base.length).trim() : '';  // base — префикс, срез безопасен
   if (!rest) rest = flat;
   return truncated ? `…${clip(rest, EXCERPT_MAX)}` : clip(rest, EXCERPT_MAX);
 }

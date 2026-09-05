@@ -13,3 +13,10 @@ Claude outputs/
 # Секретные ключи OAuth на сервере
 public/oauth/secret.php
 oauth/secret.php
+
+# Ключ ВКонтакте для синхронизации новостей: живёт только на хостинге
+public/sync/secret.php
+public/sync/.sync.lock
+
+# Оферта хостинга — нужна локально, в репозитории ей не место
+/oferta.pdf
