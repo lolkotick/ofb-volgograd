@@ -7,7 +7,9 @@ $out = [];
 foreach ($fixtures as $raw) {
     $links = collectLinks($raw);
     $text  = cleanText($raw);
-    ['title' => $title, 'truncated' => $truncated] = makeTitle($text);
+    $parsed = makeTitle($text);
+    $title = $parsed['title'];
+    $truncated = $parsed['truncated'];
     $out[] = [
         'links'     => $links,
         'text'      => $text,

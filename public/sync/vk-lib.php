@@ -45,7 +45,7 @@ function collectLinks(string $raw = ''): array
     $re = '/\[((?:https?:\/\/|www\.)[^\]|]+)\|([^\]]+)\]/u';
     if (preg_match_all($re, $raw, $matches, PREG_SET_ORDER)) {
         foreach ($matches as $m) {
-            $url = str_starts_with($m[1], 'http') ? $m[1] : 'https://' . $m[1];
+            $url = strpos($m[1], 'http') === 0 ? $m[1] : 'https://' . $m[1];
             $label = jsTrim($m[2]);
             if (!isset($seen[$url])) {
                 $seen[$url] = true;
@@ -125,7 +125,7 @@ function makeExcerpt(string $text, string $title, bool $truncated): string
     $base = jsTrim((string)preg_replace('/[' . JS_WS . ']+/u', ' ', $base));
 
     $rest = '';
-    if ($base !== '' && str_starts_with($flat, $base)) {
+    if ($base !== '' && strncmp($flat, $base, strlen($base)) === 0) {
         $rest = jsTrim(mb_substr($flat, mb_strlen($base)));
     }
     if ($rest === '') {
@@ -135,9 +135,9 @@ function makeExcerpt(string $text, string $title, bool $truncated): string
 }
 
 /** Из вложения-фотографии выбирает самый крупный размер */
-function bestPhoto(?array $photo): ?array
+function bestPhoto($photo): ?array
 {
-    $sizes = $photo['sizes'] ?? [];
+    $sizes = is_array($photo) ? ($photo['sizes'] ?? []) : [];
     if (!$sizes) {
         return null;
     }

@@ -26,18 +26,23 @@
 
 declare(strict_types=1);
 
-mb_internal_encoding('UTF-8');
-
-require_once __DIR__ . '/vk-lib.php';
-
 const API_VERSION = '5.199';
+const MIN_PHP     = '7.0.0';
 
 $IS_CLI = (PHP_SAPI === 'cli');
 
 /* --- настройки ------------------------------------------------------------
    Значения по умолчанию можно переопределить в secret.php. */
+/* Подключаем осторожно: если в secret.php опечатка (лишняя кавычка,
+   потерянная точка с запятой), без этой обёртки страница отдавала бы
+   пустую 500-ю, и понять причину было бы невозможно. */
+$SECRET_ERROR = '';
 if (is_file(__DIR__ . '/secret.php')) {
-    require_once __DIR__ . '/secret.php';
+    try {
+        require_once __DIR__ . '/secret.php';
+    } catch (Throwable $e) {
+        $SECRET_ERROR = $e->getMessage();
+    }
 }
 
 if (!defined('VK_API_TOKEN'))     { define('VK_API_TOKEN', (string)(getenv('VK_API_TOKEN') ?: '')); }
@@ -87,12 +92,14 @@ if (!$IS_CLI && isset($_GET['check'])) {
     header('Content-Type: text/plain; charset=utf-8');
     $outDir = dirname(SYNC_OUTPUT);
     $checks = [
-        'Версия PHP'                  => PHP_VERSION,
+        'Версия PHP'                  => PHP_VERSION . (version_compare(PHP_VERSION, MIN_PHP, '<') ? '  ← СТАРАЯ, нужна ' . MIN_PHP . '+' : '  (подходит)'),
         'Расширение mbstring'         => extension_loaded('mbstring') ? 'есть' : 'НЕТ (обязательно)',
         'Расширение curl'             => extension_loaded('curl') ? 'есть' : 'нет',
         'allow_url_fopen'             => ini_get('allow_url_fopen') ? 'включён' : 'выключен',
         'Способ запроса к ВК'         => extension_loaded('curl') ? 'curl' : (ini_get('allow_url_fopen') ? 'file_get_contents' : 'НЕДОСТУПЕН'),
-        'Файл secret.php'             => is_file(__DIR__ . '/secret.php') ? 'найден' : 'НЕ НАЙДЕН (создайте на хостинге)',
+        'Файл secret.php'             => !is_file(__DIR__ . '/secret.php')
+            ? 'НЕ НАЙДЕН (создайте на хостинге)'
+            : ($SECRET_ERROR !== '' ? 'ОШИБКА В ФАЙЛЕ: ' . $SECRET_ERROR : 'найден, читается'),
         'Ключ ВКонтакте'              => VK_API_TOKEN !== '' ? 'задан' : 'НЕ ЗАДАН',
         'Ключ запуска по URL'         => SYNC_RUN_KEY !== '' ? 'задан' : 'не задан (запуск по URL запрещён)',
         'Сообщество'                  => VK_GROUP_DOMAIN,
@@ -100,11 +107,37 @@ if (!$IS_CLI && isset($_GET['check'])) {
         'Папка назначения'            => is_dir($outDir) ? 'есть' : 'НЕТ (будет создана)',
         'Папка доступна на запись'    => is_dir($outDir) ? (is_writable($outDir) ? 'да' : 'НЕТ') : 'проверим при создании',
     ];
+    /* Выравниваем по символам, а не по байтам: printf() считает байты,
+       а кириллица занимает по два — колонки разъезжались бы.
+       mb_strlen тут использовать нельзя: mbstring может как раз отсутствовать,
+       ради чего эта страница и открывается. */
+    $pad = static function (string $text, int $width): string {
+        $chars = preg_match_all('/./u', $text);
+        return $text . str_repeat(' ', max(1, $width - (int)$chars));
+    };
     foreach ($checks as $name => $value) {
-        printf("%-28s %s\n", $name . ':', $value);
+        echo $pad($name . ':', 28) . $value . "\n";
     }
     exit(0);
 }
+
+/* --- требования к окружению -----------------------------------------------
+   Проверяем ДО подключения библиотеки: иначе скрипт падал бы с пустой
+   500-й ошибкой, не успев объяснить, чего ему не хватает. */
+if (version_compare(PHP_VERSION, MIN_PHP, '<')) {
+    say('✖ Слишком старая версия PHP: ' . PHP_VERSION . ', нужна ' . MIN_PHP . ' или новее.');
+    say('  Панель SpaceWeb → Настройки сайта → Версия PHP → выберите 8.x.');
+    finish(false);
+}
+if (!extension_loaded('mbstring')) {
+    say('✖ На хостинге не подключено расширение mbstring — без него нельзя');
+    say('  правильно резать русский текст. Включите его в панели SpaceWeb');
+    say('  (Настройки PHP → расширения) или напишите в поддержку.');
+    finish(false);
+}
+
+mb_internal_encoding('UTF-8');
+require_once __DIR__ . '/vk-lib.php';
 
 /* --- защита запуска по HTTP ----------------------------------------------- */
 if (!$IS_CLI) {
@@ -214,6 +247,14 @@ function fetchWall(): array
 /* --- основной сценарий ---------------------------------------------------- */
 
 try {
+    if ($SECRET_ERROR !== '') {
+        throw new RuntimeException(
+            "В файле sync/secret.php ошибка: " . $SECRET_ERROR . "\n"
+            . "  Чаще всего это лишняя или потерянная кавычка вокруг ключа.\n"
+            . "  Строка должна выглядеть ровно так:\n"
+            . "  define('VK_API_TOKEN', 'ключ');"
+        );
+    }
     if (VK_API_TOKEN === '') {
         throw new RuntimeException(
             "Не задан ключ ВКонтакте.\n"
@@ -237,7 +278,9 @@ try {
 
         $links = collectLinks($sourceText);
         $text  = cleanText($sourceText);
-        ['title' => $title, 'truncated' => $truncated] = makeTitle($text);
+        $parsed    = makeTitle($text);
+        $title     = $parsed['title'];
+        $truncated = $parsed['truncated'];
         $photos = collectPhotos($post);
 
         $item = [
@@ -260,7 +303,9 @@ try {
         $items[] = $item;
     }
 
-    usort($items, static fn(array $a, array $b): int => strcmp($b['date'], $a['date']));
+    usort($items, function (array $a, array $b) {
+        return strcmp($b['date'], $a['date']);
+    });
 
     $jsonFlags = JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_PRETTY_PRINT;
 
