@@ -1,0 +1,58 @@
+# Сборка и автоматическая публикация на российский виртуальный хостинг по SFTP.
+# Запускается при каждом push в main (включая правки из админки Decap CMS и обновление новостей).
+name: Деплой на российский хостинг (SFTP)
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+  workflow_call:
+
+concurrency:
+  group: hosting-deploy
+  cancel-in-progress: false
+
+jobs:
+  build-and-deploy:
+    name: Сборка и выгрузка на хостинг
+    runs-on: ubuntu-latest
+    env:
+      HAS_HOSTING_CREDENTIALS: ${{ secrets.HOSTING_SERVER != '' && secrets.HOSTING_USERNAME != '' && secrets.HOSTING_PASSWORD != '' }}
+    steps:
+      - name: Получить исходный код
+        uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Настроить Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Установить зависимости
+        run: npm ci
+
+      - name: Собрать сайт в dist/
+        env:
+          SITE_URL: ${{ vars.SITE_URL || 'https://basket34.ru' }}
+          SITE_BASE: ${{ vars.SITE_BASE || '/' }}
+        run: npm run build
+
+      - name: Выгрузка на российский хостинг (SFTP)
+        if: env.HAS_HOSTING_CREDENTIALS == 'true'
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.HOSTING_SERVER }}
+          username: ${{ secrets.HOSTING_USERNAME }}
+          password: ${{ secrets.HOSTING_PASSWORD }}
+          protocol: sftp
+          port: ${{ secrets.HOSTING_PORT || 22 }}
+          local-dir: ./dist/
+          server-dir: ${{ secrets.HOSTING_TARGET_DIR || 'public_html/' }}
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/node_modules/**
+            **/oauth/secret.php
+            **/oauth/config.php

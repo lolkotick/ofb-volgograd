@@ -6,8 +6,8 @@ backend:
   name: github
   repo: lolkotick/ofb-volgograd
   branch: main
-  # Адрес сайта на российском хостинге (укажите ваш домен, например https://ofb34.ru):
-  base_url: https://vrooofb.ru
+  # Адрес сайта на российском хостинге SpaceWeb:
+  base_url: https://basket34.ru
   auth_endpoint: oauth/auth.php
 
 # Локальный просмотр и правка без входа в GitHub:

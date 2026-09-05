@@ -57,3 +57,10 @@ jobs:
       pages: write
       id-token: write
     uses: ./.github/workflows/deploy.yml
+
+  publish-hosting:
+    name: Пересобрать и опубликовать на хостинг
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    uses: ./.github/workflows/deploy-hosting.yml
+    secrets: inherit

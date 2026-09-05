@@ -1,22 +1,38 @@
 // @ts-check
 import { defineConfig } from 'astro/config';
 import sitemap from '@astrojs/sitemap';
+import { readFileSync, existsSync } from 'node:fs';
+import { resolve } from 'node:path';
 
 /**
- * НАСТРОЙКА АДРЕСА САЙТА
- * ----------------------
- * Пока сайт живёт на GitHub Pages по адресу вида
- *   https://ИМЯ-ПОЛЬЗОВАТЕЛЯ.github.io/ofb-volgograd
- * поэтому нужны И site, И base.
- *
- * Когда подключите собственный домен (например https://ofb34.ru):
- *   1. site: 'https://ofb34.ru'
- *   2. base: '/'
- *   3. положите файл public/CNAME с одной строкой: ofb34.ru
- * Больше нигде в коде адреса менять не нужно — все ссылки строятся от base.
+ * НАСТРОЙКА АДРЕСА САЙТА ДЛЯ РОССИЙСКОГО ХОСТИНГА / СОБСТВЕННОГО ДОМЕНА
+ * --------------------------------------------------------------------
+ * На российском хостинге сайт располагается в корне домена (base: '/').
+ * Для GitHub Pages при необходимости можно передать SITE_BASE=/ofb-volgograd.
  */
-const SITE = process.env.SITE_URL || 'https://vrooofb.github.io';
-const BASE = process.env.SITE_BASE || '/ofb-volgograd';
+const SITE = process.env.SITE_URL || 'https://basket34.ru';
+const BASE = process.env.SITE_BASE || '/';
+
+/** Dev-сервер Astro (Vite) не отдаёт index.html из подпапок public/.
+ *  Этот плагин перехватывает запрос к /admin/ и отдаёт статический файл. */
+function servePublicSubdirs() {
+  return {
+    name: 'serve-public-subdirs',
+    configureServer(server) {
+      server.middlewares.use((req, res, next) => {
+        if (req.url === '/admin/' || req.url === '/admin') {
+          const file = resolve('public/admin/index.html');
+          if (existsSync(file)) {
+            res.setHeader('Content-Type', 'text/html; charset=utf-8');
+            res.end(readFileSync(file, 'utf-8'));
+            return;
+          }
+        }
+        next();
+      });
+    },
+  };
+}
 
 export default defineConfig({
   site: SITE,
@@ -30,4 +46,5 @@ export default defineConfig({
   trailingSlash: 'always',
   build: { format: 'directory' },
   integrations: [sitemap()],
+  vite: { plugins: [servePublicSubdirs()] },
 });

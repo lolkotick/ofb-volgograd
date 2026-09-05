@@ -9,3 +9,7 @@ dist/
 # Служебные папки, которые создаёт приложение Claude рядом с проектом.
 # В репозиторий им не нужно.
 Claude outputs/
+
+# Секретные ключи OAuth на сервере
+public/oauth/secret.php
+oauth/secret.php

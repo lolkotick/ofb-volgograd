@@ -8,10 +8,13 @@
     "dev": "astro dev",
     "build": "astro build",
     "preview": "astro preview",
-    "sync:news": "node scripts/sync-vk-news.mjs"
+    "sync:news": "node scripts/sync-vk-news.mjs",
+    "admin": "decap-server",
+    "admin:update": "npm i -D decap-cms && cp node_modules/decap-cms/dist/decap-cms.js public/admin/ && npm uninstall decap-cms"
   },
   "devDependencies": {
-    "astro": "^5.14.1"
+    "astro": "^5.14.1",
+    "decap-server": "^3.11.0"
   },
   "dependencies": {
     "@astrojs/sitemap": "^3.7.4"
