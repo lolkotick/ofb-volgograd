@@ -5,7 +5,10 @@ import { url } from '../lib/url.js';
 import { site, privacyReady, hasServer, isFilled } from '../lib/data.js';
 
 const email = site.contacts.email;
-const phoneHref = site.contacts.phone.replace(/[^+\d]/g, '');
+/* Телефонов может быть несколько; показываем все заполненные,
+   первым — тот, что федерация назвала основным. */
+const phones = (site.contacts.phones ?? [site.contacts.phone]).filter(isFilled);
+const telHref = (value) => value.replace(/[^+\d]/g, '');
 
 /* Серверная форма показывается, только когда её вообще законно показывать:
    нужны реквизиты федерации для политики обработки персональных данных
@@ -60,10 +63,12 @@ const topics = [
                 <dd><a href={`mailto:${email}`}>{email}</a></dd>
               </div>
             )}
-            {isFilled(site.contacts.phone) && (
+            {phones.length > 0 && (
               <div>
-                <dt>Телефон</dt>
-                <dd><a href={`tel:${phoneHref}`}>{site.contacts.phone}</a></dd>
+                <dt>{phones.length > 1 ? 'Телефоны' : 'Телефон'}</dt>
+                {phones.map((value) => (
+                  <dd><a href={`tel:${telHref(value)}`}>{value}</a></dd>
+                ))}
               </div>
             )}
             {isFilled(site.contacts.work_hours) && (

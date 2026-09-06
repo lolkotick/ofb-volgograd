@@ -9,9 +9,13 @@
     "address": "г. Волгоград, ул. Новороссийская, д. 2",
     "city": "Волгоград",
     "email": "2.Basket34@bk.ru",
-    "phone": "",
-    "phone_href": "",
-    "work_hours": ""
+    "phone": "+7 (903) 317-18-55",
+    "phone_href": "+79033171855",
+    "work_hours": "Пн–Пт, 8:00–16:00",
+    "phones": [
+      "+7 (903) 317-18-55",
+      "+7 (910) 008-84-54"
+    ]
   },
   "social": {
     "vk": "https://vk.com/vrooofb",
