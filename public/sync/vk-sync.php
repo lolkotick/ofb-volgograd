@@ -27,7 +27,7 @@
 declare(strict_types=1);
 
 const API_VERSION = '5.199';
-const MIN_PHP     = '7.0.0';
+const MIN_PHP     = '7.1.0';
 
 $IS_CLI = (PHP_SAPI === 'cli');
 

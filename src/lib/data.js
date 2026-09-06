@@ -61,6 +61,29 @@ export const matches = (matchesData.matches ?? [])
 export const upcomingMatches = matches.filter((m) => !m.isFinished);
 export const finishedMatches = [...matches].filter((m) => m.isFinished).reverse();
 
+/* --- ГОТОВНОСТЬ ДАННЫХ ---------------------------------------------------
+   В данных сайта незаполненные места помечены словом «указать»:
+   «указать адрес», «указать@почту.ru», «Указать спортзал».
+   Сайт не показывает незаполненное — это правило проекта, и вот его проверка. */
+export function isFilled(value) {
+  const s = String(value ?? '').trim();
+  return s !== '' && !/указать/i.test(s);
+}
+
+/** Реквизиты, без которых нельзя опубликовать политику обработки
+ *  персональных данных, а значит и принимать обращения через сайт:
+ *  в политике по 152-ФЗ указываются наименование, ОГРН, ИНН, адрес
+ *  и почта для обращений субъектов персональных данных. */
+export const privacyReady =
+  isFilled(site.requisites?.ogrn) &&
+  isFilled(site.requisites?.inn) &&
+  isFilled(site.requisites?.legal_address) &&
+  isFilled(site.contacts?.email);
+
+/** Сборка для GitHub Pages: там нет PHP, поэтому серверная форма не работает.
+ *  На хостинге base равен '/', на Pages — '/ofb-volgograd/'. */
+export const hasServer = import.meta.env.BASE_URL === '/';
+
 /* --- ФОРМАТИРОВАНИЕ ------------------------------------------------------ */
 const MONTHS = ['января','февраля','марта','апреля','мая','июня','июля','августа','сентября','октября','ноября','декабря'];
 const WEEKDAYS = ['воскресенье','понедельник','вторник','среда','четверг','пятница','суббота'];

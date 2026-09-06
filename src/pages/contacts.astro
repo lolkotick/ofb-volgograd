@@ -1,10 +1,30 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
-import { site } from '../lib/data.js';
+import { url } from '../lib/url.js';
+import { site, privacyReady, hasServer, isFilled } from '../lib/data.js';
 
 const email = site.contacts.email;
 const phoneHref = site.contacts.phone.replace(/[^+\d]/g, '');
+
+/* Серверная форма показывается, только когда её вообще законно показывать:
+   нужны реквизиты федерации для политики обработки персональных данных
+   и наличие PHP (на GitHub Pages его нет). Иначе остаётся прежний вариант —
+   письмо через почтовую программу, при котором сайт ничего не хранит. */
+const showServerForm = privacyReady && hasServer;
+
+const topics = [
+  ['accreditation', 'Аккредитация'],
+  ['competitions', 'Участие в соревнованиях'],
+  ['kids', 'Детский баскетбол и секции'],
+  ['amateur', 'Любительский баскетбол'],
+  ['student', 'Студенческий баскетбол'],
+  ['referees', 'Судейство'],
+  ['partnership', 'Сотрудничество и партнёрство'],
+  ['media', 'Вопрос для СМИ'],
+  ['site', 'Работа сайта'],
+  ['other', 'Другое'],
+];
 ---
 
 <BaseLayout
@@ -28,22 +48,30 @@ const phoneHref = site.contacts.phone.replace(/[^+\d]/g, '');
               <dt>Организация</dt>
               <dd style="font-size:1rem">{site.name_full}</dd>
             </div>
-            <div>
-              <dt>Адрес</dt>
-              <dd>{site.contacts.address}</dd>
-            </div>
-            <div>
-              <dt>Электронная почта</dt>
-              <dd><a href={`mailto:${email}`}>{email}</a></dd>
-            </div>
-            <div>
-              <dt>Телефон</dt>
-              <dd><a href={`tel:${phoneHref}`}>{site.contacts.phone}</a></dd>
-            </div>
-            <div>
-              <dt>Часы работы</dt>
-              <dd>{site.contacts.work_hours}</dd>
-            </div>
+            {isFilled(site.contacts.address) && (
+              <div>
+                <dt>Адрес</dt>
+                <dd>{site.contacts.address}</dd>
+              </div>
+            )}
+            {isFilled(email) && (
+              <div>
+                <dt>Электронная почта</dt>
+                <dd><a href={`mailto:${email}`}>{email}</a></dd>
+              </div>
+            )}
+            {isFilled(site.contacts.phone) && (
+              <div>
+                <dt>Телефон</dt>
+                <dd><a href={`tel:${phoneHref}`}>{site.contacts.phone}</a></dd>
+              </div>
+            )}
+            {isFilled(site.contacts.work_hours) && (
+              <div>
+                <dt>Часы работы</dt>
+                <dd>{site.contacts.work_hours}</dd>
+              </div>
+            )}
             <div>
               <dt>ВКонтакте</dt>
               <dd><a href={site.social.vk} rel="noopener">{site.social.vk_label}</a></dd>
@@ -58,38 +86,90 @@ const phoneHref = site.contacts.phone.replace(/[^+\d]/g, '');
 
         <div class="card" style="padding:clamp(1.25rem,4vw,2rem)">
           <h2 style="font-size:1.35rem">Форма обращения</h2>
-          <p class="muted" style="font-size:.9375rem">
-            Заполните поля — письмо откроется в вашей почтовой программе уже готовым к отправке
-            на адрес {email}. Сайт не хранит и не пересылает введённые данные.
-          </p>
 
-          <form data-contact-form style="display:grid;gap:1rem;margin-top:1.5rem">
-            <p style="margin:0">
-              <label for="cf-name" style="display:block;font-size:.8125rem;color:var(--muted);margin-bottom:.35rem">Ваше имя</label>
-              <input id="cf-name" name="name" type="text" required autocomplete="name" class="field" />
-            </p>
-            <p style="margin:0">
-              <label for="cf-topic" style="display:block;font-size:.8125rem;color:var(--muted);margin-bottom:.35rem">Тема обращения</label>
-              <select id="cf-topic" name="topic" class="field">
-                <option>Участие в соревнованиях</option>
-                <option>Детский баскетбол и секции</option>
-                <option>Судейство</option>
-                <option>Сотрудничество и партнёрство</option>
-                <option>Вопрос для СМИ</option>
-                <option>Другое</option>
-              </select>
-            </p>
-            <p style="margin:0">
-              <label for="cf-message" style="display:block;font-size:.8125rem;color:var(--muted);margin-bottom:.35rem">Сообщение</label>
-              <textarea id="cf-message" name="message" rows="5" required class="field"></textarea>
-            </p>
-            <p style="margin:0">
-              <button class="btn btn--primary" type="submit">Написать письмо</button>
-            </p>
-            <p class="muted" style="margin:0;font-size:.8125rem" data-form-hint>
-              Если почтовая программа не открылась, напишите напрямую на <a href={`mailto:${email}`}>{email}</a>.
-            </p>
-          </form>
+          {showServerForm ? (
+            <>
+              <p class="muted" style="font-size:.9375rem">
+                Напишите, что вас интересует. Мы получим обращение и ответим
+                по оставленным контактам.
+              </p>
+
+              <form
+                data-form
+                method="post"
+                action={url('/api/submit.php')}
+                style="display:grid;gap:1rem;margin-top:1.5rem"
+              >
+                <p style="margin:0">
+                  <label class="lbl" for="cf-topic">Тема обращения</label>
+                  <select id="cf-topic" name="topic" class="field" required>
+                    {topics.map(([value, label]) => <option value={value}>{label}</option>)}
+                  </select>
+                  <span class="err" data-error-for="topic"></span>
+                </p>
+                <p style="margin:0">
+                  <label class="lbl" for="cf-name">Как к вам обращаться</label>
+                  <input id="cf-name" name="name" type="text" required autocomplete="name" class="field" />
+                  <span class="err" data-error-for="name"></span>
+                </p>
+                <p style="margin:0">
+                  <label class="lbl" for="cf-contact">Почта или телефон для ответа</label>
+                  <input id="cf-contact" name="contact" type="text" required autocomplete="email" class="field" />
+                  <span class="err" data-error-for="contact"></span>
+                </p>
+                <p style="margin:0">
+                  <label class="lbl" for="cf-message">Сообщение</label>
+                  <textarea id="cf-message" name="message" rows="5" required class="field"></textarea>
+                  <span class="err" data-error-for="message"></span>
+                </p>
+
+                <p style="margin:0">
+                  <label class="consent">
+                    <input type="checkbox" name="consent" value="1" required />
+                    <span>
+                      Я согласен на обработку персональных данных в соответствии с
+                      <a href={url('/privacy/')}> политикой обработки персональных данных</a>.
+                    </span>
+                  </label>
+                  <span class="err" data-error-for="consent"></span>
+                </p>
+
+                {/* Приманка для роботов: человек её не видит и не заполнит. */}
+                <div class="trap" aria-hidden="true">
+                  <label for="cf-website">Не заполняйте это поле</label>
+                  <input id="cf-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+                <input type="hidden" name="ts" value="" />
+
+                <p style="margin:0">
+                  <button class="btn btn--primary" type="submit" data-submit>Отправить обращение</button>
+                </p>
+
+                <p class="form-status" data-status role="status" aria-live="polite" hidden></p>
+              </form>
+
+              <noscript>
+                <p class="notice" style="margin-top:1rem">
+                  Для отправки формы нужен включённый JavaScript. Если он выключен —
+                  напишите нам во <a href={site.social.vk} rel="noopener">ВКонтакте</a>
+                  {isFilled(email) && <> или на <a href={`mailto:${email}`}>{email}</a></>}.
+                </p>
+              </noscript>
+            </>
+          ) : (
+            <>
+              <p class="muted" style="font-size:.9375rem">
+                Самый надёжный способ связаться — сообщение в
+                <a href={site.social.vk} rel="noopener"> сообщество ВКонтакте</a>.
+                Там отвечают быстрее всего.
+              </p>
+              <p style="margin-top:1.25rem">
+                <a class="btn btn--primary" href={site.social.vk} rel="noopener">
+                  Написать во ВКонтакте
+                </a>
+              </p>
+            </>
+          )}
         </div>
       </div>
     </div>
@@ -97,25 +177,111 @@ const phoneHref = site.contacts.phone.replace(/[^+\d]/g, '');
 </BaseLayout>
 
 <style>
+  .lbl {
+    display: block; font-size: .8125rem; color: var(--muted); margin-bottom: .35rem;
+  }
   .field {
     width: 100%; font: inherit; font-size: .9375rem; color: var(--text);
     background: var(--bg-3); border: 1px solid var(--line);
     border-radius: var(--radius-sm); padding: .7rem .85rem;
   }
   .field:focus-visible { border-color: var(--accent); }
+  .field[aria-invalid='true'] { border-color: #FF4D4D; }
   textarea.field { resize: vertical; min-height: 120px; }
+
+  .consent {
+    display: flex; gap: .6rem; align-items: flex-start;
+    font-size: .875rem; color: var(--muted); line-height: 1.5; cursor: pointer;
+  }
+  .consent input { margin-top: .2rem; flex: none; }
+
+  .err {
+    display: none; margin-top: .35rem; font-size: .8125rem; color: #FF4D4D;
+  }
+  .err.is-shown { display: block; }
+
+  /* Уводим приманку за пределы экрана, а не display:none:
+     часть роботов умеет отличать скрытые поля по этому свойству. */
+  .trap {
+    position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden;
+  }
+
+  .form-status {
+    margin: 0; font-size: .9375rem; line-height: 1.5;
+    padding: .8rem .9rem; border-radius: var(--radius-sm);
+    border: 1px solid var(--line); background: var(--bg-3);
+  }
+  .form-status.is-ok { border-color: #2F7A4A; color: #9BE8B8; }
+  .form-status.is-error { border-color: #7A2F2F; color: #FFB0B0; }
 </style>
 
-<script is:inline define:vars={{ email }}>
-  const form = document.querySelector('[data-contact-form]');
+<script>
+  const form = document.querySelector('[data-form]');
   if (form) {
-    form.addEventListener('submit', (e) => {
-      e.preventDefault();
-      const data = new FormData(form);
-      const subject = `Обращение с сайта: ${data.get('topic')}`;
-      const body = `${data.get('message')}\n\n—\n${data.get('name')}`;
-      window.location.href =
-        `mailto:${email}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    const status = form.querySelector('[data-status]');
+    const button = form.querySelector('[data-submit]');
+    const stamp = form.querySelector('input[name="ts"]');
+
+    /* Отметка времени: по ней сервер отличает человека от робота,
+       который отправляет форму мгновенно после загрузки. */
+    stamp.value = String(Date.now());
+
+    const clearErrors = () => {
+      form.querySelectorAll('.err').forEach((el) => {
+        el.textContent = '';
+        el.classList.remove('is-shown');
+      });
+      form.querySelectorAll('[aria-invalid]').forEach((el) => el.removeAttribute('aria-invalid'));
+    };
+
+    const showStatus = (text, ok) => {
+      status.textContent = text;
+      status.classList.toggle('is-ok', ok);
+      status.classList.toggle('is-error', !ok);
+      status.hidden = false;
+    };
+
+    form.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      clearErrors();
+      button.disabled = true;
+      const previousLabel = button.textContent;
+      button.textContent = 'Отправляем…';
+
+      try {
+        const response = await fetch(form.action, {
+          method: 'POST',
+          headers: { Accept: 'application/json' },
+          body: new FormData(form),
+        });
+        const result = await response.json();
+
+        if (result.ok) {
+          form.reset();
+          stamp.value = String(Date.now());
+          showStatus(result.message, true);
+          return;
+        }
+
+        showStatus(result.message, false);
+        Object.entries(result.errors || {}).forEach(([field, text]) => {
+          const slot = form.querySelector(`[data-error-for="${field}"]`);
+          if (slot) {
+            slot.textContent = text;
+            slot.classList.add('is-shown');
+          }
+          const input = form.querySelector(`[name="${field}"]`);
+          if (input) input.setAttribute('aria-invalid', 'true');
+        });
+      } catch (error) {
+        showStatus(
+          'Не удалось связаться с сервером. Проверьте соединение или напишите нам во ВКонтакте.',
+          false
+        );
+      } finally {
+        button.disabled = false;
+        button.textContent = previousLabel;
+      }
     });
   }
 </script>
