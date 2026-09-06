@@ -55,4 +55,3 @@ jobs:
             **/.git*/**
             **/node_modules/**
             **/oauth/secret.php
-            **/oauth/config.php
