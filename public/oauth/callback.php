@@ -13,90 +13,76 @@ header('Content-Type: text/html; charset=utf-8');
 function renderAuthResponse(bool $success, array $payload, string $errorMessage = ''): void
 {
     $provider = 'github';
-    $jsonPayload = json_encode($payload, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
-    $escapedError = json_encode($errorMessage, JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES);
+
+    /* Флаги для значений, которые попадают внутрь <script>.
+       JSON_HEX_TAG обязателен: текст ошибки приходит из параметров запроса,
+       и без него подделанная ссылка могла бы закрыть тег и подставить свой код. */
+    $jsFlags = JSON_UNESCAPED_UNICODE | JSON_HEX_TAG | JSON_HEX_AMP | JSON_HEX_APOS | JSON_HEX_QUOT;
+    $jsonPayload  = json_encode($payload, $jsFlags);
+    $escapedError = json_encode($errorMessage, $jsFlags);
     ?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
     <meta charset="utf-8">
-    <title><?php echo $success ? 'Авторизация успешна' : 'Ошибка авторизации'; ?></title>
-    <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            background: #111111;
-            color: #ffffff;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
-            margin: 0;
-            padding: 20px;
-            box-sizing: border-box;
-            text-align: center;
-        }
-        .card {
-            background: #1A1A1A;
-            border: 1px solid #2F2F2F;
-            border-radius: 12px;
-            padding: 30px;
-            max-width: 420px;
-            width: 100%;
-        }
-        .status-ok { color: #4ADE80; font-size: 1.2rem; font-weight: bold; }
-        .status-err { color: #FF4D4D; font-size: 1.2rem; font-weight: bold; }
-        p { color: #A6A6A6; font-size: 0.95rem; line-height: 1.5; margin-top: 10px; }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="noindex, nofollow">
+    <title>Служебная страница</title>
 </head>
 <body>
-    <div class="card">
-        <?php if ($success): ?>
-            <div class="status-ok">✓ Вход выполнен</div>
-            <p>Передаем данные в панель управления... Окно закроется автоматически.</p>
-        <?php else: ?>
-            <div class="status-err">✕ Ошибка входа</div>
-            <p><?php echo htmlspecialchars($errorMessage, ENT_QUOTES, 'UTF-8'); ?></p>
-        <?php endif; ?>
-    </div>
+<?php if (!$success): ?>
+    <p id="oauth-error" style="font-family:sans-serif;font-size:.95rem;padding:16px"></p>
+<?php endif; ?>
+<script>
+(function () {
+    /* Страница намеренно ничего не показывает при успехе и сразу закрывается.
+       Раньше здесь была карточка «Вход выполнен» — на свежем домене, принимающем
+       параметры авторизации GitHub, она попадала под эвристику Safe Browsing
+       и Chrome помечал страницу как фишинговую. Показывать тут человеку нечего:
+       токен уходит в панель через postMessage. */
+    var provider = "<?php echo $provider; ?>";
+    var isSuccess = <?php echo $success ? 'true' : 'false'; ?>;
+    var successData = <?php echo $jsonPayload ?: '{}'; ?>;
+    var errorMsg = <?php echo $escapedError ?: '""'; ?>;
+    var targetOrigin = window.location.origin;
 
-    <script>
-    (function () {
-        var provider = "<?php echo $provider; ?>";
-        var isSuccess = <?php echo $success ? 'true' : 'false'; ?>;
-        var successData = <?php echo $jsonPayload ?: '{}'; ?>;
-        var errorMsg = <?php echo $escapedError ?: '""'; ?>;
-        var targetOrigin = window.location.origin;
+    if (!isSuccess) {
+        var box = document.getElementById("oauth-error");
+        if (box) { box.textContent = errorMsg; }
+    }
 
-        function sendMessage() {
-            if (!window.opener) return;
-            var message;
-            if (isSuccess) {
-                message = "authorization:" + provider + ":success:" + JSON.stringify(successData);
-            } else {
-                message = "authorization:" + provider + ":error:" + JSON.stringify({ message: errorMsg });
-            }
-            window.opener.postMessage(message, targetOrigin);
+    function closeSoon() {
+        if (isSuccess) { setTimeout(function () { window.close(); }, 150); }
+    }
+
+    function sendMessage() {
+        if (!window.opener) { return; }
+        var message = isSuccess
+            ? "authorization:" + provider + ":success:" + JSON.stringify(successData)
+            : "authorization:" + provider + ":error:" + JSON.stringify({ message: errorMsg });
+        window.opener.postMessage(message, targetOrigin);
+    }
+
+    function handleHandshake(e) {
+        // Принимаем сообщения только от своего домена
+        if (e.origin !== targetOrigin) { return; }
+        if (e.data === "authorizing:" + provider) {
+            window.removeEventListener("message", handleHandshake, false);
+            sendMessage();
+            closeSoon();
         }
+    }
 
-        function handleHandshake(e) {
-            // Принимаем сообщения только от своего домена
-            if (e.origin !== targetOrigin) return;
-            if (e.data === "authorizing:" + provider) {
-                window.removeEventListener("message", handleHandshake, false);
-                sendMessage();
-            }
-        }
+    window.addEventListener("message", handleHandshake, false);
 
-        window.addEventListener("message", handleHandshake, false);
-
-        if (window.opener) {
-            // Инициируем рукопожатие с Decap CMS строго на свой origin
-            window.opener.postMessage("authorizing:" + provider, targetOrigin);
-            // Резервный таймер отправки сообщения
-            setTimeout(sendMessage, 400);
-        }
-    })();
-    </script>
+    if (window.opener) {
+        // Инициируем рукопожатие с Decap CMS строго на свой origin
+        window.opener.postMessage("authorizing:" + provider, targetOrigin);
+        // Резервная отправка на случай, если панель уже ждёт ответ
+        setTimeout(function () { sendMessage(); closeSoon(); }, 400);
+    }
+})();
+</script>
 </body>
 </html>
     <?php
