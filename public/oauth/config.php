@@ -33,10 +33,14 @@ if (!defined('OAUTH_STATE_SECRET')) {
 // Функция для автоопределения базового URL сайта
 function getBaseUrl(): string
 {
+    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
+    // Для рабочего домена GitHub OAuth строго требует https в redirect_uri
+    if (strpos($host, 'basket34.ru') !== false) {
+        return 'https://' . $host;
+    }
     $isHttps = (!empty($_SERVER['HTTPS']) && $_SERVER['HTTPS'] !== 'off')
         || (isset($_SERVER['SERVER_PORT']) && (int)$_SERVER['SERVER_PORT'] === 443)
         || (isset($_SERVER['HTTP_X_FORWARDED_PROTO']) && $_SERVER['HTTP_X_FORWARDED_PROTO'] === 'https');
     $protocol = $isHttps ? 'https://' : 'http://';
-    $host = $_SERVER['HTTP_HOST'] ?? 'localhost';
     return $protocol . $host;
 }
