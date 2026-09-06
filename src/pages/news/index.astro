@@ -2,7 +2,10 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import NewsCard from '../../components/NewsCard.astro';
-import { site, news, newsUpdatedAt, formatDateTime } from '../../lib/data.js';
+import { site, news, articles, broadcasts, isBroadcast, newsUpdatedAt, formatDateTime } from '../../lib/data.js';
+
+/* Первая настоящая новость показывается крупной карточкой. */
+const featuredId = articles[0]?.id;
 ---
 
 <BaseLayout
@@ -24,8 +27,33 @@ import { site, news, newsUpdatedAt, formatDateTime } from '../../lib/data.js';
             {newsUpdatedAt && <>Последнее обновление ленты: {formatDateTime(newsUpdatedAt)}. </>}
             Источник: <a href={site.social.vk} rel="noopener">{site.social.vk_label}</a>
           </p>
+
+          {broadcasts.length > 0 && (
+            <div class="filters" data-filters style="margin-bottom:1.5rem">
+              <div class="filter-group">
+                <span class="filter-group__label" id="f-kind">Показывать</span>
+                <div class="filter-group__buttons" role="group" aria-labelledby="f-kind">
+                  <button class="filter-btn" type="button" data-filter="kind" data-value="article" aria-pressed="true">Новости</button>
+                  <button class="filter-btn" type="button" data-filter="kind" data-value="broadcast" aria-pressed="false">Трансляции</button>
+                  <button class="filter-btn" type="button" data-filter="kind" data-value="all" aria-pressed="false">Все</button>
+                </div>
+              </div>
+            </div>
+          )}
+
+          <p class="muted" style="font-size:.875rem;margin-bottom:1rem" data-news-count></p>
+
           <div class="grid grid--3">
-            {news.map((item, i) => <NewsCard item={item} featured={i === 0} />)}
+            {news.map((item) => (
+              <div class="news-item" data-kind={isBroadcast(item) ? 'broadcast' : 'article'}>
+                <NewsCard item={item} featured={item.id === featuredId} />
+              </div>
+            ))}
+          </div>
+
+          <div class="empty-state" data-news-empty hidden>
+            <strong>В этой категории пока пусто</strong>
+            <p>Выберите другой фильтр выше.</p>
           </div>
         </>
       ) : (
@@ -41,3 +69,53 @@ import { site, news, newsUpdatedAt, formatDateTime } from '../../lib/data.js';
     </div>
   </section>
 </BaseLayout>
+
+<style>
+  /* Обёртка нужна только для фильтрации — из раскладки она исчезает,
+     чтобы карточка осталась прямым элементом сетки. */
+  .news-item { display: contents; }
+  .news-item[hidden] { display: none !important; }
+</style>
+
+<script>
+  const root = document.querySelector('[data-filters]');
+  const items = [...document.querySelectorAll('.news-item')];
+  const counter = document.querySelector('[data-news-count]');
+  const empty = document.querySelector('[data-news-empty]');
+
+  if (items.length) {
+    let kind = root ? 'article' : 'all';
+
+    const plural = (n) => {
+      const d10 = n % 10, d100 = n % 100;
+      if (d10 === 1 && d100 !== 11) return 'запись';
+      if (d10 >= 2 && d10 <= 4 && (d100 < 12 || d100 > 14)) return 'записи';
+      return 'записей';
+    };
+
+    const apply = () => {
+      let visible = 0;
+      items.forEach((el) => {
+        const show = kind === 'all' || el.dataset.kind === kind;
+        el.hidden = !show;
+        if (show) visible += 1;
+      });
+      if (counter) counter.textContent = `Показано ${visible} ${plural(visible)}`;
+      if (empty) empty.hidden = visible !== 0;
+    };
+
+    if (root) {
+      root.addEventListener('click', (e) => {
+        const btn = e.target.closest('[data-filter]');
+        if (!btn) return;
+        kind = btn.dataset.value;
+        root.querySelectorAll('[data-filter="kind"]').forEach((b) => {
+          b.setAttribute('aria-pressed', String(b === btn));
+        });
+        apply();
+      });
+    }
+
+    apply();
+  }
+</script>

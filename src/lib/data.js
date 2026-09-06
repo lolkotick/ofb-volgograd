@@ -30,6 +30,26 @@ const rawNews = useSample ? newsSample : newsData;
 export const news = [...(rawNews.items ?? [])].sort(
   (a, b) => new Date(b.date) - new Date(a.date)
 );
+/** Односложная запись с трансляцией матча: есть видео, нет ни обложки,
+ *  ни фотографий, а весь текст поста совпадает с заголовком — то есть
+ *  «Липецк - Волгоград» и больше ничего.
+ *  Проверяем совокупность признаков, а не один hasVideo: у настоящей
+ *  новости тоже бывает прикреплённое видео. */
+export function isBroadcast(item) {
+  if (!item?.hasVideo) return false;
+  if (item.cover) return false;
+  if ((item.photos ?? []).length > 0) return false;
+  const text = String(item.text ?? '').trim();
+  const title = String(item.title ?? '').trim();
+  return text === '' || text === title;
+}
+
+/** Настоящие новости — то, что показываем на главной. */
+export const articles = news.filter((item) => !isBroadcast(item));
+
+/** Записи матчей — по сути архив трансляций, а не новостная лента. */
+export const broadcasts = news.filter(isBroadcast);
+
 export const newsUpdatedAt = rawNews.generatedAt ?? null;
 export const newsSourceUrl = rawNews.source ?? site.social.vk;
 

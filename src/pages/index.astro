@@ -3,9 +3,9 @@ import BaseLayout from '../layouts/BaseLayout.astro';
 import NewsCard from '../components/NewsCard.astro';
 import MatchCard from '../components/MatchCard.astro';
 import { url } from '../lib/url.js';
-import { site, news, upcomingMatches } from '../lib/data.js';
+import { site, news, articles, upcomingMatches } from '../lib/data.js';
 
-const latestNews = news.slice(0, 4);
+const latestNews = articles.slice(0, 4);
 const nextMatches = upcomingMatches.slice(0, 3);
 
 const quickLinks = [
