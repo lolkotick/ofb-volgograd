@@ -1,7 +1,7 @@
 ---
 import { url } from '../lib/url.js';
 import { sections } from '../lib/nav.js';
-import { site } from '../lib/data.js';
+import { site, privacyReady } from '../lib/data.js';
 const year = new Date().getFullYear();
 const hasRequisites = Boolean(site.requisites?.ogrn || site.requisites?.inn || site.requisites?.legal_address);
 ---
@@ -58,6 +58,9 @@ const hasRequisites = Boolean(site.requisites?.ogrn || site.requisites?.inn || s
 
     <div class="footer__bottom">
       <span>© {year} {site.name_short}. Все права защищены.</span>
+      {privacyReady && (
+        <a href={url('/privacy/')}>Политика обработки персональных данных</a>
+      )}
       <span>Волгоград и Волгоградская область</span>
     </div>
   </div>

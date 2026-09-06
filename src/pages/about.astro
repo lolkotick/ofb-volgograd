@@ -63,11 +63,6 @@ import { site, leaders } from '../lib/data.js';
         </div>
       </div>
 
-      <p class="notice" style="margin-bottom:1.75rem">
-        Данные руководителей заполняются федерацией. Сейчас в карточках показаны образцы полей —
-        ФИО, должность, фото и контакт подставляются из файла <code>data/leadership.json</code>.
-      </p>
-
       <div class="grid grid--4">
         {leaders.map((p) => (
           <article class="card person">
