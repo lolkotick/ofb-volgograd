@@ -65,6 +65,7 @@ function renderAuthResponse(bool $success, array $payload, string $errorMessage 
         var isSuccess = <?php echo $success ? 'true' : 'false'; ?>;
         var successData = <?php echo $jsonPayload ?: '{}'; ?>;
         var errorMsg = <?php echo $escapedError ?: '""'; ?>;
+        var targetOrigin = window.location.origin;
 
         function sendMessage() {
             if (!window.opener) return;
@@ -74,10 +75,12 @@ function renderAuthResponse(bool $success, array $payload, string $errorMessage 
             } else {
                 message = "authorization:" + provider + ":error:" + JSON.stringify({ message: errorMsg });
             }
-            window.opener.postMessage(message, "*");
+            window.opener.postMessage(message, targetOrigin);
         }
 
         function handleHandshake(e) {
+            // Принимаем сообщения только от своего домена
+            if (e.origin !== targetOrigin) return;
             if (e.data === "authorizing:" + provider) {
                 window.removeEventListener("message", handleHandshake, false);
                 sendMessage();
@@ -87,9 +90,9 @@ function renderAuthResponse(bool $success, array $payload, string $errorMessage 
         window.addEventListener("message", handleHandshake, false);
 
         if (window.opener) {
-            // Инициируем рукопожатие с Decap CMS
-            window.opener.postMessage("authorizing:" + provider, "*");
-            // Резервный таймер отправки сообщения на случай, если Decap уже ожидает ответ
+            // Инициируем рукопожатие с Decap CMS строго на свой origin
+            window.opener.postMessage("authorizing:" + provider, targetOrigin);
+            // Резервный таймер отправки сообщения
             setTimeout(sendMessage, 400);
         }
     })();

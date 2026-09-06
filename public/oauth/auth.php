@@ -27,7 +27,9 @@ $payload = $rand . '.' . $time;
 $sig = hash_hmac('sha256', $payload, OAUTH_STATE_SECRET);
 $state = rawurlencode($payload . '.' . $sig);
 
-$scope = $_GET['scope'] ?? 'repo';
+// Репозиторий федерации публичный: запрашиваем только public_repo,
+// чтобы не запрашивать доступ к личным приватным репозиториям сотрудников.
+$scope = 'public_repo';
 $baseUrl = getBaseUrl();
 $redirectUri = $baseUrl . '/oauth/callback.php';
 
