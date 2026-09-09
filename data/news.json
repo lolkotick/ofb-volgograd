@@ -1,8 +1,51 @@
 {
   "_комментарий": "Файл создаётся автоматически скриптом scripts/sync-vk-news.mjs. Руками не редактировать.",
-  "generatedAt": "2026-09-07T16:24:50.250Z",
+  "generatedAt": "2026-09-09T14:25:33.521Z",
   "source": "https://vk.com/vrooofb",
   "items": [
+    {
+      "id": 6535,
+      "date": "2026-09-09T12:37:22.000Z",
+      "url": "https://vk.com/wall-211184409_6535",
+      "title": "В Волгограде завершились соревнования по баскетболу, организованные МБУ ДО СШ №12 и ВРОО «ОФБ»…",
+      "text": "В Волгограде завершились соревнования по баскетболу, организованные МБУ ДО СШ №12 и ВРОО «ОФБ» при поддержке «Сбербанк» по Волгоградской области и Комитета физической культуры и спорта города Волгограда.\n\nПьедестал почёта:\n\n· 1 место — «Звезда» (тренер Белоусов А.В.)\n· 2 место — «Звезда» (тренер Белоусов А.В.)\n· 3 место — «Альянс» (тренер Астафьев И.В.)\n\nНа церемонию награждения приехали председатель Комитета физической культуры и спорта города Волгограда — Горбунов И.В., почетный президент ВРОО «ОФБ», директор МБУ ДО СШ №12, мастер спорта России — Гуторов А.И., руководитель и заместитель руководителя «Сбербанк» по Волгоградской области — поздравили спортсменов и вручили награды.\n\nПоздравляем всех участников и желаем новых побед!",
+      "links": [],
+      "excerpt": "…при поддержке «Сбербанк» по Волгоградской области и Комитета физической культуры и спорта города Волгограда. Пьедестал почёта: · 1 место — «Звезда» (тренер Белоусов А.В.) · 2…",
+      "cover": {
+        "url": "https://sun9-54.userapi.com/s/v1/ig2/_ZXvgvT9Dlwd6YGJYrazFcb__q2zZkp2yTPWQ2BLPsQjZlN0dIJ-nsFfWhnB9GJPP2NweaQuJqDkhk8t_LrjIVJ8.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853&from=bu&cs=1280x0",
+        "width": 1280,
+        "height": 853
+      },
+      "photos": [
+        {
+          "url": "https://sun9-54.userapi.com/s/v1/ig2/_ZXvgvT9Dlwd6YGJYrazFcb__q2zZkp2yTPWQ2BLPsQjZlN0dIJ-nsFfWhnB9GJPP2NweaQuJqDkhk8t_LrjIVJ8.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853&from=bu&cs=1280x0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "url": "https://sun9-37.userapi.com/s/v1/ig2/-NCx1jP_su8WMeyt1v_0btuQqDpTHyoq1zAQMQZM_Xg1Gk-JdFSXXA6VNUchGb6sO5VjehaxLbeqX4D6WXlHWruL.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853&from=bu&cs=1280x0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "url": "https://sun9-57.userapi.com/s/v1/ig2/vb-zCRrAXFNUlOmSn5cuA4nuSaCRby0pCuR1SVOFEPxkxR8UH5MrMEtf0WV3_PI6spMAHJogM6Xz2KVukbShQR_x.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853&from=bu&cs=1280x0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "url": "https://sun9-31.userapi.com/s/v1/ig2/OOdpkAAjWNUy6eQVpxP4DD9fRlnbn4ndTl4O8Ab8T9_GLXHavVa4pB07bf6AcdIBK-XhV9dc5Jg68fY_068SBgJm.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853&from=bu&cs=1280x0",
+          "width": 1280,
+          "height": 853
+        },
+        {
+          "url": "https://sun9-64.userapi.com/s/v1/ig2/1iJGPfarb6-_9ySNB1A228ULT2sZwdXSmVuyL0djLWIHurvFTjteCmjlMII16Jlct55x-9HUfQv24If5fcs6QH1K.jpg?quality=95&as=32x19,48x29,72x44,108x66,160x97,240x146,360x219,480x292,540x329,640x390,720x439,1080x658,1280x780&from=bu&cs=1280x0",
+          "width": 1280,
+          "height": 780
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
     {
       "id": 6533,
       "date": "2026-09-07T14:43:31.000Z",
@@ -624,19 +667,6 @@
       "text": "Фрязино - Бугуруслан",
       "links": [],
       "excerpt": "Фрязино - Бугуруслан",
-      "cover": null,
-      "photos": [],
-      "hasVideo": true,
-      "isPinned": false
-    },
-    {
-      "id": 6243,
-      "date": "2026-04-25T11:48:14.000Z",
-      "url": "https://vk.com/wall-211184409_6243",
-      "title": "Руна- Фортуна",
-      "text": "Руна- Фортуна",
-      "links": [],
-      "excerpt": "Руна- Фортуна",
       "cover": null,
       "photos": [],
       "hasVideo": true,
