@@ -1,8 +1,31 @@
 {
   "_комментарий": "Файл создаётся автоматически скриптом scripts/sync-vk-news.mjs. Руками не редактировать.",
-  "generatedAt": "2026-09-10T14:25:03.969Z",
+  "generatedAt": "2026-09-10T16:24:15.262Z",
   "source": "https://vk.com/vrooofb",
   "items": [
+    {
+      "id": 6536,
+      "date": "2026-09-10T14:26:12.000Z",
+      "url": "https://vk.com/wall-211184409_6536",
+      "title": "🎉 Сегодня свой день рождения отмечает Наталья Алиева!",
+      "text": "🎉 Сегодня свой день рождения отмечает Наталья Алиева!\n\nНаташа, ВРОО «ОФБ» от всей души тебя поздравляет:\n«Желаем крепкого здоровья, счастья, благополучия и неиссякаемой энергии. Пусть работа приносит радость, а решения всегда будут справедливыми и взвешенными. Спасибо за твой труд и вклад в развитие федерации!»🧡\n\nПрисоединяйтесь к поздравлениям в комментариях! 👇",
+      "links": [],
+      "excerpt": "Наташа, ВРОО «ОФБ» от всей души тебя поздравляет: «Желаем крепкого здоровья, счастья, благополучия и неиссякаемой энергии. Пусть работа приносит радость, а решения всегда будут…",
+      "cover": {
+        "url": "https://sun9-44.userapi.com/s/v1/ig2/LekTBWq62cpb4OVQVUqlptgo0hQLyColCxMWfp8nxP6MLsP7VJI_bvl50CY4sI6-Ns-8gbC5XdEC8S0PusLcb1bp.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,1448x1086&from=bu&cs=1448x0",
+        "width": 1448,
+        "height": 1086
+      },
+      "photos": [
+        {
+          "url": "https://sun9-44.userapi.com/s/v1/ig2/LekTBWq62cpb4OVQVUqlptgo0hQLyColCxMWfp8nxP6MLsP7VJI_bvl50CY4sI6-Ns-8gbC5XdEC8S0PusLcb1bp.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,1448x1086&from=bu&cs=1448x0",
+          "width": 1448,
+          "height": 1086
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
     {
       "id": 6535,
       "date": "2026-09-09T12:37:22.000Z",
@@ -55,13 +78,13 @@
       "links": [],
       "excerpt": "Друзья! В преддверии Дня рождения нашего любимого Волгограда мы дарим городу яркий спортивный подарок! МБУ ДО СШ №12 совместно с ВРОО «ОФБ» при поддержке «Сбербанк» по…",
       "cover": {
-        "url": "https://sun9-12.userapi.com/s/v1/ig2/KC7Obr05z684tn8AwIaUc9yqnHgTSHZ11geb2Wg0LRyjRzyCGr083n9_o_eseAFeiLBHfL2JwsfBAuMywmDBCpdT.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
+        "url": "https://sun9-42.userapi.com/s/v1/ig2/KC7Obr05z684tn8AwIaUc9yqnHgTSHZ11geb2Wg0LRyjRzyCGr083n9_o_eseAFeiLBHfL2JwsfBAuMywmDBCpdT.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
         "width": 1086,
         "height": 1448
       },
       "photos": [
         {
-          "url": "https://sun9-12.userapi.com/s/v1/ig2/KC7Obr05z684tn8AwIaUc9yqnHgTSHZ11geb2Wg0LRyjRzyCGr083n9_o_eseAFeiLBHfL2JwsfBAuMywmDBCpdT.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
+          "url": "https://sun9-42.userapi.com/s/v1/ig2/KC7Obr05z684tn8AwIaUc9yqnHgTSHZ11geb2Wg0LRyjRzyCGr083n9_o_eseAFeiLBHfL2JwsfBAuMywmDBCpdT.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
           "width": 1086,
           "height": 1448
         }
@@ -654,19 +677,6 @@
       "text": "Краснодар - Липецк",
       "links": [],
       "excerpt": "Краснодар - Липецк",
-      "cover": null,
-      "photos": [],
-      "hasVideo": true,
-      "isPinned": false
-    },
-    {
-      "id": 6255,
-      "date": "2026-05-05T07:56:05.000Z",
-      "url": "https://vk.com/wall-211184409_6255",
-      "title": "Фрязино - Бугуруслан",
-      "text": "Фрязино - Бугуруслан",
-      "links": [],
-      "excerpt": "Фрязино - Бугуруслан",
       "cover": null,
       "photos": [],
       "hasVideo": true,
