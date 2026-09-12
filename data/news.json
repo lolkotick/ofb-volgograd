@@ -1,8 +1,31 @@
 {
   "_комментарий": "Файл создаётся автоматически скриптом scripts/sync-vk-news.mjs. Руками не редактировать.",
-  "generatedAt": "2026-09-11T22:23:01.644Z",
+  "generatedAt": "2026-09-12T08:23:53.775Z",
   "source": "https://vk.com/vrooofb",
   "items": [
+    {
+      "id": 6540,
+      "date": "2026-09-12T07:52:17.000Z",
+      "url": "https://vk.com/wall-211184409_6540",
+      "title": "Дорогие волгоградцы! 🕊️",
+      "text": "Дорогие волгоградцы! 🕊️\n\nВолгограду — 437 лет! Для нас, баскетболистов, это как точный бросок в историю: город, который умеет быть командой и идти только вперед.\n\nОт лица ВРОО «ОФБ» желаем любимому городу процветания, новых побед и мирного неба над головой. С днем рождения, Волгоград!\n\n#Волгоград #437летВолгограду #ВРОО_ОФБ #Баскетбол",
+      "links": [],
+      "excerpt": "Волгограду — 437 лет! Для нас, баскетболистов, это как точный бросок в историю: город, который умеет быть командой и идти только вперед. От лица ВРОО «ОФБ» желаем любимому городу…",
+      "cover": {
+        "url": "https://sun9-45.userapi.com/s/v1/ig2/M9J84Wv1JxQ9P8jYwqHUx8z3f3dqvRykHLktwst6jwznLzZKefaJHTupYwmhq5q88BbmbraQOBEwY7imlF9dGWcH.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
+        "width": 1086,
+        "height": 1448
+      },
+      "photos": [
+        {
+          "url": "https://sun9-45.userapi.com/s/v1/ig2/M9J84Wv1JxQ9P8jYwqHUx8z3f3dqvRykHLktwst6jwznLzZKefaJHTupYwmhq5q88BbmbraQOBEwY7imlF9dGWcH.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
+          "width": 1086,
+          "height": 1448
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
     {
       "id": 6537,
       "date": "2026-09-11T14:18:04.000Z",
@@ -674,19 +697,6 @@
       "text": "Бугуруслан - Волгоград",
       "links": [],
       "excerpt": "Бугуруслан - Волгоград",
-      "cover": null,
-      "photos": [],
-      "hasVideo": true,
-      "isPinned": false
-    },
-    {
-      "id": 6306,
-      "date": "2026-05-05T10:42:47.000Z",
-      "url": "https://vk.com/wall-211184409_6306",
-      "title": "Сальск - Фрязино",
-      "text": "Сальск - Фрязино",
-      "links": [],
-      "excerpt": "Сальск - Фрязино",
       "cover": null,
       "photos": [],
       "hasVideo": true,
