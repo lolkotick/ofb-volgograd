@@ -1,8 +1,31 @@
 {
   "_комментарий": "Файл создаётся автоматически скриптом scripts/sync-vk-news.mjs. Руками не редактировать.",
-  "generatedAt": "2026-09-14T10:25:13.072Z",
+  "generatedAt": "2026-09-14T12:31:43.330Z",
   "source": "https://vk.com/vrooofb",
   "items": [
+    {
+      "id": 6542,
+      "date": "2026-09-14T10:25:30.000Z",
+      "url": "https://vk.com/wall-211184409_6542",
+      "title": "🏆 ШБЛ «КЭС-Баскет»: Открыт прием заявок на сезон 2026-2027!",
+      "text": "🏆 ШБЛ «КЭС-Баскет»: Открыт прием заявок на сезон 2026-2027!\n\nУважаемые руководители школ и учителя физической культуры Волгоградской области!\n\nПриглашаем ваши команды принять участие в соревнованиях Школьной Баскетбольной Лиги «КЭС-Баскет» в новом сезоне.\n\n📅 Сроки проведения заявочной кампании:\nКампания уже открыта и продлится до 15 октября 2026 года.\n\n📌 Регистрация:\nПодать заявку необходимо на официальном сайте ШБЛ «КЭС-Баскет».\n\nЖелаем вашим командам продуктивного сезона, красивых побед и отличной игры!\n\nСсылка 🔗:\nhttps://m.vk.ru/away?utf=1&ref=im&m_puad=jmsNkcifiDEiVs9QRI7Mu7nkTelpXrpjWnIneRxCDV0&m_puad_expire=1789559246&to=https%3A//kes-basket.ru/news/volgogradskaya-oblast/zayavochnaya-kompaniya-sezona-2026-2027./\n\n#КЭСБаскет #Образование #ВолгоградскаяОбласть #ШкольнаяЛига #Регистрация",
+      "links": [],
+      "excerpt": "Уважаемые руководители школ и учителя физической культуры Волгоградской области! Приглашаем ваши команды принять участие в соревнованиях Школьной Баскетбольной Лиги «КЭС-Баскет» в…",
+      "cover": {
+        "url": "https://sun9-41.userapi.com/s/v1/ig2/QnS2bjHgoA-grG07nYbQbBzgBwe1HpOULErF4ST6zOJZQS3b7y33uuliE3VyEr6nLm8Zom-XK4Wi5uve1xdM9BTH.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
+        "width": 1086,
+        "height": 1448
+      },
+      "photos": [
+        {
+          "url": "https://sun9-41.userapi.com/s/v1/ig2/QnS2bjHgoA-grG07nYbQbBzgBwe1HpOULErF4ST6zOJZQS3b7y33uuliE3VyEr6nLm8Zom-XK4Wi5uve1xdM9BTH.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
+          "width": 1086,
+          "height": 1448
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
     {
       "id": 6541,
       "date": "2026-09-14T08:38:39.000Z",
@@ -709,19 +732,6 @@
       "text": "Волгоград - Краснодар",
       "links": [],
       "excerpt": "Волгоград - Краснодар",
-      "cover": null,
-      "photos": [],
-      "hasVideo": true,
-      "isPinned": false
-    },
-    {
-      "id": 6335,
-      "date": "2026-05-05T13:28:19.000Z",
-      "url": "https://vk.com/wall-211184409_6335",
-      "title": "Липецк- Сальск",
-      "text": "Липецк- Сальск",
-      "links": [],
-      "excerpt": "Липецк- Сальск",
       "cover": null,
       "photos": [],
       "hasVideo": true,
