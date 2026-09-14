@@ -1,8 +1,46 @@
 {
   "_комментарий": "Файл создаётся автоматически скриптом scripts/sync-vk-news.mjs. Руками не редактировать.",
-  "generatedAt": "2026-09-12T18:24:22.626Z",
+  "generatedAt": "2026-09-14T10:25:13.072Z",
   "source": "https://vk.com/vrooofb",
   "items": [
+    {
+      "id": 6541,
+      "date": "2026-09-14T08:38:39.000Z",
+      "url": "https://vk.com/wall-211184409_6541",
+      "title": "12 сентября в Волгограде на базе «УТК» ФГБОУ ВО «ВГАФК» прошёл Отборочный этап АСБ 3х3 среди…",
+      "text": "12 сентября в Волгограде на базе «УТК» ФГБОУ ВО «ВГАФК» прошёл Отборочный этап АСБ 3х3 среди студенческих команд.\n\nМеста распределились следующим образом:\nДевушки⛹🏼‍♀\n🥇место - «ВолГАУ»\n🥈место - «ВГАФК-Титанки»\n🥉место - «ВолГУ»\n\nПарни ⛹🏼‍♂\n🥇место - «VGAFK TITANY»\n🥈место - «ВолГУ»\n🥉место - «ВолгГТУ”\n\n❗️Суперфинал АСБ 3х3 пройдет 6-8 ноября в Москве.\n\nПоздравляем призеров и победителей!\nЖелаем дальнейших побед!🏆\n\nФотографии с игр👇\nhttps://m.vk.ru/album-61630925_311974150",
+      "links": [],
+      "excerpt": "…студенческих команд. Места распределились следующим образом: Девушки⛹🏼‍♀ 🥇место - «ВолГАУ» 🥈место - «ВГАФК-Титанки» 🥉место - «ВолГУ» Парни ⛹🏼‍♂ 🥇место - «VGAFK TITANY» 🥈место -…",
+      "cover": {
+        "url": "https://sun9-54.userapi.com/s/v1/ig2/WROZiZ8Hz11XQwvUz0JkiiWtAATX4ZPH95xLIKLemivxlvvJLBa0NlMEK2pMIMqGwYdGaW-BomwXm5JiBc1Nu_KG.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1254x1254&from=bu&cs=1254x0",
+        "width": 1254,
+        "height": 1254
+      },
+      "photos": [
+        {
+          "url": "https://sun9-54.userapi.com/s/v1/ig2/WROZiZ8Hz11XQwvUz0JkiiWtAATX4ZPH95xLIKLemivxlvvJLBa0NlMEK2pMIMqGwYdGaW-BomwXm5JiBc1Nu_KG.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1254x1254&from=bu&cs=1254x0",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://sun9-40.userapi.com/s/v1/ig2/yVYMsyekNx6f2jx-5lAZQucs3sFcgtqDnnxGlqd9dpPa03L-8A_v6USTFx-HXiGqTG7_HhrOqb6S1ilsFq8Gv_72.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1254x1254&from=bu&cs=1254x0",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://sun9-17.userapi.com/s/v1/ig2/M8x-y7k5GhSAH7ZrQotsiEpjhSh3xmg2pTkYT6aGvfIkqFAW-85VLFZi5yolSEbf_JVadUgM0I0Td7DjfrKPcVAX.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1254x1254&from=bu&cs=1254x0",
+          "width": 1254,
+          "height": 1254
+        },
+        {
+          "url": "https://sun9-7.userapi.com/s/v1/ig2/B8vQKf4qrGrX532PBVp__biaTm9Cp_VRyRrYFoPKlzti-eHnfAIoynS2DDv-FxlJ_rOKiLUSIFH1PMYKdsxY70iW.jpg?quality=95&as=32x32,48x48,72x72,108x108,160x160,240x240,360x360,480x480,540x540,640x640,720x720,1080x1080,1254x1254&from=bu&cs=1254x0",
+          "width": 1254,
+          "height": 1254
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
     {
       "id": 6540,
       "date": "2026-09-12T07:52:17.000Z",
@@ -684,19 +722,6 @@
       "text": "Липецк- Сальск",
       "links": [],
       "excerpt": "Липецк- Сальск",
-      "cover": null,
-      "photos": [],
-      "hasVideo": true,
-      "isPinned": false
-    },
-    {
-      "id": 6322,
-      "date": "2026-05-05T12:08:53.000Z",
-      "url": "https://vk.com/wall-211184409_6322",
-      "title": "Бугуруслан - Волгоград",
-      "text": "Бугуруслан - Волгоград",
-      "links": [],
-      "excerpt": "Бугуруслан - Волгоград",
       "cover": null,
       "photos": [],
       "hasVideo": true,
