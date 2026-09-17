@@ -1,8 +1,36 @@
 {
   "_комментарий": "Файл создаётся автоматически скриптом scripts/sync-vk-news.mjs. Руками не редактировать.",
-  "generatedAt": "2026-09-17T18:27:31.282Z",
+  "generatedAt": "2026-09-17T20:24:40.073Z",
   "source": "https://vk.com/vrooofb",
   "items": [
+    {
+      "id": 6544,
+      "date": "2026-09-17T18:55:07.000Z",
+      "url": "https://vk.com/wall-211184409_6544",
+      "title": "🏀 «Доугс-Титаны» достойно выступили на первом этапе Кубка России!",
+      "text": "🏀 «Доугс-Титаны» достойно выступили на первом этапе Кубка России!\n\nС 15 по 17 сентября в Ессентуках прошел первый этап Кубка России. Волгоградскую область представляла команда «Доугс-Титаны» во главе с тренером Антоном Понкрашовым.\n\nКоманда показала красивый и уверенный баскетбол, обыграв двух соперников и уступив лишь в упорной борьбе одному из лидеров.\n\nРезультаты матчей:\n\n▪️ Ставбаскет — Доугс-Титаны — 75:93 ✅\n▪️ Доугс-Титаны — Динамо-МГТУ — 69:61 ✅\n▪️ СШОР-Локомотив-Кубань — Доугс-Титаны — 66:63 ❌\n\nДве победы в трех матчах, отличная игра и характер — достойный старт в турнире! Поздравляем команду и тренерский штаб с красивым выступлением. Так держать! 💪\n\n#баскетбол #Волгоград #ДоугсТитаны #КубокРоссии #баскетболВолгоград #рфб",
+      "links": [],
+      "excerpt": "С 15 по 17 сентября в Ессентуках прошел первый этап Кубка России. Волгоградскую область представляла команда «Доугс-Титаны» во главе с тренером Антоном Понкрашовым. Команда…",
+      "cover": {
+        "url": "https://sun9-17.userapi.com/s/v1/ig2/ucwlF-5n9tb17gt6KsPVUcIW9uEKOQ16BOinpSaGSYtn9ZuxxLTQEO049_GFwVNTrhjNTFQdS7aQCGIdCyeZ_83x.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,1448x1086&from=bu&cs=1448x0",
+        "width": 1448,
+        "height": 1086
+      },
+      "photos": [
+        {
+          "url": "https://sun9-17.userapi.com/s/v1/ig2/ucwlF-5n9tb17gt6KsPVUcIW9uEKOQ16BOinpSaGSYtn9ZuxxLTQEO049_GFwVNTrhjNTFQdS7aQCGIdCyeZ_83x.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,1448x1086&from=bu&cs=1448x0",
+          "width": 1448,
+          "height": 1086
+        },
+        {
+          "url": "https://sun9-26.userapi.com/s/v1/ig2/4vK6hv4NDAJGtMIyG5ve115REv02u5ybZDWb0sjTHX309JLLNTIT7wgPywGuNeBwGc03Fi2zeKwcjaQEjaGIC6JQ.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x426,720x480,1080x720,1280x853&from=bu&cs=1280x0",
+          "width": 1280,
+          "height": 853
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
     {
       "id": 6542,
       "date": "2026-09-14T10:25:30.000Z",
@@ -279,7 +307,7 @@
           "height": 1707
         },
         {
-          "url": "https://sun9-24.userapi.com/s/v1/ig2/iCuZds3EQks0HmYpBebtOuTGhWJRVn9RbAzVKOVVE398EnDPSjEpNkf9DzS2KLxEflUJG-2V3Wj4AB8Nv5zN-S3x.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=2560x0",
+          "url": "https://sun9-70.userapi.com/s/v1/ig2/iCuZds3EQks0HmYpBebtOuTGhWJRVn9RbAzVKOVVE398EnDPSjEpNkf9DzS2KLxEflUJG-2V3Wj4AB8Nv5zN-S3x.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=2560x0",
           "width": 2560,
           "height": 1707
         }
@@ -719,19 +747,6 @@
       "text": "Фрязино - Кадеты Липецк",
       "links": [],
       "excerpt": "Фрязино - Кадеты Липецк",
-      "cover": null,
-      "photos": [],
-      "hasVideo": true,
-      "isPinned": false
-    },
-    {
-      "id": 6353,
-      "date": "2026-05-05T14:54:26.000Z",
-      "url": "https://vk.com/wall-211184409_6353",
-      "title": "Волгоград - Краснодар",
-      "text": "Волгоград - Краснодар",
-      "links": [],
-      "excerpt": "Волгоград - Краснодар",
       "cover": null,
       "photos": [],
       "hasVideo": true,
