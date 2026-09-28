@@ -1,8 +1,31 @@
 {
   "_комментарий": "Файл создаётся автоматически скриптом scripts/sync-vk-news.mjs. Руками не редактировать.",
-  "generatedAt": "2026-09-28T14:29:37.834Z",
+  "generatedAt": "2026-09-28T21:57:47.843Z",
   "source": "https://vk.com/vrooofb",
   "items": [
+    {
+      "id": 6548,
+      "date": "2026-09-28T17:30:00.000Z",
+      "url": "https://vk.com/wall-211184409_6548",
+      "title": "🏀 НАПОМИНАНИЕ! УЖЕ ЗАВТРА!",
+      "text": "🏀 НАПОМИНАНИЕ! УЖЕ ЗАВТРА!\n\n29 и 30 сентября на паркете «Арена-Баскет» (ул. Елецкая, 9в) пройдёт Открытый Кубок Волгограда по баскетболу среди юношей 2014 г.р.\n\nПриходите поддержать юных спортсменов! Для них ваша поддержка — лучший стимул к победе! 🔥\n\n📺 Не сможете быть лично — смотрите прямую трансляцию на наших официальных ресурсах.\n\nЖдем вас на трибунах! Болеем за своих! 🏀\n\n#БаскетболВолгоград #АренаБаскет #КубокВолгограда #ДетскийБаскетбол #СпортВолгоград",
+      "links": [],
+      "excerpt": "29 и 30 сентября на паркете «Арена-Баскет» (ул. Елецкая, 9в) пройдёт Открытый Кубок Волгограда по баскетболу среди юношей 2014 г.р. Приходите поддержать юных спортсменов! Для них…",
+      "cover": {
+        "url": "https://sun9-24.userapi.com/s/v1/ig2/Px-UYkM_nPPmcZPiLta8a_1yGEJC4sY5DE3vBjKnYNaxK_lq-6k4c7hASuaCwWzkH4wpTHUcppT83sagO0M7J9Di.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
+        "width": 1086,
+        "height": 1448
+      },
+      "photos": [
+        {
+          "url": "https://sun9-24.userapi.com/s/v1/ig2/Px-UYkM_nPPmcZPiLta8a_1yGEJC4sY5DE3vBjKnYNaxK_lq-6k4c7hASuaCwWzkH4wpTHUcppT83sagO0M7J9Di.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
+          "width": 1086,
+          "height": 1448
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
     {
       "id": 6546,
       "date": "2026-09-24T15:14:06.000Z",
@@ -368,7 +391,7 @@
           "height": 1707
         },
         {
-          "url": "https://sun9-32.userapi.com/s/v1/ig2/iCuZds3EQks0HmYpBebtOuTGhWJRVn9RbAzVKOVVE398EnDPSjEpNkf9DzS2KLxEflUJG-2V3Wj4AB8Nv5zN-S3x.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=2560x0",
+          "url": "https://sun9-70.userapi.com/s/v1/ig2/iCuZds3EQks0HmYpBebtOuTGhWJRVn9RbAzVKOVVE398EnDPSjEpNkf9DzS2KLxEflUJG-2V3Wj4AB8Nv5zN-S3x.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=2560x0",
           "width": 2560,
           "height": 1707
         }
@@ -769,19 +792,6 @@
       "text": "Сальск - Волгоград",
       "links": [],
       "excerpt": "Сальск - Волгоград",
-      "cover": null,
-      "photos": [],
-      "hasVideo": true,
-      "isPinned": false
-    },
-    {
-      "id": 6399,
-      "date": "2026-05-06T08:54:56.000Z",
-      "url": "https://vk.com/wall-211184409_6399",
-      "title": "Липецк - Бугуруслан",
-      "text": "Липецк - Бугуруслан",
-      "links": [],
-      "excerpt": "Липецк - Бугуруслан",
       "cover": null,
       "photos": [],
       "hasVideo": true,
