@@ -1,8 +1,51 @@
 {
   "_комментарий": "Файл создаётся автоматически скриптом scripts/sync-vk-news.mjs. Руками не редактировать.",
-  "generatedAt": "2026-10-06T01:17:21.438Z",
+  "generatedAt": "2026-10-06T16:46:50.533Z",
   "source": "https://vk.com/vrooofb",
   "items": [
+    {
+      "id": 6561,
+      "date": "2026-10-06T15:11:17.000Z",
+      "url": "https://vk.com/wall-211184409_6561",
+      "title": "📢 Сегодня состоялось общее собрание ВРОО «ОФБ».",
+      "text": "📢 Сегодня состоялось общее собрание ВРОО «ОФБ».\n\nВ ходе встречи члены Федерации обсудили ключевые вопросы развития организации и утвердили предварительную повестку дня:\n\n✅ Были избраны председатель, секретарь, а также определены лица, ответственные за подсчет голосов.\n✅ Заслушан и утвержден отчет Руководителя и Правления ВРОО «ОФБ» о проделанной работе.\n✅ Утверждены краткосрочные и долгосрочные планы работы Федерации.\n✅ В рамках собрания прошел предсезонный семинар, посвященный изменениям в правилах ФИБА.\n\nБлагодарим всех членов Федерации за активное участие и конструктивную работу! Впереди много задач и новый сезон. 🏀\n\n#ОФБ #Баскетбол #ФедерацияБаскетбола #Собрание #НовыйСезон",
+      "links": [],
+      "excerpt": "В ходе встречи члены Федерации обсудили ключевые вопросы развития организации и утвердили предварительную повестку дня: ✅ Были избраны председатель, секретарь, а также определены…",
+      "cover": {
+        "url": "https://sun9-37.userapi.com/s/v1/ig2/Mxw3Iu6zmXHoYUKF459wwgVpgWhJBpkl66zV-lNC29gpzbtKoA9Q7OqL5tKpURLRGikn6C1mm1ypmXvY4sIqlwPX.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x721,640x854,720x961,1080x1441,1280x1708&from=bu&cs=1280x0",
+        "width": 1280,
+        "height": 1708
+      },
+      "photos": [
+        {
+          "url": "https://sun9-37.userapi.com/s/v1/ig2/Mxw3Iu6zmXHoYUKF459wwgVpgWhJBpkl66zV-lNC29gpzbtKoA9Q7OqL5tKpURLRGikn6C1mm1ypmXvY4sIqlwPX.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x721,640x854,720x961,1080x1441,1280x1708&from=bu&cs=1280x0",
+          "width": 1280,
+          "height": 1708
+        },
+        {
+          "url": "https://sun9-56.userapi.com/s/v1/ig2/axxZG-A0CmL2QtZhkR9TFSTAjGLmeUa5JIdEJkOiTJhMy938YGOYMk8sElfZHQS-wmbl_V8Oca5L7GpPWoNODNXRU5UbKQ.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960&from=bu&cs=1280x0",
+          "width": 1280,
+          "height": 960
+        },
+        {
+          "url": "https://sun9-45.userapi.com/s/v1/ig2/4Yu-_gpzhhrOUEjqdDCeG8xbNeoDDhuGt8mGpWKyCUGcG2AS891LC9AU5L6Lj2xpWwmmFFBKgmEhKrDjU7c26O4NiY4OYA.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x721,640x854,720x961,1080x1441,1280x1708&from=bu&cs=1280x0",
+          "width": 1280,
+          "height": 1708
+        },
+        {
+          "url": "https://sun9-52.userapi.com/s/v1/ig2/HsolXxEtG5BWwZ4p24naPD7TADxriKA9zCM1wkorylC0qhf-3OFhcOq-6KceA_ahYW9_zjYkB1NdSf1eAMWj1_hj.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x721,640x854,720x961,1080x1441,1280x1708&from=bu&cs=1280x0",
+          "width": 1280,
+          "height": 1708
+        },
+        {
+          "url": "https://sun9-82.userapi.com/s/v1/ig2/4yYbbHmfGqFEHgLYfoMFZUSDc2AtV4gMQPknYhXDpyoFOehBBexL3avnmQ_D5FVO0rfWSb01RBx61OT_aaZkKwhply_pkw.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x721,640x854,720x961,1080x1441,1280x1708&from=bu&cs=1280x0",
+          "width": 1280,
+          "height": 1708
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
     {
       "id": 6560,
       "date": "2026-10-05T14:20:26.000Z",
@@ -43,7 +86,7 @@
           "height": 2560
         },
         {
-          "url": "https://sun9-4.userapi.com/s/v1/ig2/gVTiHf-3P7kTGNckxXF0NRq1JzKrJwl89q0nfp0cXhgEmONmmnN2fnez12tje9_3w7_EbUiFBbMYO10xi7YKqewZT0YYJg.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x854,720x960,1080x1441,1280x1708,1440x1921,1919x2560&from=bu&cs=1919x0",
+          "url": "https://sun9-68.userapi.com/s/v1/ig2/gVTiHf-3P7kTGNckxXF0NRq1JzKrJwl89q0nfp0cXhgEmONmmnN2fnez12tje9_3w7_EbUiFBbMYO10xi7YKqewZT0YYJg.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x854,720x960,1080x1441,1280x1708,1440x1921,1919x2560&from=bu&cs=1919x0",
           "width": 1919,
           "height": 2560
         },
@@ -614,7 +657,7 @@
           "height": 1707
         },
         {
-          "url": "https://sun9-70.userapi.com/s/v1/ig2/iCuZds3EQks0HmYpBebtOuTGhWJRVn9RbAzVKOVVE398EnDPSjEpNkf9DzS2KLxEflUJG-2V3Wj4AB8Nv5zN-S3x.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=2560x0",
+          "url": "https://sun9-69.userapi.com/s/v1/ig2/s10a4DlbT0r95A1uETyx5pNMyXjVzeegvSyoCHjRmRl9dcMVqdObsdIaSKHM3SVnhFUs109flGCSHvQ_2cO9FpnLW_jAdw.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1280x853,1440x960,2560x1707&from=bu&cs=2560x0",
           "width": 2560,
           "height": 1707
         }
@@ -647,7 +690,7 @@
           "height": 800
         },
         {
-          "url": "https://sun9-68.userapi.com/s/v1/ig2/LsT1L-jxsFfHAIFyWofr1tjCkGgYH-nBPXx904WRGNEZNymuGa6gK2lSSKgr4wH-zRV0_h1lAfCz4nmaj8WyffcWYwV8OQ.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&from=bu&cs=1200x0",
+          "url": "https://sun9-85.userapi.com/s/v1/ig2/LsT1L-jxsFfHAIFyWofr1tjCkGgYH-nBPXx904WRGNEZNymuGa6gK2lSSKgr4wH-zRV0_h1lAfCz4nmaj8WyffcWYwV8OQ.jpg?quality=95&as=32x21,48x32,72x48,108x72,160x107,240x160,360x240,480x320,540x360,640x427,720x480,1080x720,1200x800&from=bu&cs=1200x0",
           "width": 1200,
           "height": 800
         },
@@ -914,29 +957,6 @@
           "url": "https://sun9-15.userapi.com/s/v1/ig2/tdBIarvmPZ5qt6bvIgDcJImw1XKqKWsWu2ZUDm9D6bqKkNSvEgOHUlmavP7q1C8vUKVFeTjGKP_DwkZxIeKPybJ1.jpg?quality=95&crop=0,0,1066,1599&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1066x1599&from=bu&cs=1066x0",
           "width": 1066,
           "height": 1599
-        }
-      ],
-      "hasVideo": false,
-      "isPinned": false
-    },
-    {
-      "id": 6510,
-      "date": "2026-05-09T09:06:57.000Z",
-      "url": "https://vk.com/wall-211184409_6510",
-      "title": "Дорогие друзья!",
-      "text": "Дорогие друзья!\n\nСегодня мы отмечаем один из самых значимых и священных праздников — День Победы! Этот день напоминает нам о мужестве и героизме наших предков, о тех, кто отстоял свободу и мир на нашей земле. Мы чтим память тех, кто сражался на фронтах, кто трудился в тылу, кто не дожил до этого дня, но чья сила духа навсегда останется в наших сердцах.\n\nПусть этот день станет символом единства и гордости за нашу страну. Мы обязаны помнить уроки истории и передавать их следующим поколениям.\n\nС праздником! С Днём Победы! Пусть мир и согласие всегда будут в наших домах, а память о героях живёт вечно!\n\n#ДеньПобеды #9мая #ПомнимЧтимГордимся",
-      "links": [],
-      "excerpt": "Сегодня мы отмечаем один из самых значимых и священных праздников — День Победы! Этот день напоминает нам о мужестве и героизме наших предков, о тех, кто отстоял свободу и мир на…",
-      "cover": {
-        "url": "https://sun9-7.userapi.com/s/v1/ig2/Xio87mC-j8V87DY4RSC0eM1Uct8P8nelDpCKZD2CZ1vBy_z6p2oL9GHVNWbw2OVWU0A945_yugiP5e-v_GVbqzdZ.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1024x1536&from=bu&cs=1024x0",
-        "width": 1024,
-        "height": 1536
-      },
-      "photos": [
-        {
-          "url": "https://sun9-7.userapi.com/s/v1/ig2/Xio87mC-j8V87DY4RSC0eM1Uct8P8nelDpCKZD2CZ1vBy_z6p2oL9GHVNWbw2OVWU0A945_yugiP5e-v_GVbqzdZ.jpg?quality=95&as=32x48,48x72,72x108,108x162,160x240,240x360,360x540,480x720,540x810,640x960,720x1080,1024x1536&from=bu&cs=1024x0",
-          "width": 1024,
-          "height": 1536
         }
       ],
       "hasVideo": false,
