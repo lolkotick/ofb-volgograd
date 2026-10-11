@@ -1,8 +1,31 @@
 {
   "_комментарий": "Файл создаётся автоматически скриптом scripts/sync-vk-news.mjs. Руками не редактировать.",
-  "generatedAt": "2026-10-09T22:35:31.213Z",
+  "generatedAt": "2026-10-11T12:44:11.703Z",
   "source": "https://vk.com/vrooofb",
   "items": [
+    {
+      "id": 6567,
+      "date": "2026-10-11T07:00:01.000Z",
+      "url": "https://vk.com/wall-211184409_6567",
+      "title": "🏀 Открытый межрегиональный турнир по баскетболу «Кубок Феникса» 🏀",
+      "text": "🏀 Открытый межрегиональный турнир по баскетболу «Кубок Феникса» 🏀\n\n📅 Дата: 10–13 октября\n👦 Участники: юноши 2011 г.р.\n📍 Место: г. Волгоград, бульвар 30-летия Победы, д. 66, стр. А\n\n🏆 Этап: групповой этап, раунд 1\n🔹 Группа C1\n\n1. СШ №12 — Волгоград\n2. СШ №2 «Ювента»-1 — Тольятти\n3. СШ №7 — Ростов-на-Дону\n4. Симбирские орлы СШ №1 — Ульяновск\n5. СШОР №1 — Самара\n\nПриглашаем болельщиков поддержать команды и юных спортсменов!\nЖелаем участникам честной борьбы и ярких побед. 📣\n\n#КубокФеникса #баскетбол #Волгоград #юноши2011 #баскетболРоссии #турнир",
+      "links": [],
+      "excerpt": "📅 Дата: 10–13 октября 👦 Участники: юноши 2011 г.р. 📍 Место: г. Волгоград, бульвар 30-летия Победы, д. 66, стр. А 🏆 Этап: групповой этап, раунд 1 🔹 Группа C1 1. СШ №12 — Волгоград…",
+      "cover": {
+        "url": "https://sun9-66.userapi.com/s/v1/ig2/RCAK9xfVqP8o_Z10gMICiZDbD7Y9MmFXAU--RdaoyIbtQhQDu54f0zKz8nNKXTzUNrswKI0Z0tNV1wW6beKYzX8unZhw0g.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
+        "width": 1086,
+        "height": 1448
+      },
+      "photos": [
+        {
+          "url": "https://sun9-66.userapi.com/s/v1/ig2/RCAK9xfVqP8o_Z10gMICiZDbD7Y9MmFXAU--RdaoyIbtQhQDu54f0zKz8nNKXTzUNrswKI0Z0tNV1wW6beKYzX8unZhw0g.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
+          "width": 1086,
+          "height": 1448
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
     {
       "id": 6565,
       "date": "2026-10-09T22:09:27.000Z",
@@ -984,29 +1007,6 @@
           "url": "https://sun9-63.userapi.com/s/v1/ig2/bASM85Ddwb1uOCycqzqDUTtwSQS3e80mMLNCqSYddJAhYmw5or7oFkuh79saowFL9uqdTpHkvowKNQ-371ZicwQx.jpg?quality=95&as=32x57,48x85,72x128,108x192,160x284,240x427,360x640,480x853,540x960,640x1138,720x1280,1080x1920,1280x2276,1440x2560&from=bu&cs=1440x0",
           "width": 1440,
           "height": 2560
-        }
-      ],
-      "hasVideo": false,
-      "isPinned": false
-    },
-    {
-      "id": 6517,
-      "date": "2026-06-12T11:22:54.000Z",
-      "url": "https://vk.com/wall-211184409_6517",
-      "title": "С Днём России!",
-      "text": "С Днём России!",
-      "links": [],
-      "excerpt": "С Днём России!",
-      "cover": {
-        "url": "https://sun9-37.userapi.com/s/v1/ig2/UKL3dfVgpQzPHUZwjyRsJdqRUAlfrJczXCBdvieseiH21lZ_NN13DwGLMT86jIZqHydNO3T6muw083HmAYTLzH1d.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
-        "width": 1086,
-        "height": 1448
-      },
-      "photos": [
-        {
-          "url": "https://sun9-37.userapi.com/s/v1/ig2/UKL3dfVgpQzPHUZwjyRsJdqRUAlfrJczXCBdvieseiH21lZ_NN13DwGLMT86jIZqHydNO3T6muw083HmAYTLzH1d.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
-          "width": 1086,
-          "height": 1448
         }
       ],
       "hasVideo": false,
