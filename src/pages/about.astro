@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import { url } from '../lib/url.js';
-import { site, leaders } from '../lib/data.js';
+import { site, leaders, formatDate } from '../lib/data.js';
 
 ---
 
@@ -24,6 +24,20 @@ import { site, leaders } from '../lib/data.js';
           <h2>Официальное название</h2>
           <p>Полное наименование: <strong>{site.name_full}</strong>.</p>
           <p>Сокращённое наименование: <strong>{site.name_short}</strong>.</p>
+
+          {site.accreditation?.order && (
+            <>
+              <h2>Государственная аккредитация</h2>
+              <p>
+                Федерация наделена статусом региональной спортивной федерации по баскетболу
+                с {formatDate(site.accreditation.from)} по {formatDate(site.accreditation.to)}:
+                {' '}{site.accreditation.order}.
+                {site.accreditation.document && (
+                  <> <a href={url(site.accreditation.document)}>Решение и приказ (PDF)</a></>
+                )}
+              </p>
+            </>
+          )}
 
           <h2>Миссия</h2>
           <p>{site.mission}</p>
