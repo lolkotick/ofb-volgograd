@@ -9,6 +9,7 @@
     "build": "astro build",
     "preview": "astro preview",
     "sync:news": "node scripts/sync-vk-news.mjs",
+    "sync:matches": "node scripts/sync-matches.mjs",
     "admin": "decap-server",
     "admin:update": "npm i -D decap-cms && cp node_modules/decap-cms/dist/decap-cms.js public/admin/ && npm uninstall decap-cms"
   },

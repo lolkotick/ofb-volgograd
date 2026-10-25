@@ -8,6 +8,7 @@ import site from '../../data/site.json';
 import leadership from '../../data/leadership.json';
 import documentsData from '../../data/documents.json';
 import matchesData from '../../data/matches.json';
+import matchesAuto from '../../data/matches.auto.json';
 import newsData from '../../data/news.json';
 import newsSample from '../../data/news.sample.json';
 
@@ -54,14 +55,17 @@ export const newsUpdatedAt = rawNews.generatedAt ?? null;
 export const newsSourceUrl = rawNews.source ?? site.social.vk;
 
 /* --- МАТЧИ ---------------------------------------------------------------
-   TODO (второй этап): здесь появится точка подключения автоматического
-   источника расписания. Когда у РФБ (или у оператора соревнований) появится
-   открытый фид, достаточно будет:
-     1) написать скрипт по образцу scripts/sync-vk-news.mjs, который приводит
-        данные фида к структуре ниже и пишет их в data/matches.json;
-     2) добавить его в расписание GitHub Actions.
-   Остальной код страниц календаря менять не придётся — он читает только
-   эту функцию. */
+   Два файла:
+     • data/matches.json — ручной календарь (правится через админку);
+     • data/matches.auto.json — МЛБЛ-Волгоград и АСБ, его перезаписывает
+       scripts/sync-matches.mjs по расписанию GitHub Actions.
+   При совпадении кода матча побеждает ручная запись: так федерация может
+   поправить авто-матч (например, добавить трансляцию). */
+export const MATCH_SOURCES = {
+  mlbl: { title: 'МЛБЛ-Волгоград', url: 'https://volgograd.ilovebasket.ru' },
+  asb: { title: 'Ассоциация студенческого баскетбола', url: 'https://asbasket.ru' },
+};
+
 function normalizeMatch(m) {
   const dt = m.time ? `${m.date}T${m.time}:00` : `${m.date}T00:00:00`;
   return {
@@ -71,10 +75,15 @@ function normalizeMatch(m) {
     isHome: m.home === true,
     isFinished: m.status === 'finished',
     hasBroadcast: Boolean(m.broadcast_url && String(m.broadcast_url).trim()),
+    sourceInfo: MATCH_SOURCES[m.source] ?? null,
   };
 }
 
-export const matches = (matchesData.matches ?? [])
+export const matches = [
+  ...new Map(
+    [...(matchesAuto.matches ?? []), ...(matchesData.matches ?? [])].map((m) => [m.id, m])
+  ).values(),
+]
   .map(normalizeMatch)
   .sort((a, b) => a.timestamp - b.timestamp);
 

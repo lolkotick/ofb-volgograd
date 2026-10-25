@@ -13,7 +13,7 @@
       "id": "head",
       "name": "Воропаев Александр Александрович",
       "role": "Руководитель",
-      "photo": "",
+      "photo": "/leadership/head.jpg",
       "email": "",
       "phone": "",
       "note": ""
@@ -22,7 +22,7 @@
       "id": "director",
       "name": "Хохленкова Светлана Викторовна",
       "role": "Исполнительный директор",
-      "photo": "",
+      "photo": "/leadership/director.jpg",
       "email": "",
       "phone": "",
       "note": ""
@@ -31,7 +31,7 @@
       "id": "secretary",
       "name": "Рязанова Анна Павловна",
       "role": "Главный секретарь",
-      "photo": "",
+      "photo": "/leadership/secretary.jpg",
       "email": "",
       "phone": "",
       "note": ""
@@ -40,7 +40,7 @@
       "id": "advisor",
       "name": "Астафьева Татьяна Владимировна",
       "role": "Советник руководителя",
-      "photo": "",
+      "photo": "/leadership/advisor.jpg",
       "email": "",
       "phone": "",
       "note": ""

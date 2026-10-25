@@ -1,0 +1,63 @@
+# Автоматическая синхронизация расписания с МЛБЛ-Волгоград и АСБ.
+# Скрипт забирает матчи из открытых источников (ключи не нужны),
+# обновляет data/matches.auto.json, коммитит изменения и запускает пересборку сайта.
+# Ручной календарь data/matches.json не трогается.
+name: Расписание МЛБЛ и АСБ
+
+on:
+  schedule:
+    # каждые 3 часа, в 47 минут (время указано в UTC; Волгоград = UTC+3)
+    - cron: '47 */3 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  sync:
+    name: Обновить data/matches.auto.json
+    runs-on: ubuntu-latest
+    outputs:
+      changed: ${{ steps.commit.outputs.changed }}
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+
+      - name: Забрать расписание
+        run: node scripts/sync-matches.mjs
+
+      - name: Закоммитить изменения
+        id: commit
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data/matches.auto.json; then
+            echo "Расписание без изменений — коммит не нужен."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+          else
+            git add data/matches.auto.json
+            git commit -m "Календарь: обновление расписания МЛБЛ и АСБ"
+            git pull --rebase
+            git push
+            echo "changed=true" >> "$GITHUB_OUTPUT"
+          fi
+
+  publish:
+    name: Пересобрать и опубликовать сайт
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    uses: ./.github/workflows/deploy.yml
+
+  publish-hosting:
+    name: Пересобрать и опубликовать на хостинг
+    needs: sync
+    if: needs.sync.outputs.changed == 'true'
+    uses: ./.github/workflows/deploy-hosting.yml
+    secrets: inherit

@@ -2,13 +2,15 @@
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import PageHero from '../../components/PageHero.astro';
 import { url } from '../../lib/url.js';
-import { matches, formatDate, weekday } from '../../lib/data.js';
+import { matches, formatDate, weekday, MATCH_SOURCES } from '../../lib/data.js';
 
 /* Матчи выводим от ближайших предстоящих к более далёким,
    прошедшие — в конце, от самых свежих. */
 const upcoming = matches.filter((m) => !m.isFinished);
 const finished = [...matches].filter((m) => m.isFinished).reverse();
 const rows = [...upcoming, ...finished];
+/* Фильтр по лиге нужен, только когда лиг больше одной. */
+const leagues = [...new Set(rows.map((m) => m.league).filter(Boolean))].sort();
 ---
 
 <BaseLayout
@@ -43,6 +45,17 @@ const rows = [...upcoming, ...finished];
                 <button class="filter-btn" type="button" data-filter="type" data-value="away" aria-pressed="false">Выездные</button>
               </div>
             </div>
+            {leagues.length > 1 && (
+              <div class="filter-group">
+                <span class="filter-group__label" id="f-league">Лига</span>
+                <div class="filter-group__buttons" role="group" aria-labelledby="f-league">
+                  <button class="filter-btn" type="button" data-filter="league" data-value="all" aria-pressed="true">Все</button>
+                  {leagues.map((l) => (
+                    <button class="filter-btn" type="button" data-filter="league" data-value={l} aria-pressed="false">{l}</button>
+                  ))}
+                </div>
+              </div>
+            )}
           </div>
 
           <p class="muted" style="font-size:.875rem;margin-bottom:1rem" data-match-count aria-live="polite"></p>
@@ -62,7 +75,7 @@ const rows = [...upcoming, ...finished];
               </thead>
               <tbody>
                 {rows.map((m) => (
-                  <tr data-status={m.isFinished ? 'finished' : 'upcoming'} data-type={m.isHome ? 'home' : 'away'}>
+                  <tr data-status={m.isFinished ? 'finished' : 'upcoming'} data-type={m.isHome ? 'home' : 'away'} data-league={m.league}>
                     <td>
                       <time datetime={m.datetime}>{formatDate(m.date)}</time>
                       <div class="muted" style="font-size:.8125rem">
@@ -97,7 +110,10 @@ const rows = [...upcoming, ...finished];
       )}
 
       <p class="notice" style="margin-top:2rem">
-        Расписание ведёт федерация. Если вы заметили ошибку в календаре или хотите добавить матч,
+        Матчи {Object.values(MATCH_SOURCES).map((s, i) => (
+          <>{i > 0 && ' и '}<a href={s.url} rel="noopener">{s.title}</a></>
+        ))} обновляются автоматически с сайтов этих лиг, остальные матчи вносит федерация.
+        Если вы заметили ошибку в календаре или хотите добавить матч,
         напишите нам через <a href={url('/contacts/')}>раздел контактов</a>.
       </p>
     </div>
@@ -110,7 +126,7 @@ const rows = [...upcoming, ...finished];
     const rows = [...document.querySelectorAll('tbody tr')];
     const empty = document.querySelector('[data-empty]');
     const counter = document.querySelector('[data-match-count]');
-    const state = { status: 'upcoming', type: 'all' };
+    const state = { status: 'upcoming', type: 'all', league: 'all' };
 
     const plural = (n) => {
       const d10 = n % 10, d100 = n % 100;
@@ -124,7 +140,8 @@ const rows = [...upcoming, ...finished];
       rows.forEach((row) => {
         const okStatus = state.status === 'all' || row.dataset.status === state.status;
         const okType = state.type === 'all' || row.dataset.type === state.type;
-        const show = okStatus && okType;
+        const okLeague = state.league === 'all' || row.dataset.league === state.league;
+        const show = okStatus && okType && okLeague;
         row.hidden = !show;
         if (show) visible += 1;
       });

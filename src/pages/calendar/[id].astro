@@ -51,6 +51,11 @@ const title = `${match.team1} — ${match.team2}`;
             <div><dt>Место</dt><dd>{match.venue}</dd></div>
             <div><dt>Город</dt><dd>{match.city}</dd></div>
             {match.note && <div><dt>Примечание</dt><dd>{match.note}</dd></div>}
+            {match.sourceInfo && (
+              <div><dt>Источник</dt><dd>
+                <a href={match.source_url || match.sourceInfo.url} rel="noopener">{match.sourceInfo.title}</a>
+              </dd></div>
+            )}
           </dl>
 
           <p><a href={url('/calendar/')}>← Ко всему календарю</a></p>
