@@ -46,6 +46,13 @@ const ASB_PAGE = 100;
    скорее сбой, чем отмена всего сезона: оставляем прежние данные. */
 const SUSPICIOUS_DROP = 5;
 
+/** Предупреждение в консоль; в GitHub Actions — ещё и жёлтая пометка в сводке
+ *  запуска, чтобы сбой источника было видно без чтения всего лога. */
+function warn(message) {
+  console.warn(message);
+  if (process.env.GITHUB_ACTIONS) console.log(`::warning::${message}`);
+}
+
 /* --- сеть ---------------------------------------------------------------- */
 async function get(url, { json = true } = {}) {
   const res = await fetch(url, {
@@ -92,9 +99,9 @@ async function mlblComps() {
       found.set(m[1], decodeURIComponent(m[2]).replace(/\/+$/, ''));
     }
     if (found.size > 0) return [...found].map(([id, api]) => ({ id, api }));
-    console.warn('  ! на странице МЛБЛ не нашлось ссылок на турниры');
+    warn('  ! на странице МЛБЛ не нашлось ссылок на турниры');
   } catch (e) {
-    console.warn(`  ! страница МЛБЛ недоступна: ${e.message}`);
+    warn(`  ! страница МЛБЛ недоступна: ${e.message}`);
   }
   return MLBL_COMPS_FALLBACK.map((id) => ({ id, api: MLBL_API_DEFAULT }));
 }
@@ -206,14 +213,14 @@ async function main() {
     try {
       const fresh = await src.run();
       if (fresh.length === 0 && before.length >= SUSPICIOUS_DROP) {
-        console.warn(`! ${src.title}: пришло 0 матчей вместо ${before.length} — оставляю прежние`);
+        warn(`! ${src.title}: пришло 0 матчей вместо ${before.length} — оставляю прежние`);
         result.push(...before);
       } else {
         console.log(`✔ ${src.title}: ${fresh.length} матч(ей)`);
         result.push(...fresh);
       }
     } catch (e) {
-      console.warn(`! ${src.title}: ${e.message} — оставляю прежние (${before.length})`);
+      warn(`! ${src.title}: ${e.message} — оставляю прежние (${before.length})`);
       result.push(...before);
     }
   }
@@ -238,5 +245,5 @@ async function main() {
 main().catch((e) => {
   /* Даже при непредвиденной ошибке не роняем расписание GitHub Actions:
      прежний файл остаётся на месте. */
-  console.error('✖', e);
+  warn(`✖ ${e?.stack || e}`);
 });

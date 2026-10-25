@@ -110,9 +110,9 @@ const leagues = [...new Set(rows.map((m) => m.league).filter(Boolean))].sort();
       )}
 
       <p class="notice" style="margin-top:2rem">
-        Матчи {Object.values(MATCH_SOURCES).map((s, i) => (
-          <>{i > 0 && ' и '}<a href={s.url} rel="noopener">{s.title}</a></>
-        ))} обновляются автоматически с сайтов этих лиг, остальные матчи вносит федерация.
+        Матчи <a href={MATCH_SOURCES.mlbl.url} rel="noopener">МЛБЛ-Волгоград</a> и
+        <a href={MATCH_SOURCES.asb.url} rel="noopener">Ассоциации студенческого баскетбола</a>
+        подгружаются автоматически с их сайтов, остальные матчи вносит федерация.
         Если вы заметили ошибку в календаре или хотите добавить матч,
         напишите нам через <a href={url('/contacts/')}>раздел контактов</a>.
       </p>

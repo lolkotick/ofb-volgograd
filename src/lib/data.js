@@ -59,8 +59,8 @@ export const newsSourceUrl = rawNews.source ?? site.social.vk;
      • data/matches.json — ручной календарь (правится через админку);
      • data/matches.auto.json — МЛБЛ-Волгоград и АСБ, его перезаписывает
        scripts/sync-matches.mjs по расписанию GitHub Actions.
-   При совпадении кода матча побеждает ручная запись: так федерация может
-   поправить авто-матч (например, добавить трансляцию). */
+   При совпадении кода матча ручная запись целиком заменяет авто-матч,
+   и дальше он уже не обновляется автоматически. */
 export const MATCH_SOURCES = {
   mlbl: { title: 'МЛБЛ-Волгоград', url: 'https://volgograd.ilovebasket.ru' },
   asb: { title: 'Ассоциация студенческого баскетбола', url: 'https://asbasket.ru' },

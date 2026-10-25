@@ -21,4 +21,4 @@ public/api/secret.php
 photo/
 
 # Настройки предпросмотра приложения Claude
-.claude/
+.claude/launch.json
