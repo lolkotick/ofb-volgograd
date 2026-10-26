@@ -121,6 +121,36 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1123600?apiUrl=https://reg.infobasket.su"
     },
     {
+      "id": "asb-1129885",
+      "date": "2026-10-27",
+      "time": "19:00",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "ВолгГТУ",
+      "team2": "ВолГУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129885"
+    },
+    {
+      "id": "asb-1129886",
+      "date": "2026-10-27",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "ВолГАУ - Lion`s",
+      "team2": "ВГСПУ-Тандем",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129886"
+    },
+    {
       "id": "mlbl-1127564",
       "date": "2026-10-28",
       "time": "19:15",
@@ -149,6 +179,36 @@
       "score": "",
       "source": "mlbl",
       "source_url": "https://volgograd.ilovebasket.ru/games/1123606?apiUrl=https://reg.infobasket.su"
+    },
+    {
+      "id": "asb-1129906",
+      "date": "2026-10-29",
+      "time": "19:00",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВГСПУ",
+      "team2": "ВолГУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129906"
+    },
+    {
+      "id": "asb-1129907",
+      "date": "2026-10-29",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВолгГМУ",
+      "team2": "ВолГАУ - Lion`s",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129907"
     },
     {
       "id": "mlbl-1127549",
