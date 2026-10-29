@@ -391,19 +391,19 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1123602?apiUrl=https://reg.infobasket.su"
     },
     {
-      "id": "mlbl-1127547",
+      "id": "mlbl-1127528",
       "date": "2026-11-09",
       "time": "19:15",
       "league": "МЛБЛ — Чемпионат Волгограда, Второй Дивизион",
-      "team1": "СШ 12",
-      "team2": "ВЫСОТАремстрой",
+      "team1": "Местные",
+      "team2": "СШОР 2",
       "venue": "ФОК Волгоград",
       "city": "Волгоград",
       "home": true,
       "status": "upcoming",
       "score": "",
       "source": "mlbl",
-      "source_url": "https://volgograd.ilovebasket.ru/games/1127547?apiUrl=https://reg.infobasket.su"
+      "source_url": "https://volgograd.ilovebasket.ru/games/1127528?apiUrl=https://reg.infobasket.su"
     },
     {
       "id": "mlbl-1127560",
@@ -421,19 +421,19 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1127560?apiUrl=https://reg.infobasket.su"
     },
     {
-      "id": "mlbl-1127528",
+      "id": "mlbl-1127547",
       "date": "2026-11-11",
       "time": "19:15",
       "league": "МЛБЛ — Чемпионат Волгограда, Второй Дивизион",
-      "team1": "Местные",
-      "team2": "СШОР 2",
+      "team1": "СШ 12",
+      "team2": "ВЫСОТАремстрой",
       "venue": "ФОК Волгоград",
       "city": "Волгоград",
       "home": true,
       "status": "upcoming",
       "score": "",
       "source": "mlbl",
-      "source_url": "https://volgograd.ilovebasket.ru/games/1127528?apiUrl=https://reg.infobasket.su"
+      "source_url": "https://volgograd.ilovebasket.ru/games/1127547?apiUrl=https://reg.infobasket.su"
     },
     {
       "id": "mlbl-1123597",
