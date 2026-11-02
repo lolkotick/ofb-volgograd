@@ -250,8 +250,8 @@
       "venue": "ФОК Волгоград",
       "city": "Волгоград",
       "home": true,
-      "status": "upcoming",
-      "score": "",
+      "status": "finished",
+      "score": "64:85",
       "source": "mlbl",
       "source_url": "https://volgograd.ilovebasket.ru/games/1127557?apiUrl=https://reg.infobasket.su"
     },
@@ -265,8 +265,8 @@
       "venue": "ФОК Волгоград",
       "city": "Волгоград",
       "home": true,
-      "status": "upcoming",
-      "score": "",
+      "status": "finished",
+      "score": "77:88",
       "source": "mlbl",
       "source_url": "https://volgograd.ilovebasket.ru/games/1123601?apiUrl=https://reg.infobasket.su"
     },
