@@ -421,6 +421,36 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1127560?apiUrl=https://reg.infobasket.su"
     },
     {
+      "id": "asb-1129889",
+      "date": "2026-11-10",
+      "time": "19:10",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "ВолгГТУ ИАиС-Горхоз",
+      "team2": "ВолгГТУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129889"
+    },
+    {
+      "id": "asb-1129890",
+      "date": "2026-11-10",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "ВГСПУ-Тандем",
+      "team2": "ВолгГМУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129890"
+    },
+    {
       "id": "mlbl-1127547",
       "date": "2026-11-11",
       "time": "19:15",
@@ -449,6 +479,36 @@
       "score": "",
       "source": "mlbl",
       "source_url": "https://volgograd.ilovebasket.ru/games/1123597?apiUrl=https://reg.infobasket.su"
+    },
+    {
+      "id": "asb-1129910",
+      "date": "2026-11-12",
+      "time": "19:10",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВолГАУ - Lion`s",
+      "team2": "ВГАФК-Титанки",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129910"
+    },
+    {
+      "id": "asb-1129911",
+      "date": "2026-11-12",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВолГУ",
+      "team2": "ВолгГМУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129911"
     },
     {
       "id": "mlbl-1127541",
