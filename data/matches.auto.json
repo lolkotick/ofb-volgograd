@@ -586,19 +586,19 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1127553?apiUrl=https://reg.infobasket.su"
     },
     {
-      "id": "mlbl-1123598",
+      "id": "mlbl-1127533",
       "date": "2026-11-18",
       "time": "20:45",
-      "league": "МЛБЛ — Чемпионат Волгограда, Первый Дивизион",
-      "team1": "ВГАФК-Титаны",
-      "team2": "LIONS ВолГАУ",
+      "league": "МЛБЛ — Чемпионат Волгограда, Второй Дивизион",
+      "team1": "БК Сталинград",
+      "team2": "Кировчанин",
       "venue": "ФОК Волгоград",
       "city": "Волгоград",
       "home": true,
       "status": "upcoming",
       "score": "",
       "source": "mlbl",
-      "source_url": "https://volgograd.ilovebasket.ru/games/1123598?apiUrl=https://reg.infobasket.su"
+      "source_url": "https://volgograd.ilovebasket.ru/games/1127533?apiUrl=https://reg.infobasket.su"
     },
     {
       "id": "asb-1129910",
@@ -631,19 +631,19 @@
       "source_url": "https://asbasket.ru/game/1129911"
     },
     {
-      "id": "mlbl-1127533",
+      "id": "mlbl-1123598",
       "date": "2026-11-20",
       "time": "19:15",
-      "league": "МЛБЛ — Чемпионат Волгограда, Второй Дивизион",
-      "team1": "БК Сталинград",
-      "team2": "Кировчанин",
+      "league": "МЛБЛ — Чемпионат Волгограда, Первый Дивизион",
+      "team1": "ВГАФК-Титаны",
+      "team2": "LIONS ВолГАУ",
       "venue": "ФОК Волгоград",
       "city": "Волгоград",
       "home": true,
       "status": "upcoming",
       "score": "",
       "source": "mlbl",
-      "source_url": "https://volgograd.ilovebasket.ru/games/1127533?apiUrl=https://reg.infobasket.su"
+      "source_url": "https://volgograd.ilovebasket.ru/games/1123598?apiUrl=https://reg.infobasket.su"
     },
     {
       "id": "mlbl-1127534",
