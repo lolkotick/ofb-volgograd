@@ -400,8 +400,8 @@
       "venue": "ФОК Волгоград",
       "city": "Волгоград",
       "home": true,
-      "status": "upcoming",
-      "score": "",
+      "status": "finished",
+      "score": "64:58",
       "source": "mlbl",
       "source_url": "https://volgograd.ilovebasket.ru/games/1127528?apiUrl=https://reg.infobasket.su"
     },
@@ -415,8 +415,8 @@
       "venue": "ФОК Волгоград",
       "city": "Волгоград",
       "home": true,
-      "status": "upcoming",
-      "score": "",
+      "status": "finished",
+      "score": "66:59",
       "source": "mlbl",
       "source_url": "https://volgograd.ilovebasket.ru/games/1127560?apiUrl=https://reg.infobasket.su"
     },
@@ -494,21 +494,6 @@
       "score": "",
       "source": "asb",
       "source_url": "https://asbasket.ru/game/1129912"
-    },
-    {
-      "id": "asb-1129915",
-      "date": "2026-11-12",
-      "time": "20:30",
-      "league": "АСБ — Волгоградская область, женщины",
-      "team1": "ВолГУ",
-      "team2": "ВолГАУ - Lion`s",
-      "venue": "ФОК СШОР №2",
-      "city": "Волгоград",
-      "home": true,
-      "status": "upcoming",
-      "score": "",
-      "source": "asb",
-      "source_url": "https://asbasket.ru/game/1129915"
     },
     {
       "id": "mlbl-1127541",
