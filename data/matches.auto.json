@@ -460,8 +460,8 @@
       "venue": "ФОК Волгоград",
       "city": "Волгоград",
       "home": true,
-      "status": "upcoming",
-      "score": "",
+      "status": "finished",
+      "score": "64:94",
       "source": "mlbl",
       "source_url": "https://volgograd.ilovebasket.ru/games/1127547?apiUrl=https://reg.infobasket.su"
     },
@@ -556,6 +556,36 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1123605?apiUrl=https://reg.infobasket.su"
     },
     {
+      "id": "asb-1129891",
+      "date": "2026-11-17",
+      "time": "19:10",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "ВолГАУ - Lion`s",
+      "team2": "Титаны-ВГАФК",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129891"
+    },
+    {
+      "id": "asb-1129892",
+      "date": "2026-11-17",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "ВолГУ",
+      "team2": "ВолгГТУ ИАиС-Горхоз",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129892"
+    },
+    {
       "id": "mlbl-1127553",
       "date": "2026-11-18",
       "time": "19:15",
@@ -586,11 +616,11 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1127533?apiUrl=https://reg.infobasket.su"
     },
     {
-      "id": "asb-1129910",
+      "id": "asb-1129914",
       "date": "2026-11-19",
       "time": "19:10",
       "league": "АСБ — Волгоградская область, женщины",
-      "team1": "ВолГАУ - Lion`s",
+      "team1": "ВГСПУ",
       "team2": "ВГАФК-Титанки",
       "venue": "ФОК СШОР №2",
       "city": "Волгоград",
@@ -598,22 +628,22 @@
       "status": "upcoming",
       "score": "",
       "source": "asb",
-      "source_url": "https://asbasket.ru/game/1129910"
+      "source_url": "https://asbasket.ru/game/1129914"
     },
     {
-      "id": "asb-1129911",
+      "id": "asb-1129915",
       "date": "2026-11-19",
       "time": "20:30",
       "league": "АСБ — Волгоградская область, женщины",
       "team1": "ВолГУ",
-      "team2": "ВолгГМУ",
+      "team2": "ВолГАУ - Lion`s",
       "venue": "ФОК СШОР №2",
       "city": "Волгоград",
       "home": true,
       "status": "upcoming",
       "score": "",
       "source": "asb",
-      "source_url": "https://asbasket.ru/game/1129911"
+      "source_url": "https://asbasket.ru/game/1129915"
     },
     {
       "id": "mlbl-1123598",
@@ -676,6 +706,36 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1127546?apiUrl=https://reg.infobasket.su"
     },
     {
+      "id": "asb-1129893",
+      "date": "2026-11-24",
+      "time": "19:10",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "ВГСПУ-Тандем",
+      "team2": "ВолгГТУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129893"
+    },
+    {
+      "id": "asb-1129895",
+      "date": "2026-11-24",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "ВолГАУ - Lion`s",
+      "team2": "ВолгГМУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129895"
+    },
+    {
       "id": "mlbl-1127570",
       "date": "2026-11-25",
       "time": "19:15",
@@ -704,21 +764,6 @@
       "score": "",
       "source": "mlbl",
       "source_url": "https://volgograd.ilovebasket.ru/games/1123607?apiUrl=https://reg.infobasket.su"
-    },
-    {
-      "id": "asb-1129913",
-      "date": "2026-11-26",
-      "time": "20:30",
-      "league": "АСБ — Волгоградская область, женщины",
-      "team1": "ВолГАУ - Lion`s",
-      "team2": "ВГСПУ",
-      "venue": "ФОК СШОР №2",
-      "city": "Волгоград",
-      "home": true,
-      "status": "upcoming",
-      "score": "",
-      "source": "asb",
-      "source_url": "https://asbasket.ru/game/1129913"
     },
     {
       "id": "mlbl-1127539",
@@ -781,6 +826,36 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1123616?apiUrl=https://reg.infobasket.su"
     },
     {
+      "id": "asb-1129896",
+      "date": "2026-12-01",
+      "time": "19:10",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "ВГСПУ-Тандем",
+      "team2": "ВолГУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129896"
+    },
+    {
+      "id": "asb-1129894",
+      "date": "2026-12-01",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "Титаны-ВГАФК",
+      "team2": "ВолгГТУ ИАиС-Горхоз",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129894"
+    },
+    {
       "id": "mlbl-1127531",
       "date": "2026-12-02",
       "time": "19:15",
@@ -809,6 +884,36 @@
       "score": "",
       "source": "mlbl",
       "source_url": "https://volgograd.ilovebasket.ru/games/1127567?apiUrl=https://reg.infobasket.su"
+    },
+    {
+      "id": "asb-1129910",
+      "date": "2026-12-03",
+      "time": "19:10",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВолГАУ - Lion`s",
+      "team2": "ВГАФК-Титанки",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129910"
+    },
+    {
+      "id": "asb-1129911",
+      "date": "2026-12-03",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВолГУ",
+      "team2": "ВолгГМУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129911"
     },
     {
       "id": "mlbl-1127530",
@@ -871,6 +976,36 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1123609?apiUrl=https://reg.infobasket.su"
     },
     {
+      "id": "asb-1129897",
+      "date": "2026-12-08",
+      "time": "19:10",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "ВолгГМУ",
+      "team2": "Титаны-ВГАФК",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129897"
+    },
+    {
+      "id": "asb-1129898",
+      "date": "2026-12-08",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "ВолгГТУ ИАиС-Горхоз",
+      "team2": "ВГСПУ-Тандем",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129898"
+    },
+    {
       "id": "mlbl-1127563",
       "date": "2026-12-09",
       "time": "19:15",
@@ -899,6 +1034,21 @@
       "score": "",
       "source": "mlbl",
       "source_url": "https://volgograd.ilovebasket.ru/games/1123608?apiUrl=https://reg.infobasket.su"
+    },
+    {
+      "id": "asb-1129913",
+      "date": "2026-12-10",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВолГАУ - Lion`s",
+      "team2": "ВГСПУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129913"
     },
     {
       "id": "mlbl-1127561",
@@ -961,6 +1111,36 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1123612?apiUrl=https://reg.infobasket.su"
     },
     {
+      "id": "asb-1129899",
+      "date": "2026-12-15",
+      "time": "19:10",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "ВолгГТУ",
+      "team2": "ВолГАУ - Lion`s",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129899"
+    },
+    {
+      "id": "asb-1129900",
+      "date": "2026-12-15",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "Титаны-ВГАФК",
+      "team2": "ВГСПУ-Тандем",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129900"
+    },
+    {
       "id": "mlbl-1127527",
       "date": "2026-12-16",
       "time": "19:15",
@@ -989,6 +1169,36 @@
       "score": "",
       "source": "mlbl",
       "source_url": "https://volgograd.ilovebasket.ru/games/1127555?apiUrl=https://reg.infobasket.su"
+    },
+    {
+      "id": "asb-1129916",
+      "date": "2026-12-17",
+      "time": "19:10",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВолГУ",
+      "team2": "ВГСПУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129916"
+    },
+    {
+      "id": "asb-1129922",
+      "date": "2026-12-17",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВолгГМУ",
+      "team2": "ВГАФК-Титанки",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129922"
     },
     {
       "id": "mlbl-1127548",
