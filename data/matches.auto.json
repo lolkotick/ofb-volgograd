@@ -490,8 +490,8 @@
       "venue": "ФОК СШОР №2",
       "city": "Волгоград",
       "home": true,
-      "status": "upcoming",
-      "score": "",
+      "status": "finished",
+      "score": "53:33",
       "source": "asb",
       "source_url": "https://asbasket.ru/game/1129912"
     },
@@ -616,11 +616,11 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1127533?apiUrl=https://reg.infobasket.su"
     },
     {
-      "id": "asb-1129891",
+      "id": "asb-1129897",
       "date": "2026-11-19",
       "time": "19:10",
       "league": "АСБ — Волгоградская область, мужчины",
-      "team1": "ВолГАУ - Lion`s",
+      "team1": "ВолгГМУ",
       "team2": "Титаны-ВГАФК",
       "venue": "ФОК СШОР №2",
       "city": "Волгоград",
@@ -628,7 +628,7 @@
       "status": "upcoming",
       "score": "",
       "source": "asb",
-      "source_url": "https://asbasket.ru/game/1129891"
+      "source_url": "https://asbasket.ru/game/1129897"
     },
     {
       "id": "asb-1129892",
@@ -1006,11 +1006,11 @@
       "source_url": "https://volgograd.ilovebasket.ru/games/1123609?apiUrl=https://reg.infobasket.su"
     },
     {
-      "id": "asb-1129897",
+      "id": "asb-1129891",
       "date": "2026-12-08",
       "time": "19:10",
       "league": "АСБ — Волгоградская область, мужчины",
-      "team1": "ВолгГМУ",
+      "team1": "ВолГАУ - Lion`s",
       "team2": "Титаны-ВГАФК",
       "venue": "ФОК СШОР №2",
       "city": "Волгоград",
@@ -1018,7 +1018,7 @@
       "status": "upcoming",
       "score": "",
       "source": "asb",
-      "source_url": "https://asbasket.ru/game/1129897"
+      "source_url": "https://asbasket.ru/game/1129891"
     },
     {
       "id": "asb-1129898",
@@ -1424,6 +1424,96 @@
       "score": "",
       "source": "mlbl",
       "source_url": "https://volgograd.ilovebasket.ru/games/1123613?apiUrl=https://reg.infobasket.su"
+    },
+    {
+      "id": "asb-1129917",
+      "date": "2027-02-04",
+      "time": "19:11",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВолГАУ - Lion`s",
+      "team2": "ВолгГМУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129917"
+    },
+    {
+      "id": "asb-1129918",
+      "date": "2027-02-04",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВолГУ",
+      "team2": "ВГАФК-Титанки",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129918"
+    },
+    {
+      "id": "asb-1129919",
+      "date": "2027-02-09",
+      "time": "19:10",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВГСПУ",
+      "team2": "ВолгГМУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129919"
+    },
+    {
+      "id": "asb-1129920",
+      "date": "2027-02-09",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВГАФК-Титанки",
+      "team2": "ВолГАУ - Lion`s",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129920"
+    },
+    {
+      "id": "asb-1129921",
+      "date": "2027-02-18",
+      "time": "19:10",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВолгГМУ",
+      "team2": "ВолГУ",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129921"
+    },
+    {
+      "id": "asb-1129923",
+      "date": "2027-02-18",
+      "time": "20:30",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВГСПУ",
+      "team2": "ВолГАУ - Lion`s",
+      "venue": "ФОК СШОР №2",
+      "city": "Волгоград",
+      "home": true,
+      "status": "upcoming",
+      "score": "",
+      "source": "asb",
+      "source_url": "https://asbasket.ru/game/1129923"
     }
   ]
 }
