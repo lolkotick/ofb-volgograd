@@ -1,8 +1,31 @@
 {
   "_комментарий": "Файл создаётся автоматически скриптом scripts/sync-vk-news.mjs. Руками не редактировать.",
-  "generatedAt": "2026-11-12T09:44:56.143Z",
+  "generatedAt": "2026-11-13T06:36:30.753Z",
   "source": "https://vk.com/vrooofb",
   "items": [
+    {
+      "id": 6618,
+      "date": "2026-11-13T05:00:02.000Z",
+      "url": "https://vk.com/wall-211184409_6618",
+      "title": "сднемрождения 🎂",
+      "text": "#сднемрождения 🎂\nВера Смирнова ✨\n\nСудья-секретарь ВРОО «ОФБ» — это человек, на котором держится порядок и дисциплина. Вера Алексеевна, желаем Вам крепкого здоровья, семейного счастья и профессионального долголетия! 🥳\n\nПусть Ваша работа приносит только радость, а в жизни всегда будет место для чудес и приятных сюрпризов. С Днем Рождения! 💐\n\n#ВРОООФБ #ДеньРождения #Поздравляем #СудьяСекретарь #Спорт #Федерация",
+      "links": [],
+      "excerpt": "#сднемрождения 🎂 Вера Смирнова ✨ Судья-секретарь ВРОО «ОФБ» — это человек, на котором держится порядок и дисциплина. Вера Алексеевна, желаем Вам крепкого здоровья, семейного…",
+      "cover": {
+        "url": "https://sun9-39.userapi.com/s/v1/ig2/N7rh_yMS2WiCg7ec8NNMMD_DchY-UxCXXJ4ytii3nLdjtEVwSZGyzHQrl_VGL3WvO9JRFgUDc7NGowEG533P5gt0.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,1448x1086&from=bu&cs=1448x0",
+        "width": 1448,
+        "height": 1086
+      },
+      "photos": [
+        {
+          "url": "https://sun9-39.userapi.com/s/v1/ig2/N7rh_yMS2WiCg7ec8NNMMD_DchY-UxCXXJ4ytii3nLdjtEVwSZGyzHQrl_VGL3WvO9JRFgUDc7NGowEG533P5gt0.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,1448x1086&from=bu&cs=1448x0",
+          "width": 1448,
+          "height": 1086
+        }
+      ],
+      "hasVideo": false,
+      "isPinned": false
+    },
     {
       "id": 6616,
       "date": "2026-11-12T05:56:14.000Z",
@@ -862,74 +885,6 @@
           "url": "https://sun9-66.userapi.com/s/v1/ig2/M60CqG3PdHVOE_17Wk7WCwEyW52P7NXLnlg53PHsm5fnCEjOcQAIwvDXkPP5JhZuwgAynARXKidtOyyugaLj2yG1.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x853,720x960,1080x1440,1086x1448&from=bu&cs=1086x0",
           "width": 1086,
           "height": 1448
-        }
-      ],
-      "hasVideo": false,
-      "isPinned": false
-    },
-    {
-      "id": 6565,
-      "date": "2026-10-09T22:09:27.000Z",
-      "url": "https://vk.com/wall-211184409_6565",
-      "title": "🏀 Первенство Волгоградской области по баскетболу среди юниоров и юниорок до 18 лет 🏀",
-      "text": "🏀 Первенство Волгоградской области по баскетболу среди юниоров и юниорок до 18 лет 🏀\n\nПодведены итоги соревнований! Поздравляем победителей и призеров!\n\n👦 Юниоры до 18 лет:\n🥇 1 место — МБУ ДО СШОР 2 (Тренер Несерин А.Е.)\n🥈 2 место — МБУ ДО СШ 23 (Тренеры Двужилова И.Ю. и Двужилов В.Т.)\n🥉 3 место — МБУ ДО СШ Михайловка (Тренеры Разуваева С.А. и Свиридов Л.В.)\n\n👧 Юниорки до 18 лет:\n🥇 Чемпионки — МБУ ДО СШОР 2 (Тренер Шахматова Т.В.)\n\nОт всей души поздравляем команды, тренеров и всех, кто поддерживал за наших спортсменов! Желаем новых побед и ярких достижений! 💪🔥\n\n#баскетбол #Волгоградскаяобласть #первенство #юниоры #юниорки #спорт #победа",
-      "links": [],
-      "excerpt": "Подведены итоги соревнований! Поздравляем победителей и призеров! 👦 Юниоры до 18 лет: 🥇 1 место — МБУ ДО СШОР 2 (Тренер Несерин А.Е.) 🥈 2 место — МБУ ДО СШ 23 (Тренеры Двужилова…",
-      "cover": {
-        "url": "https://sun9-2.userapi.com/s/v1/ig2/99sD5SqE84JOCP0eFcrFJF7Ag9IWAachFeeWRdt4TkK9KuzqT6fupwkdw6E5FFLf7Bn6H0ZmKVCGpEXCV7DVaFRA.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x854,720x960,1080x1441,1280x1708,1440x1921,1919x2560&from=bu&cs=1919x0",
-        "width": 1919,
-        "height": 2560
-      },
-      "photos": [
-        {
-          "url": "https://sun9-2.userapi.com/s/v1/ig2/99sD5SqE84JOCP0eFcrFJF7Ag9IWAachFeeWRdt4TkK9KuzqT6fupwkdw6E5FFLf7Bn6H0ZmKVCGpEXCV7DVaFRA.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x854,720x960,1080x1441,1280x1708,1440x1921,1919x2560&from=bu&cs=1919x0",
-          "width": 1919,
-          "height": 2560
-        },
-        {
-          "url": "https://sun9-71.userapi.com/s/v1/ig2/YyriMS7ASf_b0oODkQAZ324sCDx_gpJ7avvPs8WVJf6udtpSl4axl2kfsWfVAUX2SXJzlDVztnGs_p4KgLKqjmzP.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,2560x1920&from=bu&cs=2560x0",
-          "width": 2560,
-          "height": 1920
-        },
-        {
-          "url": "https://sun9-51.userapi.com/s/v1/ig2/WOv4J9a8mpYNbW-RajNod3jPRMJ8YTDORmxFgLU4ZXfRGecRO2cUDWFz7F0mj7VVwz0jUj4HRkxCptsCJMZYkBs_.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x854,720x960,1080x1441,1280x1708,1440x1921,1919x2560&from=bu&cs=1919x0",
-          "width": 1919,
-          "height": 2560
-        },
-        {
-          "url": "https://sun9-45.userapi.com/s/v1/ig2/zhD1D6gkXkmBQ_eqtwPo9U_GQjRE1SBrWuRAOAHHnYm-4Br_YgRaEBWKklpWW1KThqKt6sZo5asp-wKfFQQrISDG.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x854,720x960,1080x1441,1280x1708,1440x1921,1919x2560&from=bu&cs=1919x0",
-          "width": 1919,
-          "height": 2560
-        },
-        {
-          "url": "https://sun9-67.userapi.com/s/v1/ig2/eDM-LYCBzwEf_veduY3OKoLKfbnUfO0QBVqDx2FK1-BoMT2v3m_1LuRgMV9Brs8u-h8v6S8dH6oFThCdO2EfCliQ.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x854,720x960,1080x1441,1280x1708,1440x1921,1919x2560&from=bu&cs=1919x0",
-          "width": 1919,
-          "height": 2560
-        },
-        {
-          "url": "https://sun9-48.userapi.com/s/v1/ig2/iS5FPAf9K6iMbxh2VtuB0tPY8kXsESZVCpiRjw1dgs2i4-lrH6bzx5o5rBV-EfH_pEgNU8iMwtzVc2kvEqbjJA2T.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x854,720x960,1080x1441,1280x1708,1440x1921,1919x2560&from=bu&cs=1919x0",
-          "width": 1919,
-          "height": 2560
-        },
-        {
-          "url": "https://sun9-6.userapi.com/s/v1/ig2/XEJVPNoTMtNZ6qAsgWllI5QfpwOTzf7Yqq9aANT9d2bs46_ru94UloV--Wx0C9kiXpG2rVgUFbN-FaEGtzxHvERL.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,2560x1920&from=bu&cs=2560x0",
-          "width": 2560,
-          "height": 1920
-        },
-        {
-          "url": "https://sun9-49.userapi.com/s/v1/ig2/kx8N9CKLRjguucTOLV3jaAZG6UaKLjFu-I00IjENJ0E5PYgrktok1e053eiTnEYlWVVjxj6kU7KUibZjMIuBqYzx.jpg?quality=95&as=32x24,48x36,72x54,108x81,160x120,240x180,360x270,480x360,540x405,640x480,720x540,1080x810,1280x960,1440x1080,2560x1920&from=bu&cs=2560x0",
-          "width": 2560,
-          "height": 1920
-        },
-        {
-          "url": "https://sun9-47.userapi.com/s/v1/ig2/_KVthlu6iLEgvLApRXHPfViALBUW64UWxefbTbnArbccp5uDN95rsH2-YKCxvH9TqGooTzAiyhleptPg8G2ux8zC.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x854,720x960,1080x1441,1280x1708,1440x1921,1919x2560&from=bu&cs=1919x0",
-          "width": 1919,
-          "height": 2560
-        },
-        {
-          "url": "https://sun9-55.userapi.com/s/v1/ig2/6xuh2zwjMHwL6pY_iYV-xt-6MyXHXmFm0eK6ZwQ0d49_8oLEZEK9kR7lLBzbk6UDg8Sh85iNG-z43utDER0NoSzz.jpg?quality=95&as=32x43,48x64,72x96,108x144,160x213,240x320,360x480,480x640,540x720,640x854,720x960,1080x1441,1280x1708,1440x1921,1919x2560&from=bu&cs=1919x0",
-          "width": 1919,
-          "height": 2560
         }
       ],
       "hasVideo": false,
