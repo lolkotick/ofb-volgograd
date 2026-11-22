@@ -871,19 +871,19 @@
       "source_url": "https://asbasket.ru/game/1129910"
     },
     {
-      "id": "asb-1129911",
+      "id": "asb-1129894",
       "date": "2026-12-01",
       "time": "20:30",
-      "league": "АСБ — Волгоградская область, женщины",
-      "team1": "ВолГУ",
-      "team2": "ВолгГМУ",
+      "league": "АСБ — Волгоградская область, мужчины",
+      "team1": "Титаны-ВГАФК",
+      "team2": "ВолгГТУ ИАиС-Горхоз",
       "venue": "ФОК СШОР №2",
       "city": "Волгоград",
       "home": true,
       "status": "upcoming",
       "score": "",
       "source": "asb",
-      "source_url": "https://asbasket.ru/game/1129911"
+      "source_url": "https://asbasket.ru/game/1129894"
     },
     {
       "id": "mlbl-1127531",
@@ -931,19 +931,19 @@
       "source_url": "https://asbasket.ru/game/1129896"
     },
     {
-      "id": "asb-1129894",
+      "id": "asb-1129911",
       "date": "2026-12-03",
       "time": "20:30",
-      "league": "АСБ — Волгоградская область, мужчины",
-      "team1": "Титаны-ВГАФК",
-      "team2": "ВолгГТУ ИАиС-Горхоз",
+      "league": "АСБ — Волгоградская область, женщины",
+      "team1": "ВолГУ",
+      "team2": "ВолгГМУ",
       "venue": "ФОК СШОР №2",
       "city": "Волгоград",
       "home": true,
       "status": "upcoming",
       "score": "",
       "source": "asb",
-      "source_url": "https://asbasket.ru/game/1129894"
+      "source_url": "https://asbasket.ru/game/1129911"
     },
     {
       "id": "mlbl-1127530",
