@@ -715,8 +715,8 @@
       "venue": "ФОК СШОР №2",
       "city": "Волгоград",
       "home": true,
-      "status": "upcoming",
-      "score": "",
+      "status": "finished",
+      "score": "46:78",
       "source": "asb",
       "source_url": "https://asbasket.ru/game/1129893"
     },
@@ -730,7 +730,7 @@
       "venue": "ФОК СШОР №2",
       "city": "Волгоград",
       "home": true,
-      "status": "upcoming",
+      "status": "finished",
       "score": "",
       "source": "asb",
       "source_url": "https://asbasket.ru/game/1129895"
